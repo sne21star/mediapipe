@@ -188,6 +188,7 @@ mediapipe_simple_subgraph(
         "//mediapipe/calculators/util:landmarks_to_detection_calculator",
         "//mediapipe/calculators/util:rect_transformation_calculator",
         "//mediapipe/calculators/util:thresholding_calculator",
+         "//hand-gesture-recognition:hand-gesture-recognition-calculator",
     ],
 )
 
