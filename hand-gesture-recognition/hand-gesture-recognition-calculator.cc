@@ -130,11 +130,11 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     }
     else if (thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
-        LOG(INFO) << "TREE!";
+        LOG(INFO) << "THREE!";
     }
     else if (thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
-        LOG(INFO) << "TWO!";
+        LOG(INFO) << "YEAH!";
     }
     else if (!thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
@@ -142,11 +142,11 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     }
     else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
-        LOG(INFO) << "YEAH!";
+        LOG(INFO) << "TWO!";
     }
-    else if (!thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
+    else if (thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
     {
-        LOG(INFO) << "ROCK!";
+        LOG(INFO) << "I LOVE YOU!";
     }
     else if (thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
     {
@@ -154,7 +154,7 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     }
     else if (!thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
-        LOG(INFO) << "FIST!";
+        LOG(INFO) << "S - ASL LETTER!";
     }
     else if (!firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && fourthFingerIsOpen && this->isThumbNearFirstFinger(landmarkList.landmark(4), landmarkList.landmark(8)))
     {
