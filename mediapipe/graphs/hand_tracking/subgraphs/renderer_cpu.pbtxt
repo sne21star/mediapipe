@@ -70,8 +70,8 @@ node {
       landmark_connections: 19
       landmark_connections: 19
       landmark_connections: 20
-      landmark_color { r: 255 g: 0 b: 0 }
-      connection_color { r: 0 g: 255 b: 0 }
+      landmark_color { r: 0 g: 0 b: 255 }
+      connection_color { r: 0 g: 255 b: 255 }
       thickness: 4.0
     }
   }

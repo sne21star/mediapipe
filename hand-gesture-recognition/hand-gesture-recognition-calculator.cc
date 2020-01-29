@@ -126,7 +126,7 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     }
     else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && fourthFingerIsOpen)
     {
-        LOG(INFO) << "FOUR!";
+        LOG(INFO) << "B - ASL Letter!";
     }
     else if (thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
@@ -138,27 +138,61 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     }
     else if (!thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
-        LOG(INFO) << "ONE!";
+        LOG(INFO) << "D - ASL LETTER!";
+    }
+    else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && this->isThumbNearFirstFinger(landmarkList.landmark(12), landmarkList.landmark(8)))
+    {
+        LOG(INFO) << "U - ASL Letter!";
+    }
+    else if (!thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && this->isThumbNearFirstFinger(landmarkList.landmark(12), landmarkList.landmark(8)))
+    {
+        LOG(INFO) << "R - ASL Letter!";
     }
     else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
-        LOG(INFO) << "TWO!";
+        LOG(INFO) << "V - ASL Letter!";
     }
+    else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && !fourthFingerIsOpen)
+    {
+        LOG(INFO) << "W - ASL Letter!";
+    }
+
     else if (thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
     {
         LOG(INFO) << "I LOVE YOU!";
     }
+    else if (thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
+    {
+        LOG(INFO) << "Y - ASL Letter!";
+    }
+
     else if (thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
     {
         LOG(INFO) << "SPIDERMAN!";
     }
-    else if (!thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
+     else if (!thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && this->isThumbNearFirstFinger(landmarkList.landmark(7), landmarkList.landmark(6)))
+    {
+        LOG(INFO) << "X - ASL LETTER!";
+    }
+    else if (!thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
         LOG(INFO) << "S - ASL LETTER!";
     }
+    else if (thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
+    {
+        LOG(INFO) << "A - ASL LETTER!";
+    }
+    else if (!thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
+    {
+        LOG(INFO) << "I - ASL LETTER!";
+    }
     else if (!firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && fourthFingerIsOpen && this->isThumbNearFirstFinger(landmarkList.landmark(4), landmarkList.landmark(8)))
     {
-        LOG(INFO) << "OK!";
+        LOG(INFO) << "F - ASL LETTER!";
+    }
+    else if (firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && this->isThumbNearFirstFinger(landmarkList.landmark(4), landmarkList.landmark(20)))
+    {
+        LOG(INFO) << "O - ASL LETTER!";
     }
     else
     {
