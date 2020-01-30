@@ -174,6 +174,10 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     {
         LOG(INFO) << "X - ASL LETTER!";
     }
+    else if (thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && this->isThumbNearFirstFinger(landmarkList.landmark(4), landmarkList.landmark(6)))
+    {
+        LOG(INFO) << "P - ASL LETTER!";
+    }
     else if (!thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
         LOG(INFO) << "S - ASL LETTER!";

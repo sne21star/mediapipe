@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../404_ECE/Lecture3Code/.idea/Lecture3Code.iml" filepath="$PROJECT_DIR$/../../../404_ECE/Lecture3Code/.idea/Lecture3Code.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/mediapipe.iml" filepath="$PROJECT_DIR$/.idea/mediapipe.iml" />
     </modules>
   </component>
