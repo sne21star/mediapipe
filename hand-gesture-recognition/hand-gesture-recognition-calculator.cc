@@ -195,7 +195,6 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     }
     else if (thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
-
         LOG(INFO) << "L - ASL LETTER!";
     }
     else if(!thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && !(this-> areLandmarksClose(landmarkList.landmark(7), landmarkList.landmark(3))))
