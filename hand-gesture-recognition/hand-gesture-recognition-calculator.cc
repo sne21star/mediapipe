@@ -133,11 +133,7 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
 
              LOG(INFO) << "D - ASL LETTER!";
     }
-    else if (thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
-    {
 
-             LOG(INFO) << "Q - ASL LETTER!";
-    }
     else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && this->areLandmarksClose(landmarkList.landmark(6), landmarkList.landmark(10)))
     {
         if (!(this->areLandmarksClose(landmarkList.landmark(12), landmarkList.landmark(8))))
@@ -181,7 +177,7 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     }
     else if (thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
-        if(this->isThumbNearFirstFinger(landmarkList.landmark(4), landmarkList.landmark(6)))
+        if(this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(6)))
         {
              LOG(INFO) << "T - ASL LETTER!";
         }
