@@ -37,7 +37,7 @@ private:
     bool isThumbNearFirstFinger(NormalizedLandmark point1, NormalizedLandmark point2)
     {
         float distance = this->get_Euclidean_DistanceAB(point1.x(), point1.y(), point2.x(), point2.y());
-        return distance < 0.1;
+        return distance < 0.085;
     }
 };
 
@@ -122,7 +122,7 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     // Hand gesture recognition
     if (thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && fourthFingerIsOpen)
     {
-        LOG(INFO) << "FIVE!";
+        LOG(INFO) << "C - ASL Letter!!";
     }
     else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && fourthFingerIsOpen)
     {
@@ -132,22 +132,22 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     {
         LOG(INFO) << "THREE!";
     }
-    else if (thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
-    {
-        LOG(INFO) << "YEAH!";
-    }
     else if (!thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
         LOG(INFO) << "D - ASL LETTER!";
     }
-    else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && this->isThumbNearFirstFinger(landmarkList.landmark(12), landmarkList.landmark(8)))
+    else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && this->isThumbNearFirstFinger(landmarkList.landmark(6), landmarkList.landmark(10)))
     {
-        LOG(INFO) << "U - ASL Letter!";
+        if (!(this->isThumbNearFirstFinger(landmarkList.landmark(12), landmarkList.landmark(8))))
+        {
+            LOG(INFO) << "U - ASL Letter!";
+        }
+        else
+        {
+            LOG(INFO) << "R - ASL Letter!";
+        }
     }
-    else if (!thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && this->isThumbNearFirstFinger(landmarkList.landmark(12), landmarkList.landmark(8)))
-    {
-        LOG(INFO) << "R - ASL Letter!";
-    }
+
     else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
         LOG(INFO) << "V - ASL Letter!";
@@ -165,11 +165,6 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     {
         LOG(INFO) << "Y - ASL Letter!";
     }
-
-    else if (thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
-    {
-        LOG(INFO) << "SPIDERMAN!";
-    }
      else if (!thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && this->isThumbNearFirstFinger(landmarkList.landmark(7), landmarkList.landmark(6)))
     {
         LOG(INFO) << "X - ASL LETTER!";
@@ -178,7 +173,7 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     {
         LOG(INFO) << "P - ASL LETTER!";
     }
-    else if (!thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
+    else if (!thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
         LOG(INFO) << "S - ASL LETTER!";
     }
@@ -197,6 +192,11 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     else if (firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && this->isThumbNearFirstFinger(landmarkList.landmark(4), landmarkList.landmark(20)))
     {
         LOG(INFO) << "O - ASL LETTER!";
+    }
+    else if (thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
+    {
+
+        LOG(INFO) << "L - ASL LETTER!";
     }
     else
     {
