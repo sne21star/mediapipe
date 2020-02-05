@@ -125,6 +125,9 @@ DEFINE_string(output_video_path, "",
       }
       writer.write(output_frame_mat);
     } else {
+      putText(output_frame_mat, "hi", cvPoint(30,30),
+      cv::FONT_HERSHEY_COMPLEX_SMALL, 0.8, cvScalar(0,0,255), 1, CV_AA);
+
       cv::imshow(kWindowName, output_frame_mat);
       // Press any key to exit.
       const int pressed_key = cv::waitKey(5);

@@ -52,6 +52,8 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     RET_CHECK(cc->Inputs().HasTag(normRectTag));
     cc->Inputs().Tag(normRectTag).Set<NormalizedRect>();
 
+    cc->Outputs()
+
     return ::mediapipe::OkStatus();
 }
 
@@ -177,7 +179,7 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     }
     else if (thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
-        if(this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(6)))
+        if(this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(9)))
         {
              LOG(INFO) << "T - ASL LETTER!";
         }
