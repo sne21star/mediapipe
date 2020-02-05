@@ -53,6 +53,7 @@ node {
   calculator: "HandLandmarkSubgraph"
   input_stream: "IMAGE:input_video"
   input_stream: "NORM_RECT:hand_rect"
+  output_stream: "ASL_LETTERS:asl_letters"
   output_stream: "LANDMARKS:hand_landmarks"
   output_stream: "NORM_RECT:hand_rect_from_landmarks"
   output_stream: "PRESENCE:hand_presence"
