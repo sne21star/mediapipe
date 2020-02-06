@@ -14,7 +14,10 @@
 //
 // An example of sending OpenCV webcam frames into a MediaPipe graph.
 #include <cstdlib>
-
+#include<iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
 #include "mediapipe/framework/calculator_framework.h"
 #include "mediapipe/framework/formats/image_frame.h"
 #include "mediapipe/framework/formats/image_frame_opencv.h"
@@ -25,6 +28,7 @@
 #include "mediapipe/framework/port/opencv_video_inc.h"
 #include "mediapipe/framework/port/parse_text_proto.h"
 #include "mediapipe/framework/port/status.h"
+//#include "/Users/snehamahapatra/Desktop/Spring2020/EPCS412/CNN_ASL/mediapipe/hand-gesture-recognition/hand-gesture-recognition-calculator.h"
 
 constexpr char kInputStream[] = "input_video";
 constexpr char kOutputStream[] = "output_video";
@@ -125,9 +129,14 @@ DEFINE_string(output_video_path, "",
       }
       writer.write(output_frame_mat);
     } else {
-      putText(output_frame_mat, "hi", cvPoint(30,30),
-      cv::FONT_HERSHEY_COMPLEX_SMALL, 0.8, cvScalar(0,0,255), 1, CV_AA);
-
+      //HandGestureRecognitionCalculator obj1;
+      std::string text;
+      std::fstream file;
+      file.open("string_to_Screen.txt", std::ios::out | std::ios::in );
+      file >> text;
+      file.close();
+      putText(output_frame_mat, text, cvPoint(30,30),
+      cv::FONT_HERSHEY_TRIPLEX, 1, cvScalar(255,0,0), 1, CV_AA);
       cv::imshow(kWindowName, output_frame_mat);
       // Press any key to exit.
       const int pressed_key = cv::waitKey(5);

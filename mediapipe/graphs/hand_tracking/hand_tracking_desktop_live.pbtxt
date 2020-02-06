@@ -6,7 +6,6 @@
 # Images coming into and out of the graph.
 input_stream: "input_video"
 output_stream: "output_video"
-
 # Caches a hand-presence decision fed back from HandLandmarkSubgraph, and upon
 # the arrival of the next input image sends out the cached decision with the
 # timestamp replaced by that of the input image, essentially generating a packet
@@ -53,7 +52,7 @@ node {
   calculator: "HandLandmarkSubgraph"
   input_stream: "IMAGE:input_video"
   input_stream: "NORM_RECT:hand_rect"
-  output_stream: "ASL_LETTERS:asl_letters"
+  #output_stream: "ASL_LETTERS:asl_letters"
   output_stream: "LANDMARKS:hand_landmarks"
   output_stream: "NORM_RECT:hand_rect_from_landmarks"
   output_stream: "PRESENCE:hand_presence"

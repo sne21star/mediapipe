@@ -2,6 +2,9 @@
 #include "mediapipe/framework/calculator_framework.h"
 #include "mediapipe/framework/formats/landmark.pb.h"
 #include "mediapipe/framework/formats/rect.pb.h"
+#include "mediapipe/framework/input_stream_handler.h"
+#include <iostream>
+#include <fstream>
 
 namespace mediapipe
 {
@@ -26,7 +29,6 @@ public:
     ::mediapipe::Status Open(CalculatorContext *cc) override;
 
     ::mediapipe::Status Process(CalculatorContext *cc) override;
-
 private:
     float get_Euclidean_DistanceAB(float a_x, float a_y, float b_x, float b_y)
     {
@@ -39,6 +41,7 @@ private:
         float distance = this->get_Euclidean_DistanceAB(point1.x(), point1.y(), point2.x(), point2.y());
         return distance < 0.085;
     }
+
 };
 
 REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
@@ -51,8 +54,6 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
 
     RET_CHECK(cc->Inputs().HasTag(normRectTag));
     cc->Inputs().Tag(normRectTag).Set<NormalizedRect>();
-
-    cc->Outputs()
 
     return ::mediapipe::OkStatus();
 }
@@ -90,7 +91,6 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     bool thirdFingerIsOpen = false;
     bool fourthFingerIsOpen = false;
     //
-
     float pseudoFixKeyPoint = landmarkList.landmark(2).x();
     if (landmarkList.landmark(3).x() < pseudoFixKeyPoint && landmarkList.landmark(4).x() < pseudoFixKeyPoint)
     {
@@ -126,6 +126,7 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     {
         LOG(INFO) << "C - ASL Letter!!";
     }
+
     else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && fourthFingerIsOpen)
     {
         LOG(INFO) << "B - ASL Letter!";
@@ -165,6 +166,11 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
 
     else if (thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
     {
+         std::ofstream fout;
+            fout.open("string_to_Screen.txt");
+            fout << "I_LOVE_YOU!" << std::endl;
+            fout.close();
+            LOG(INFO) << "A - ASL LETTER!";
         LOG(INFO) << "I LOVE YOU!";
     }
     else if (thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
@@ -195,7 +201,12 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
         }
         else
         {
+            std::ofstream fout;
+            fout.open("string_to_Screen.txt");
+            fout << "A!" << std::endl;
+            fout.close();
             LOG(INFO) << "A - ASL LETTER!";
+            //outputString = "A - ASL LETTER!";
         }
     }
     else if (!thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
@@ -223,7 +234,6 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
         LOG(INFO) << "Finger States: " << thumbIsOpen << firstFingerIsOpen << secondFingerIsOpen << thirdFingerIsOpen << fourthFingerIsOpen;
         LOG(INFO) << "___";
     }
-
     return ::mediapipe::OkStatus();
 } // namespace mediapipe
 
