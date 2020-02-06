@@ -5,6 +5,9 @@
 #include "mediapipe/framework/input_stream_handler.h"
 #include <iostream>
 #include <fstream>
+#include <string>
+using namespace std;
+void stringToFile();
 
 namespace mediapipe
 {
@@ -43,6 +46,20 @@ private:
     }
 
 };
+
+void stringToFile(std::string toWrite)
+{
+    std::string s=toWrite;
+    std::ofstream os("string_to_Screen.txt");
+    if (!os)
+    {
+        std::cerr<<"Error writing to ..."<<std::endl;
+    }
+    else
+    {
+        os << s;
+    }
+}
 
 REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
 
@@ -124,16 +141,19 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     // Hand gesture recognition
     if (thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && fourthFingerIsOpen)
     {
+        stringToFile("C!");
         LOG(INFO) << "C - ASL Letter!!";
     }
 
     else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && fourthFingerIsOpen)
     {
+        stringToFile("B!");
         LOG(INFO) << "B - ASL Letter!";
     }
     else if (!thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
 
+            stringToFile("D!");
              LOG(INFO) << "D - ASL LETTER!";
     }
 
@@ -141,10 +161,12 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     {
         if (!(this->areLandmarksClose(landmarkList.landmark(12), landmarkList.landmark(8))))
         {
+            stringToFile("U!");
             LOG(INFO) << "U - ASL Letter!";
         }
         else
         {
+            stringToFile("R!");
             LOG(INFO) << "R - ASL Letter!";
         }
     }
@@ -153,80 +175,88 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     {
         if ((this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(6))))
         {
+            stringToFile("K!");
             LOG(INFO) << "K - ASL Letter!";
         }
-        else{
-        LOG(INFO) << "V - ASL Letter!";
+        else
+        {
+            stringToFile("V!");
+            LOG(INFO) << "V - ASL Letter!";
         }
     }
     else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && !fourthFingerIsOpen)
     {
+        stringToFile("W!");
         LOG(INFO) << "W - ASL Letter!";
     }
 
     else if (thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
     {
-         std::ofstream fout;
-            fout.open("string_to_Screen.txt");
-            fout << "I_LOVE_YOU!" << std::endl;
-            fout.close();
-            LOG(INFO) << "A - ASL LETTER!";
+         stringToFile("I LOVE YOU!");
         LOG(INFO) << "I LOVE YOU!";
     }
     else if (thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
     {
+        stringToFile("Y!");
         LOG(INFO) << "Y - ASL Letter!";
     }
      else if (!thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && this->areLandmarksClose(landmarkList.landmark(7), landmarkList.landmark(6)))
     {
+        stringToFile("X!");
         LOG(INFO) << "X - ASL LETTER!";
     }
     else if (thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(6)))
     {
+        stringToFile("P!");
         LOG(INFO) << "P - ASL LETTER!";
     }
     else if (!thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && (this-> areLandmarksClose(landmarkList.landmark(7), landmarkList.landmark(3))))
     {
+        stringToFile("S!");
         LOG(INFO) << "S - ASL LETTER!";
     }
     else if (thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
         if(this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(9)))
         {
+             stringToFile("T!");
              LOG(INFO) << "T - ASL LETTER!";
         }
         else if(this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(8)))
         {
+            stringToFile("O!");
              LOG(INFO) << "O - ASL LETTER!";
         }
         else
         {
-            std::ofstream fout;
-            fout.open("string_to_Screen.txt");
-            fout << "A!" << std::endl;
-            fout.close();
+            stringToFile("A!");
             LOG(INFO) << "A - ASL LETTER!";
             //outputString = "A - ASL LETTER!";
         }
     }
     else if (!thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
     {
+        stringToFile("I!");
         LOG(INFO) << "I - ASL LETTER!";
     }
     else if (!firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && fourthFingerIsOpen && this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(8)))
     {
+        stringToFile("F!");
         LOG(INFO) << "F - ASL LETTER!";
     }
     else if (thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
+        stringToFile("L!");
         LOG(INFO) << "L - ASL LETTER!";
     }
     else if(!thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && !(this-> areLandmarksClose(landmarkList.landmark(7), landmarkList.landmark(3))))
     {
+        stringToFile("E!");
         LOG(INFO) << "E - ASL LETTER!";
     }
      if (thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
+        stringToFile("H!");
         LOG(INFO) << "H - ASL Letter!!";
     }
     else

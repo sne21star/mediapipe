@@ -29,7 +29,7 @@
 #include "mediapipe/framework/port/parse_text_proto.h"
 #include "mediapipe/framework/port/status.h"
 //#include "/Users/snehamahapatra/Desktop/Spring2020/EPCS412/CNN_ASL/mediapipe/hand-gesture-recognition/hand-gesture-recognition-calculator.h"
-
+using namespace std;
 constexpr char kInputStream[] = "input_video";
 constexpr char kOutputStream[] = "output_video";
 constexpr char kWindowName[] = "MediaPipe";
@@ -133,11 +133,17 @@ DEFINE_string(output_video_path, "",
       std::string text;
       std::fstream file;
       file.open("string_to_Screen.txt", std::ios::out | std::ios::in );
-      file >> text;
-      file.close();
-      putText(output_frame_mat, text, cvPoint(30,30),
+      std::string sentence;
+      std::string spaceExtra = " ";
+      while(file >> text)
+      {
+        sentence += text;
+        sentence += spaceExtra;
+      }
+      putText(output_frame_mat, sentence, cvPoint(30,30),
       cv::FONT_HERSHEY_TRIPLEX, 1, cvScalar(255,0,0), 1, CV_AA);
       cv::imshow(kWindowName, output_frame_mat);
+      file.close();
       // Press any key to exit.
       const int pressed_key = cv::waitKey(5);
       if (pressed_key >= 0 && pressed_key != 255) grab_frames = false;
