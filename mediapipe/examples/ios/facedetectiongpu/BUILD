@@ -23,7 +23,7 @@ load(
 
 ios_application(
     name = "FaceDetectionGpuApp",
-    bundle_id = "com.google.mediapipe.FaceDetectionGpu",
+    bundle_id = "edu.purdue.ecn.das",
     families = [
         "iphone",
         "ipad",

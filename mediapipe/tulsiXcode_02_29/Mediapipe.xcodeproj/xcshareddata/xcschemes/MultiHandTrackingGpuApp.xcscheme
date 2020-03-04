@@ -1,0 +1,86 @@
+
+<Scheme version="1.3" LastUpgradeVersion="1000">
+    <BuildAction buildImplicitDependencies="YES" parallelizeBuildables="YES">
+        <BuildActionEntries>
+            <BuildActionEntry buildForTesting="YES" buildForArchiving="YES" buildForRunning="YES" buildForAnalyzing="YES" buildForProfiling="YES">
+                <BuildableReference BuildableIdentifier="primary" BlueprintName="MultiHandTrackingGpuApp" ReferencedContainer="container:Mediapipe.xcodeproj" BlueprintIdentifier="C80253E906DFF35400000000" BuildableName="MultiHandTrackingGpuApp.app"></BuildableReference>
+            </BuildActionEntry>
+        </BuildActionEntries>
+        <PreActions>
+            <ExecutionAction ActionType="Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+                <ActionContent scriptText="" title="Run Script">
+                    <EnvironmentBuildable>
+                        <BuildableReference ReferencedContainer="container:Mediapipe.xcodeproj" BlueprintName="MultiHandTrackingGpuApp" BuildableIdentifier="primary" BuildableName="MultiHandTrackingGpuApp.app" BlueprintIdentifier="C80253E906DFF35400000000"></BuildableReference>
+                    </EnvironmentBuildable>
+                </ActionContent>
+            </ExecutionAction>
+        </PreActions>
+        <PostActions>
+            <ExecutionAction ActionType="Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+                <ActionContent scriptText="" title="Run Script">
+                    <EnvironmentBuildable>
+                        <BuildableReference BlueprintIdentifier="C80253E906DFF35400000000" BuildableName="MultiHandTrackingGpuApp.app" BuildableIdentifier="primary" BlueprintName="MultiHandTrackingGpuApp" ReferencedContainer="container:Mediapipe.xcodeproj"></BuildableReference>
+                    </EnvironmentBuildable>
+                </ActionContent>
+            </ExecutionAction>
+        </PostActions>
+    </BuildAction>
+    <TestAction shouldUseLaunchSchemeArgsEnv="YES" selectedLauncherIdentifier="Xcode.DebuggerFoundation.Launcher.LLDB" buildConfiguration="__TulsiTestRunner_Debug" selectedDebuggerIdentifier="Xcode.DebuggerFoundation.Debugger.LLDB">
+        <Testables></Testables>
+        <PreActions>
+            <ExecutionAction ActionType="Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+                <ActionContent title="Run Script" scriptText="">
+                    <EnvironmentBuildable>
+                        <BuildableReference ReferencedContainer="container:Mediapipe.xcodeproj" BlueprintName="MultiHandTrackingGpuApp" BlueprintIdentifier="C80253E906DFF35400000000" BuildableIdentifier="primary" BuildableName="MultiHandTrackingGpuApp.app"></BuildableReference>
+                    </EnvironmentBuildable>
+                </ActionContent>
+            </ExecutionAction>
+        </PreActions>
+        <PostActions>
+            <ExecutionAction ActionType="Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+                <ActionContent title="Run Script" scriptText="">
+                    <EnvironmentBuildable>
+                        <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="C80253E906DFF35400000000" BlueprintName="MultiHandTrackingGpuApp" BuildableName="MultiHandTrackingGpuApp.app" ReferencedContainer="container:Mediapipe.xcodeproj"></BuildableReference>
+                    </EnvironmentBuildable>
+                </ActionContent>
+            </ExecutionAction>
+        </PostActions>
+        <BuildableProductRunnable runnableDebuggingMode="0">
+            <BuildableReference BlueprintIdentifier="C80253E906DFF35400000000" BuildableIdentifier="primary" ReferencedContainer="container:Mediapipe.xcodeproj" BuildableName="MultiHandTrackingGpuApp.app" BlueprintName="MultiHandTrackingGpuApp"></BuildableReference>
+        </BuildableProductRunnable>
+    </TestAction>
+    <LaunchAction buildConfiguration="Debug" debugDocumentVersioning="YES" selectedDebuggerIdentifier="Xcode.DebuggerFoundation.Debugger.LLDB" selectedLauncherIdentifier="Xcode.DebuggerFoundation.Launcher.LLDB" allowLocationSimulation="YES" launchStyle="0" ignoresPersistentStateOnLaunch="NO" useCustomWorkingDirectory="NO" debugServiceExtension="internal">
+        <CommandLineArguments>
+            <CommandLineArgument isEnabled="YES" argument=""></CommandLineArgument>
+        </CommandLineArguments>
+        <EnvironmentVariables></EnvironmentVariables>
+        <PreActions>
+            <ExecutionAction ActionType="Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+                <ActionContent title="Run Script" scriptText="">
+                    <EnvironmentBuildable>
+                        <BuildableReference ReferencedContainer="container:Mediapipe.xcodeproj" BlueprintIdentifier="C80253E906DFF35400000000" BuildableName="MultiHandTrackingGpuApp.app" BlueprintName="MultiHandTrackingGpuApp" BuildableIdentifier="primary"></BuildableReference>
+                    </EnvironmentBuildable>
+                </ActionContent>
+            </ExecutionAction>
+        </PreActions>
+        <PostActions>
+            <ExecutionAction ActionType="Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+                <ActionContent title="Run Script" scriptText="">
+                    <EnvironmentBuildable>
+                        <BuildableReference BuildableIdentifier="primary" ReferencedContainer="container:Mediapipe.xcodeproj" BlueprintIdentifier="C80253E906DFF35400000000" BuildableName="MultiHandTrackingGpuApp.app" BlueprintName="MultiHandTrackingGpuApp"></BuildableReference>
+                    </EnvironmentBuildable>
+                </ActionContent>
+            </ExecutionAction>
+        </PostActions>
+        <BuildableProductRunnable runnableDebuggingMode="0">
+            <BuildableReference BlueprintName="MultiHandTrackingGpuApp" ReferencedContainer="container:Mediapipe.xcodeproj" BlueprintIdentifier="C80253E906DFF35400000000" BuildableName="MultiHandTrackingGpuApp.app" BuildableIdentifier="primary"></BuildableReference>
+        </BuildableProductRunnable>
+    </LaunchAction>
+    <ProfileAction buildConfiguration="__TulsiTestRunner_Release" useCustomWorkingDirectory="NO" shouldUseLaunchSchemeArgsEnv="YES" debugDocumentVersioning="YES">
+        <BuildableProductRunnable runnableDebuggingMode="0">
+            <BuildableReference ReferencedContainer="container:Mediapipe.xcodeproj" BuildableName="MultiHandTrackingGpuApp.app" BlueprintName="MultiHandTrackingGpuApp" BuildableIdentifier="primary" BlueprintIdentifier="C80253E906DFF35400000000"></BuildableReference>
+        </BuildableProductRunnable>
+    </ProfileAction>
+    <AnalyzeAction buildConfiguration="Debug"></AnalyzeAction>
+    <ArchiveAction revealArchiveInOrganizer="YES" buildConfiguration="Release"></ArchiveAction>
+</Scheme>

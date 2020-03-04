@@ -140,8 +140,7 @@ DEFINE_string(output_video_path, "",
         sentence += text;
         sentence += spaceExtra;
       }
-      putText(output_frame_mat, sentence, cvPoint(30,30),
-      cv::FONT_HERSHEY_TRIPLEX, 1, cvScalar(255,0,0), 1, CV_AA);
+      putText(output_frame_mat, sentence, cvPoint(0,200),cv::FONT_HERSHEY_TRIPLEX, 1, cvScalar(255,0,0), 1, CV_AA);
       cv::imshow(kWindowName, output_frame_mat);
       file.close();
       // Press any key to exit.

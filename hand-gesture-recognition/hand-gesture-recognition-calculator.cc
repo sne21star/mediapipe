@@ -231,6 +231,7 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
         {
             stringToFile("A!");
             LOG(INFO) << "A - ASL LETTER!";
+            LOG(INFO) << "A - ASL LETTER!";
             //outputString = "A - ASL LETTER!";
         }
     }
@@ -254,13 +255,14 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
         stringToFile("E!");
         LOG(INFO) << "E - ASL LETTER!";
     }
-     if (thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
+    else if (thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
         stringToFile("H!");
         LOG(INFO) << "H - ASL Letter!!";
     }
     else
     {
+       stringToFile("No Hand Detected");
         LOG(INFO) << "Finger States: " << thumbIsOpen << firstFingerIsOpen << secondFingerIsOpen << thirdFingerIsOpen << fourthFingerIsOpen;
         LOG(INFO) << "___";
     }

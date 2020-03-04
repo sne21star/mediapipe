@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../../../404_ECE/Lecture3Code/.idea/Lecture3Code.iml" filepath="$PROJECT_DIR$/../../../404_ECE/Lecture3Code/.idea/Lecture3Code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../404_ECE/Homework6/.idea/Homework6.iml" filepath="$PROJECT_DIR$/../../../404_ECE/Homework6/.idea/Homework6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../VIP/GUI_interface/gui_interface/.idea/gui_interface.iml" filepath="$PROJECT_DIR$/../../../VIP/GUI_interface/gui_interface/.idea/gui_interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/mediapipe.iml" filepath="$PROJECT_DIR$/.idea/mediapipe.iml" />
     </modules>
   </component>
