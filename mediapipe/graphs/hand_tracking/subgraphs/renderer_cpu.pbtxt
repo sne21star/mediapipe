@@ -96,7 +96,7 @@ node {
    input_stream: "NORM_LANDMARKS:landmarks"
    input_stream: "NORM_RECT:rect"
    output_stream: "ASL:text_to_put"
-  }
+ }
 
 node {
    calculator: "OpenCvPutTextCalculator"

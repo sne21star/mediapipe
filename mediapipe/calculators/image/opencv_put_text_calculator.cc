@@ -38,6 +38,7 @@ class OpenCvPutTextCalculator : public CalculatorBase {
 
 ::mediapipe::Status OpenCvPutTextCalculator::GetContract(
     CalculatorContract* cc) {
+
   cc->Inputs().Index(0).Set<std::string>();
   cc->Outputs().Index(0).Set<ImageFrame>();
   return ::mediapipe::OkStatus();
@@ -46,8 +47,9 @@ class OpenCvPutTextCalculator : public CalculatorBase {
 ::mediapipe::Status OpenCvPutTextCalculator::Process(CalculatorContext* cc) {
   const std::string& text_content = cc->Inputs().Index(0).Get<std::string>();
   cv::Mat mat = cv::Mat::zeros(640, 640, CV_8UC4);
-  cv::putText(mat, text_content, cv::Point(15, 70), cv::FONT_HERSHEY_PLAIN, 3,
+  cv::putText(mat, "HELLLLLOOOOOOO!!!!", cv::Point(15, 70), cv::FONT_HERSHEY_PLAIN, 3,
               cv::Scalar(255, 255, 0, 255), 4);
+              LOG(INFO) << "I WAS IN OPEN";
   std::unique_ptr<ImageFrame> output_frame = absl::make_unique<ImageFrame>(
       ImageFormat::SRGBA, mat.size().width, mat.size().height);
   mat.copyTo(formats::MatView(output_frame.get()));

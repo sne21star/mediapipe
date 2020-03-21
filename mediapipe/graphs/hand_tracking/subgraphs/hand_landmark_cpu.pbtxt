@@ -184,9 +184,3 @@ node {
   }
 }
 
-node {
-  calculator: "HandGestureRecognitionCalculator"
-  input_stream: "NORM_LANDMARKS:scaled_landmarks"
-  input_stream: "NORM_RECT:hand_rect_for_next_frame"
-  #output_stream: "ASL_LETTERS:asl_letters"
-}
