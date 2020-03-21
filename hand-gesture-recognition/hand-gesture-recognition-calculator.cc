@@ -72,6 +72,9 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     RET_CHECK(cc->Inputs().HasTag(normRectTag));
     cc->Inputs().Tag(normRectTag).Set<NormalizedRect>();
 
+    if (cc->Outputs().HasTag("ASL")) {
+    cc->Outputs().Tag("ASL").Set<std::string>();
+  }
     return ::mediapipe::OkStatus();
 }
 
@@ -266,6 +269,9 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
         LOG(INFO) << "Finger States: " << thumbIsOpen << firstFingerIsOpen << secondFingerIsOpen << thirdFingerIsOpen << fourthFingerIsOpen;
         LOG(INFO) << "___";
     }
+    cc->Outputs().Tag("ASL").AddPacket(
+        MakePacket<std::string>("HELLLO!!")
+            .At(cc->InputTimestamp()));
     return ::mediapipe::OkStatus();
 } // namespace mediapipe
 
