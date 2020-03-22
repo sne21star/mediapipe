@@ -15,6 +15,8 @@ This project is part of a senior design project at Purdue University. My team an
 ![hand_tracking](mediapipe/docs/images/mobile/hand_tracking_3d_android_gpu_small.gif)
 This shows the handtracking Mediapipe has already created.
 
+## ASL Translator App
+![Real-time Hand Tracking](mediapipe/docs/images/ASL.gif)
 ## Installation
 Follow these [instructions](mediapipe/docs/install.md).
 
