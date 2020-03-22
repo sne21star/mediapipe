@@ -1,4 +1,4 @@
-![ASL Translator](mediapipe/docs/images/ASL_Translator.png?raw=true "ASL Translator on App")
+![ASL Translator](mediapipe/docs/images/ASL_Translator_small.png?raw=true "ASL Translator on App")
 =======================================================================
 
 [MediaPipe](http://mediapipe.dev) is a framework for building multimodal (eg. video, audio, any time series data) applied ML pipelines. With MediaPipe, a perception pipeline can be built as a graph of modular components, including, for instance, inference models (e.g., TensorFlow, TFLite) and media processing functions.
