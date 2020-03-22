@@ -1,9 +1,9 @@
 ![ASL Translator](mediapipe/docs/images/ASL_Translator_small.png?raw=true "ASL Translator on App")
 =======================================================================
 
-[MediaPipe](http://mediapipe.dev) is a framework for building multimodal (eg. video, audio, any time series data) applied ML pipelines. With MediaPipe, a perception pipeline can be built as a graph of modular components, including, for instance, inference models (e.g., TensorFlow, TFLite) and media processing functions.
+[MediaPipe](http://mediapipe.dev)
 
-We are attempting to create an ASL translator using the framework already created. We have so far able to translator ASL letters. We are going to atttempt to interpret words as well in ASL.
+This project is part of a senior design project at Purdue University. My team and I are attempting to create an ASL translator using the Mediapipe Framework. We have so far been able to translator ASL letters. We are going to attempt to interpret words as well in ASL.
 
 ![Real-time Hand Tracking](mediapipe/docs/images/mobile/hand_tracking_android_gpu.gif)
 
@@ -13,6 +13,7 @@ We are attempting to create an ASL translator using the framework already create
 
 * [Hand Tracking](mediapipe/docs/hand_tracking_mobile_gpu.md)
 ![hand_tracking](mediapipe/docs/images/mobile/hand_tracking_3d_android_gpu_small.gif)
+This shows the handtracking Mediapipe has already created.
 
 ## Installation
 Follow these [instructions](mediapipe/docs/install.md).
@@ -21,7 +22,7 @@ Follow these [instructions](mediapipe/docs/install.md).
 See mobile, desktop and Google Coral [examples](mediapipe/docs/examples.md).
 
 ## Documentation
-We will soon create Documentation to help with the changes we created in this framework.
+We will soon create Documentation to help understand the changes we made in this framework.
 
 ## Publications
 * [On-Device, Real-Time Hand Tracking with MediaPipe](https://ai.googleblog.com/2019/08/on-device-real-time-hand-tracking-with.html)
