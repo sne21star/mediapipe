@@ -8,7 +8,7 @@
 #include <string>
 using namespace std;
 void stringToFile();
-
+string ASL_Word;
 namespace mediapipe
 {
 
@@ -47,6 +47,7 @@ private:
 
 };
 
+/*
 void stringToFile(std::string toWrite)
 {
     std::string s=toWrite;
@@ -60,6 +61,7 @@ void stringToFile(std::string toWrite)
         os << s;
     }
 }
+*/
 
 REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
 
@@ -96,6 +98,11 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     if (width < 0.01 || height < 0.01)
     {
         LOG(INFO) << "No Hand Detected";
+        if (cc->Outputs().HasTag("ASL")) {
+    cc->Outputs().Tag("ASL").AddPacket(
+        MakePacket<std::string>("No Hand Detected")
+            .At(cc->InputTimestamp()));
+           }
         return ::mediapipe::OkStatus();
     }
 
@@ -144,19 +151,18 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     // Hand gesture recognition
     if (thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && fourthFingerIsOpen)
     {
-        stringToFile("C!");
+        ASL_Word = "C";
         LOG(INFO) << "C - ASL Letter!!";
     }
 
     else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && fourthFingerIsOpen)
     {
-        stringToFile("B!");
+        ASL_Word = "B";
         LOG(INFO) << "B - ASL Letter!";
     }
     else if (!thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
-
-            stringToFile("D!");
+            ASL_Word = "D";
              LOG(INFO) << "D - ASL LETTER!";
     }
 
@@ -164,12 +170,12 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     {
         if (!(this->areLandmarksClose(landmarkList.landmark(12), landmarkList.landmark(8))))
         {
-            stringToFile("U!");
+            ASL_Word = "U";
             LOG(INFO) << "U - ASL Letter!";
         }
         else
         {
-            stringToFile("R!");
+            ASL_Word = "R";
             LOG(INFO) << "R - ASL Letter!";
         }
     }
@@ -178,100 +184,99 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     {
         if ((this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(6))))
         {
-            stringToFile("K!");
+            ASL_Word = "K";
             LOG(INFO) << "K - ASL Letter!";
         }
         else
         {
-            stringToFile("V!");
+            ASL_Word = "V";
             LOG(INFO) << "V - ASL Letter!";
         }
     }
     else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && !fourthFingerIsOpen)
     {
-        stringToFile("W!");
+        ASL_Word = "W";
         LOG(INFO) << "W - ASL Letter!";
     }
 
     else if (thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
     {
-         stringToFile("I LOVE YOU!");
+         ASL_Word = "I LOVE YOU!";
         LOG(INFO) << "I LOVE YOU!";
     }
     else if (thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
     {
-        stringToFile("Y!");
+        ASL_Word = "Y";
         LOG(INFO) << "Y - ASL Letter!";
     }
      else if (!thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && this->areLandmarksClose(landmarkList.landmark(7), landmarkList.landmark(6)))
     {
-        stringToFile("X!");
+        ASL_Word = "X";
         LOG(INFO) << "X - ASL LETTER!";
     }
     else if (thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(6)))
     {
-        stringToFile("P!");
+        ASL_Word = "P";
         LOG(INFO) << "P - ASL LETTER!";
     }
     else if (!thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && (this-> areLandmarksClose(landmarkList.landmark(7), landmarkList.landmark(3))))
     {
-        stringToFile("S!");
+        ASL_Word = "S";
         LOG(INFO) << "S - ASL LETTER!";
     }
     else if (thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
         if(this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(9)))
         {
-             stringToFile("T!");
+             ASL_Word = "T";
              LOG(INFO) << "T - ASL LETTER!";
         }
         else if(this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(8)))
         {
-            stringToFile("O!");
+            ASL_Word = "O";
              LOG(INFO) << "O - ASL LETTER!";
         }
         else
         {
-            stringToFile("A!");
             LOG(INFO) << "A - ASL LETTER!";
-            LOG(INFO) << "A - ASL LETTER!";
+            ASL_Word = "A";
             //outputString = "A - ASL LETTER!";
         }
     }
     else if (!thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
     {
-        stringToFile("I!");
+        ASL_Word = "I";
         LOG(INFO) << "I - ASL LETTER!";
     }
     else if (!firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && fourthFingerIsOpen && this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(8)))
     {
-        stringToFile("F!");
+        ASL_Word = "F";
         LOG(INFO) << "F - ASL LETTER!";
     }
     else if (thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
-        stringToFile("L!");
+        ASL_Word = "L";
         LOG(INFO) << "L - ASL LETTER!";
     }
     else if(!thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && !(this-> areLandmarksClose(landmarkList.landmark(7), landmarkList.landmark(3))))
     {
-        stringToFile("E!");
+        ASL_Word = "E";
         LOG(INFO) << "E - ASL LETTER!";
     }
     else if (thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
     {
-        stringToFile("H!");
+        ASL_Word = "H";
         LOG(INFO) << "H - ASL Letter!!";
     }
     else
     {
-       stringToFile("No Hand Detected");
+       ASL_Word = "Not in ASL";
         LOG(INFO) << "Finger States: " << thumbIsOpen << firstFingerIsOpen << secondFingerIsOpen << thirdFingerIsOpen << fourthFingerIsOpen;
         LOG(INFO) << "___";
     }
      if (cc->Outputs().HasTag("ASL")) {
     cc->Outputs().Tag("ASL").AddPacket(
-        MakePacket<std::string>("HELLLO!!")
+        MakePacket<std::string>(ASL_Word)
             .At(cc->InputTimestamp()));
            }
     return ::mediapipe::OkStatus();

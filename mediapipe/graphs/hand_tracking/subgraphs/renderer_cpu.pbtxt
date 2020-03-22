@@ -99,10 +99,10 @@ node {
  }
 
 node {
-   calculator: "OpenCvPutTextCalculator"
-   input_stream: "text_to_put"
-   output_stream: "out_image_frames"
- }
+  calculator: "StringToRenderDataCalculator"
+  input_stream: "TEXT:text_to_put"
+  output_stream: "RENDER_DATA:text_render_data"
+}
 
 # Draws annotations and overlays them on top of the input images.
 node {
@@ -111,5 +111,6 @@ node {
   input_stream: "detection_render_data"
   input_stream: "landmark_render_data"
   input_stream: "rect_render_data"
+  input_stream: "text_render_data"
   output_stream: "OUTPUT_FRAME:output_image"
 }

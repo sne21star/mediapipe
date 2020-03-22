@@ -111,7 +111,7 @@ mediapipe_simple_subgraph(
         "//mediapipe/calculators/util:landmarks_to_render_data_calculator",
         "//mediapipe/calculators/util:rect_to_render_data_calculator",
         "//hand-gesture-recognition:hand-gesture-recognition-calculator",
-        "//mediapipe/calculators/image:opencv_put_text_calculator",
+        "//hand-gesture-recognition:string_to_render_data_calculator",
     ],
 )
 
@@ -217,7 +217,7 @@ mediapipe_simple_subgraph(
         "//mediapipe/calculators/util:landmarks_to_render_data_calculator",
         "//mediapipe/calculators/util:rect_to_render_data_calculator",
         "//hand-gesture-recognition:hand-gesture-recognition-calculator",
-        "//mediapipe/calculators/image:opencv_put_text_calculator",
+        "//hand-gesture-recognition:string_to_render_data_calculator",
     ],
 )
 

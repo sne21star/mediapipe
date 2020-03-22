@@ -113,3 +113,4 @@ mediapipe_binary_graph(
     output_name = "hand_detection_mobile_gpu.binarypb",
     deps = [":detection_mobile_calculators"],
 )
+
