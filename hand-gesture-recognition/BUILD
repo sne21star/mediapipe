@@ -8,6 +8,17 @@ cc_library(
         "//mediapipe/framework/port:status",
         "//mediapipe/framework/formats:rect_cc_proto",
         "//mediapipe/framework/port:ret_check",
+        "@org_tensorflow//tensorflow/lite:framework",
+        "@org_tensorflow//tensorflow/lite/kernels/internal:types",
+        "@org_tensorflow//tensorflow/lite/kernels:kernel_util",
+        "@org_tensorflow//tensorflow/lite/kernels:padding",
+        "@org_tensorflow//tensorflow/lite/kernels/internal:common",
+        "@org_tensorflow//tensorflow/lite/kernels/internal:tensor",
+        "@org_tensorflow//tensorflow/lite/kernels/internal:tensor_utils",
+        "@org_tensorflow//tensorflow/core:framework",
+        "@org_tensorflow//tensorflow/lite:builtin_op_data",
+        "@org_tensorflow//tensorflow/lite/kernels:builtin_ops",
+
     ],
     alwayslink = 1,
 )
@@ -22,4 +33,17 @@ cc_library(
         "@com_google_absl//absl/memory",
     ],
     alwayslink = 1,
+)
+
+cc_library(
+    name = "z_score_calculator",
+    srcs = ["z_score_calculator.cc"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//mediapipe/framework:calculator_framework",
+        "//mediapipe/framework/formats:landmark_cc_proto",
+        "//mediapipe/framework/formats:location_data_cc_proto",
+        "//mediapipe/framework/formats:detection_cc_proto",
+    ],
+    alwayslink = 1
 )

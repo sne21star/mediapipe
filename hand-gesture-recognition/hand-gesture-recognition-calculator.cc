@@ -1,14 +1,24 @@
 #include <cmath>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cstdio>
 #include "mediapipe/framework/calculator_framework.h"
 #include "mediapipe/framework/formats/landmark.pb.h"
 #include "mediapipe/framework/formats/rect.pb.h"
 #include "mediapipe/framework/input_stream_handler.h"
-#include <iostream>
-#include <fstream>
-#include <string>
-using namespace std;
+#include "tensorflow/core/framework/tensor.h"
+#include "tensorflow/lite/kernels/internal/common.h"
+#include "tensorflow/lite/kernels/internal/tensor.h"
+#include "tensorflow/lite/kernels/padding.h"
+
+#include "tensorflow/lite/model.h"
+#include "tensorflow/lite/interpreter.h"
+#include "tensorflow/lite/kernels/register.h"
+#include "tensorflow/lite/optional_debug_tools.h"
+
 void stringToFile();
-string ASL_Word;
+std::string ASL_Word;
 namespace mediapipe
 {
 
@@ -25,6 +35,7 @@ constexpr char normalizedLandmarkListTag[] = "NORM_LANDMARKS";
 //   input_stream: "NORM_LANDMARKS:scaled_landmarks"
 //   input_stream: "NORM_RECT:hand_rect_for_next_frame"
 // }
+
 class HandGestureRecognitionCalculator : public CalculatorBase
 {
 public:
@@ -76,6 +87,7 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
 
     if (cc->Outputs().HasTag("ASL")) {
     cc->Outputs().Tag("ASL").Set<std::string>();
+
   }
     return ::mediapipe::OkStatus();
 }
@@ -111,7 +123,46 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
                                    .Get<mediapipe::NormalizedLandmarkList>();
     RET_CHECK_GT(landmarkList.landmark_size(), 0) << "Input landmark vector is empty.";
 
+    float x_mean = 0;
+    float x_sdev = 0;
+    float y_mean = 0;
+    float y_sdev = 0;
+
+
+    // Find mean
+    for(unsigned int i = 0; i < 21; i++){
+        x_mean += landmarkList.landmark(i).x();
+        y_mean += landmarkList.landmark(i).y();
+    }
+
+    x_mean /= 21.0;
+    y_mean /= 21.0;
+
+    // Find sdev
+    // Σ(xi -mu)^2
+    for(unsigned int i = 0; i < 21; i++){
+        x_sdev += powf(landmarkList.landmark(i).x() - x_mean, 2.0);
+        y_sdev += powf(landmarkList.landmark(i).y() - y_mean, 2.0);
+    }
+
+    // sqrt((Σ(xi -mu)^2) / N)
+    x_sdev = sqrtf(x_sdev);
+    y_sdev = sqrtf(y_sdev);
+
+     // get z scores
+    std::vector<NormalizedLandmark> zscores;
+    for(unsigned int i = 0; i < 21; i++){
+        NormalizedLandmark scored = NormalizedLandmark();
+        scored.set_x((landmarkList.landmark(i).x() - x_mean) / x_sdev);
+        scored.set_y((landmarkList.landmark(i).y() - y_mean) / y_sdev);
+        zscores.push_back(scored);
+    }
+
+  std::unique_ptr<tflite::FlatBufferModel> model = tflite::FlatBufferModel::BuildFromFile("model.tflite");
+
+
     // finger states
+    /*
     bool thumbIsOpen = false;
     bool firstFingerIsOpen = false;
     bool secondFingerIsOpen = false;
@@ -147,8 +198,10 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     {
         fourthFingerIsOpen = true;
     }
+    */
 
     // Hand gesture recognition
+    /*
     if (thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && fourthFingerIsOpen)
     {
         ASL_Word = "C";
@@ -274,9 +327,11 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
         LOG(INFO) << "Finger States: " << thumbIsOpen << firstFingerIsOpen << secondFingerIsOpen << thirdFingerIsOpen << fourthFingerIsOpen;
         LOG(INFO) << "___";
     }
+    */
+
      if (cc->Outputs().HasTag("ASL")) {
     cc->Outputs().Tag("ASL").AddPacket(
-        MakePacket<std::string>(ASL_Word)
+        MakePacket<std::string>("ASL_WORDS")
             .At(cc->InputTimestamp()));
            }
     return ::mediapipe::OkStatus();

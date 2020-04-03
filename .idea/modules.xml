@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../../../VIP/GUI_interface/gui_interface/.idea/gui_interface.iml" filepath="$PROJECT_DIR$/../../../VIP/GUI_interface/gui_interface/.idea/gui_interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/mediapipe.iml" filepath="$PROJECT_DIR$/.idea/mediapipe.iml" />
     </modules>
   </component>
