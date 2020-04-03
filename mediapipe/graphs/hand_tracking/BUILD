@@ -74,6 +74,8 @@ cc_library(
         "//mediapipe/graphs/hand_tracking/subgraphs:multi_hand_detection_cpu",
         "//mediapipe/graphs/hand_tracking/subgraphs:multi_hand_landmark_cpu",
         "//mediapipe/graphs/hand_tracking/subgraphs:multi_hand_renderer_cpu",
+        "//hand-gesture-recognition:hand-gesture-recognition-calculator",
+        "//hand-gesture-recognition:string_to_render_data_calculator",
     ],
 )
 

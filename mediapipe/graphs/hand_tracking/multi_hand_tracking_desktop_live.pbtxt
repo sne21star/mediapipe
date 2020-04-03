@@ -57,6 +57,12 @@ node {
   output_stream: "NORM_RECTS:multi_hand_rects_from_landmarks"
 }
 
+node {
+  calculator: "ZScoreCalculator"
+  input_stream: "LANDMARKS:multi_hand_landmarks"
+  output_stream: "LANDMARKS:z_score"
+}
+
 # Caches a hand rectangle fed back from MultiHandLandmarkSubgraph, and upon the
 # arrival of the next input image sends out the cached rectangle with the
 # timestamp replaced by that of the input image, essentially generating a packet

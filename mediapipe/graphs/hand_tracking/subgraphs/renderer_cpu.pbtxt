@@ -91,6 +91,7 @@ node {
   }
 }
 
+
 node {
   calculator: "HandGestureRecognitionCalculator"
    input_stream: "NORM_LANDMARKS:landmarks"
