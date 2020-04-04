@@ -158,7 +158,7 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
         zscores.push_back(scored);
     }
 
-  std::unique_ptr<tflite::FlatBufferModel> model = tflite::FlatBufferModel::BuildFromFile("model.tflite");
+  std::unique_ptr<tflite::FlatBufferModel> model = tflite::FlatBufferModel::BuildFromFile("/Users/snehamahapatra/Desktop/Spring2020/EPCS412/CNN_ASL/mediapipe/hand-gesture-recognition/model.tflite");
 
 
     // finger states
