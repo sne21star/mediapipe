@@ -18,8 +18,25 @@ cc_library(
         "@org_tensorflow//tensorflow/core:framework",
         "@org_tensorflow//tensorflow/lite:builtin_op_data",
         "@org_tensorflow//tensorflow/lite/kernels:builtin_ops",
-
+        "@org_tensorflow//tensorflow/lite:string_util",
+        "@org_tensorflow//tensorflow/lite/delegates/nnapi:nnapi_delegate",
+        "@org_tensorflow//tensorflow/lite/profiling:profiler",
+        "@org_tensorflow//tensorflow/lite/tools/evaluation:utils",
+        "@com_google_absl//absl/memory",
     ],
+
+    + select({
+           "//tensorflow:android": [
+               "//tensorflow/lite/delegates/gpu:gl_delegate",
+               "//tensorflow/lite/experimental/delegates/hexagon:hexagon_delegate",
+           ],
+           "//tensorflow:android_arm64": [
+               "//tensorflow/lite/delegates/gpu:gl_delegate",
+               "//tensorflow/lite/experimental/delegates/hexagon:hexagon_delegate",
+           ],
+           "//conditions:default": [],
+       }),
+
     alwayslink = 1,
 )
 cc_library(

@@ -3,6 +3,9 @@
 #include <fstream>
 #include <string>
 #include <cstdio>
+#include <typeinfo>
+#include <algorithm>
+
 #include "mediapipe/framework/calculator_framework.h"
 #include "mediapipe/framework/formats/landmark.pb.h"
 #include "mediapipe/framework/formats/rect.pb.h"
@@ -16,6 +19,19 @@
 #include "tensorflow/lite/interpreter.h"
 #include "tensorflow/lite/kernels/register.h"
 #include "tensorflow/lite/optional_debug_tools.h"
+#include "absl/memory/memory.h"
+#include "tensorflow/lite/delegates/nnapi/nnapi_delegate.h"
+#include "tensorflow/lite/kernels/register.h"
+#include "tensorflow/lite/optional_debug_tools.h"
+#include "tensorflow/lite/string_util.h"
+
+#include "absl/memory/memory.h"
+#include "tensorflow/lite/delegates/nnapi/nnapi_delegate.h"
+#include "tensorflow/lite/kernels/register.h"
+#include "tensorflow/lite/profiling/profiler.h"
+#include "tensorflow/lite/string_util.h"
+#include "tensorflow/lite/tools/evaluation/utils.h"
+#include <sys/types.h>
 
 void stringToFile();
 std::string ASL_Word;
@@ -26,15 +42,7 @@ namespace
 {
 constexpr char normRectTag[] = "NORM_RECT";
 constexpr char normalizedLandmarkListTag[] = "NORM_LANDMARKS";
-} // namespace
-
-// Graph config:
-//
-// node {
-//   calculator: "HandGestureRecognitionCalculator"
-//   input_stream: "NORM_LANDMARKS:scaled_landmarks"
-//   input_stream: "NORM_RECT:hand_rect_for_next_frame"
-// }
+}
 
 class HandGestureRecognitionCalculator : public CalculatorBase
 {
@@ -58,21 +66,6 @@ private:
 
 };
 
-/*
-void stringToFile(std::string toWrite)
-{
-    std::string s=toWrite;
-    std::ofstream os("string_to_Screen.txt");
-    if (!os)
-    {
-        std::cerr<<"Error writing to ..."<<std::endl;
-    }
-    else
-    {
-        os << s;
-    }
-}
-*/
 
 REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
 
@@ -151,187 +144,66 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
 
      // get z scores
     std::vector<NormalizedLandmark> zscores;
+    float zscore_array[42] = {0};
+
     for(unsigned int i = 0; i < 21; i++){
         NormalizedLandmark scored = NormalizedLandmark();
         scored.set_x((landmarkList.landmark(i).x() - x_mean) / x_sdev);
         scored.set_y((landmarkList.landmark(i).y() - y_mean) / y_sdev);
+
+        zscore_array[2*i] = (landmarkList.landmark(i).x() - x_mean) / x_sdev;
+        zscore_array[2*i + 1] = (landmarkList.landmark(i).y() - y_mean) / y_sdev;
+
         zscores.push_back(scored);
     }
 
-  std::unique_ptr<tflite::FlatBufferModel> model = tflite::FlatBufferModel::BuildFromFile("model.tflite");
 
+    std::unique_ptr<tflite::FlatBufferModel> model = tflite::FlatBufferModel::BuildFromFile("/Users/ishaghodgaonkar/SeniorDesign/mediapipe/hand-gesture-recognition/model.tflite");
 
-    // finger states
-    /*
-    bool thumbIsOpen = false;
-    bool firstFingerIsOpen = false;
-    bool secondFingerIsOpen = false;
-    bool thirdFingerIsOpen = false;
-    bool fourthFingerIsOpen = false;
-    //
-    float pseudoFixKeyPoint = landmarkList.landmark(2).x();
-    if (landmarkList.landmark(3).x() < pseudoFixKeyPoint && landmarkList.landmark(4).x() < pseudoFixKeyPoint)
+    //  Build the interpreter
+    tflite::ops::builtin::BuiltinOpResolver resolver;
+    std::unique_ptr<tflite::Interpreter> interpreter;
+    tflite::InterpreterBuilder(*model, resolver)(&interpreter);
+
+    std::vector<int> sizes = {42};
+
+    // Resize input tensors, if desired.
+    interpreter->ResizeInputTensor(0, sizes);
+    interpreter->AllocateTensors();
+
+    for (int i = 0; i < 42; i++)
     {
-        thumbIsOpen = true;
+        interpreter->typed_input_tensor<float>(0)[i] = zscore_array[i];
     }
+    //interpreter->typed_input_tensor<float*>(0)[0] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
 
-    pseudoFixKeyPoint = landmarkList.landmark(6).y();
-    if (landmarkList.landmark(7).y() < pseudoFixKeyPoint && landmarkList.landmark(8).y() < pseudoFixKeyPoint)
-    {
-        firstFingerIsOpen = true;
-    }
+    interpreter->Invoke();
 
-    pseudoFixKeyPoint = landmarkList.landmark(10).y();
-    if (landmarkList.landmark(11).y() < pseudoFixKeyPoint && landmarkList.landmark(12).y() < pseudoFixKeyPoint)
-    {
-        secondFingerIsOpen = true;
-    }
 
-    pseudoFixKeyPoint = landmarkList.landmark(14).y();
-    if (landmarkList.landmark(15).y() < pseudoFixKeyPoint && landmarkList.landmark(16).y() < pseudoFixKeyPoint)
-    {
-        thirdFingerIsOpen = true;
-    }
+    LOG(INFO) << "here";
+    float* output = interpreter->typed_output_tensor<float>(0);
+    LOG(INFO) << "here 2";
 
-    pseudoFixKeyPoint = landmarkList.landmark(18).y();
-    if (landmarkList.landmark(19).y() < pseudoFixKeyPoint && landmarkList.landmark(20).y() < pseudoFixKeyPoint)
+    float maxprob = 0;
+    int maxindex = 0;
+    for (int i = 0; i < 24; i++)
     {
-        fourthFingerIsOpen = true;
-    }
-    */
-
-    // Hand gesture recognition
-    /*
-    if (thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && fourthFingerIsOpen)
-    {
-        ASL_Word = "C";
-        LOG(INFO) << "C - ASL Letter!!";
-    }
-
-    else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && fourthFingerIsOpen)
-    {
-        ASL_Word = "B";
-        LOG(INFO) << "B - ASL Letter!";
-    }
-    else if (!thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
-    {
-            ASL_Word = "D";
-             LOG(INFO) << "D - ASL LETTER!";
-    }
-
-    else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && this->areLandmarksClose(landmarkList.landmark(6), landmarkList.landmark(10)))
-    {
-        if (!(this->areLandmarksClose(landmarkList.landmark(12), landmarkList.landmark(8))))
+        if (output[i] > maxprob)
         {
-            ASL_Word = "U";
-            LOG(INFO) << "U - ASL Letter!";
-        }
-        else
-        {
-            ASL_Word = "R";
-            LOG(INFO) << "R - ASL Letter!";
+            maxprob = output[i];
+            maxindex = i;
         }
     }
 
-    else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
-    {
-        if ((this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(6))))
-        {
-            ASL_Word = "K";
-            LOG(INFO) << "K - ASL Letter!";
-        }
-        else
-        {
-            ASL_Word = "V";
-            LOG(INFO) << "V - ASL Letter!";
-        }
-    }
-    else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && !fourthFingerIsOpen)
-    {
-        ASL_Word = "W";
-        LOG(INFO) << "W - ASL Letter!";
-    }
+    LOG(INFO) << "max probability" << maxprob;
+    LOG(INFO) << "max index" << maxindex;
 
-    else if (thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
-    {
-         ASL_Word = "I LOVE YOU!";
-        LOG(INFO) << "I LOVE YOU!";
-    }
-    else if (thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
-    {
-        ASL_Word = "Y";
-        LOG(INFO) << "Y - ASL Letter!";
-    }
-     else if (!thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && this->areLandmarksClose(landmarkList.landmark(7), landmarkList.landmark(6)))
-    {
-        ASL_Word = "X";
-        LOG(INFO) << "X - ASL LETTER!";
-    }
-    else if (thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(6)))
-    {
-        ASL_Word = "P";
-        LOG(INFO) << "P - ASL LETTER!";
-    }
-    else if (!thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && (this-> areLandmarksClose(landmarkList.landmark(7), landmarkList.landmark(3))))
-    {
-        ASL_Word = "S";
-        LOG(INFO) << "S - ASL LETTER!";
-    }
-    else if (thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
-    {
-        if(this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(9)))
-        {
-             ASL_Word = "T";
-             LOG(INFO) << "T - ASL LETTER!";
-        }
-        else if(this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(8)))
-        {
-            ASL_Word = "O";
-             LOG(INFO) << "O - ASL LETTER!";
-        }
-        else
-        {
-            LOG(INFO) << "A - ASL LETTER!";
-            ASL_Word = "A";
-            //outputString = "A - ASL LETTER!";
-        }
-    }
-    else if (!thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
-    {
-        ASL_Word = "I";
-        LOG(INFO) << "I - ASL LETTER!";
-    }
-    else if (!firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && fourthFingerIsOpen && this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(8)))
-    {
-        ASL_Word = "F";
-        LOG(INFO) << "F - ASL LETTER!";
-    }
-    else if (thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
-    {
-        ASL_Word = "L";
-        LOG(INFO) << "L - ASL LETTER!";
-    }
-    else if(!thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && !(this-> areLandmarksClose(landmarkList.landmark(7), landmarkList.landmark(3))))
-    {
-        ASL_Word = "E";
-        LOG(INFO) << "E - ASL LETTER!";
-    }
-    else if (thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
-    {
-        ASL_Word = "H";
-        LOG(INFO) << "H - ASL Letter!!";
-    }
-    else
-    {
-       ASL_Word = "Not in ASL";
-        LOG(INFO) << "Finger States: " << thumbIsOpen << firstFingerIsOpen << secondFingerIsOpen << thirdFingerIsOpen << fourthFingerIsOpen;
-        LOG(INFO) << "___";
-    }
-    */
+    std::string letters =  {'G', 'V', 'Y', 'A', 'E', 'L', 'R', 'W', 'Q', 'T', 'I', 'P', 'H', 'F', 'O', 'U', 'M', 'B', 'N', 'D', 'K', 'X', 'S', 'C'};
+    ASL_Word = letters[maxindex];
 
      if (cc->Outputs().HasTag("ASL")) {
     cc->Outputs().Tag("ASL").AddPacket(
-        MakePacket<std::string>("ASL_WORDS")
+        MakePacket<std::string>(ASL_Word)
             .At(cc->InputTimestamp()));
            }
     return ::mediapipe::OkStatus();
