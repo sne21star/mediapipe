@@ -175,7 +175,6 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     {
         interpreter->typed_input_tensor<float>(0)[i] = zscore_array[i];
     }
-    //interpreter->typed_input_tensor<float*>(0)[0] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
 
     interpreter->Invoke();
 
@@ -195,11 +194,20 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
         }
     }
 
+    if (maxprob < 0.2)
+    {
+        ASL_Word = "no sign detected";
+
+    }
+
+    else{
+
+        std::string letters =  {'G', 'V', 'Y', 'A', 'E', 'L', 'R', 'W', 'Q', 'T', 'I', 'P', 'H', 'F', 'O', 'U', 'M', 'B', 'N', 'D', 'K', 'X', 'S', 'C'};
+        ASL_Word = letters[maxindex];
+    }
     LOG(INFO) << "max probability" << maxprob;
     LOG(INFO) << "max index" << maxindex;
 
-    std::string letters =  {'G', 'V', 'Y', 'A', 'E', 'L', 'R', 'W', 'Q', 'T', 'I', 'P', 'H', 'F', 'O', 'U', 'M', 'B', 'N', 'D', 'K', 'X', 'S', 'C'};
-    ASL_Word = letters[maxindex];
 
      if (cc->Outputs().HasTag("ASL")) {
     cc->Outputs().Tag("ASL").AddPacket(

@@ -25,18 +25,6 @@ cc_library(
         "@com_google_absl//absl/memory",
     ],
 
-    + select({
-           "//tensorflow:android": [
-               "//tensorflow/lite/delegates/gpu:gl_delegate",
-               "//tensorflow/lite/experimental/delegates/hexagon:hexagon_delegate",
-           ],
-           "//tensorflow:android_arm64": [
-               "//tensorflow/lite/delegates/gpu:gl_delegate",
-               "//tensorflow/lite/experimental/delegates/hexagon:hexagon_delegate",
-           ],
-           "//conditions:default": [],
-       }),
-
     alwayslink = 1,
 )
 cc_library(
