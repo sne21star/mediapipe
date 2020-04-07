@@ -8,20 +8,27 @@ cc_library(
         "//mediapipe/framework/port:status",
         "//mediapipe/framework/formats:rect_cc_proto",
         "//mediapipe/framework/port:ret_check",
-        "@org_tensorflow//tensorflow/lite:framework",
-        "@org_tensorflow//tensorflow/lite/kernels/internal:types",
-        "@org_tensorflow//tensorflow/lite/kernels:kernel_util",
-        "@org_tensorflow//tensorflow/lite/kernels:padding",
-        "@org_tensorflow//tensorflow/lite/kernels/internal:common",
-        "@org_tensorflow//tensorflow/lite/kernels/internal:tensor",
-        "@org_tensorflow//tensorflow/lite/kernels/internal:tensor_utils",
-        "@org_tensorflow//tensorflow/core:framework",
-        "@org_tensorflow//tensorflow/lite:builtin_op_data",
+        "//mediapipe/util:resource_util",
         "@org_tensorflow//tensorflow/lite/kernels:builtin_ops",
+    ]+ select({
+        "//mediapipe:android": [
+            "//mediapipe/util/android/file/base",
+            "@org_tensorflow//tensorflow/lite/delegates/nnapi:nnapi_delegate",
+        ],
+        "//mediapipe:apple": [
+            "//mediapipe/util/android/file/base",
+        ],
+        "//mediapipe:macos": [
+            "//mediapipe/framework/port:file_helpers",
+        ],
+        "//conditions:default": [
+            "//mediapipe/framework/port:file_helpers",
+        ],
+    }),
 
-    ],
     alwayslink = 1,
 )
+
 cc_library(
     name = "string_to_render_data_calculator",
     srcs = ["string_to_render_data_calculator.cc"],
