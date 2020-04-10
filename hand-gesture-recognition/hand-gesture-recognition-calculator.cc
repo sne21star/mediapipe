@@ -188,6 +188,7 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     // sqrt((Σ(xi -mu)^2) / N)
     x_sdev = sqrtf(x_sdev);
     y_sdev = sqrtf(y_sdev);
+
      LOG(INFO) << "X Stn Devi";
       LOG(INFO) << std::to_string(x_sdev);
        LOG(INFO) << "Y Stn Devi";
