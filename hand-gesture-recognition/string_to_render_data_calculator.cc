@@ -108,7 +108,7 @@ REGISTER_CALCULATOR(StringToRenderDataCalculator);
   auto* text = text_annotation->mutable_text();
   text->set_display_text(text_string);
   LOG(INFO) << "Displaying text: " << text_string;
-
+  
   text->set_normalized(true);
   text->set_left(kTextLineXPos);
   text->set_baseline(kTextLineHeight);
