@@ -176,7 +176,6 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
                  {
                     interpreter->typed_input_tensor<float>(0)[i] = zscore_array[i];
                  }
-                    //LOG(INFO) << std::to_string(interpreter->typed_input_tensor<float>(0)[41]);
 
                     if(interpreter->Invoke() == kTfLiteOk)
                     {
