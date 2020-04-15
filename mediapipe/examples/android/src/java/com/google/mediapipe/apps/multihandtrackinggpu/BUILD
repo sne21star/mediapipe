@@ -68,6 +68,8 @@ android_library(
         ":binary_graph",
         ":model",
         "//mediapipe/models:model.tflite",
+         "//mediapipe/models:model_targeted_a.tflite",
+        "//mediapipe/models:model_targeted_b.tflite",
         "//mediapipe/models:palm_detection.tflite",
         "//mediapipe/models:palm_detection_labelmap.txt",
     ],

@@ -500,7 +500,7 @@ REGISTER_CALCULATOR(AnnotationOverlayCalculator);
     image_mat = absl::make_unique<cv::Mat>(
         options_.canvas_height_px(), options_.canvas_width_px(), CV_8UC3,
         cv::Scalar(options_.canvas_color().r(), options_.canvas_color().g(),
-                   options_.canvas_color().b()));
+                   options_.canvas_color().b()));	
   }
 #endif  //  !MEDIAPIPE_DISABLE_GPU
 

@@ -10,7 +10,12 @@ cc_library(
         "//mediapipe/framework/port:ret_check",
         "//mediapipe/util:resource_util",
         "@org_tensorflow//tensorflow/lite/kernels:builtin_ops",
-    ]+ select({
+        "@org_tensorflow//tensorflow/lite/delegates/gpu/common:shape",
+        "@org_tensorflow//tensorflow/lite/delegates/gpu:gl_delegate",
+        "@org_tensorflow//tensorflow/lite/delegates/gpu/gl:gl_buffer",
+        "@org_tensorflow//tensorflow/lite/delegates/gpu/gl:gl_program",
+        "@org_tensorflow//tensorflow/lite/delegates/gpu/gl:gl_shader",
+        ]+ select({
         "//mediapipe:android": [
             "//mediapipe/util/android/file/base",
             "@org_tensorflow//tensorflow/lite/delegates/nnapi:nnapi_delegate",
@@ -54,3 +59,4 @@ cc_library(
     ],
     alwayslink = 1
 )
+

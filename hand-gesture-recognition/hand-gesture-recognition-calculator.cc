@@ -17,70 +17,7 @@
 #if defined(MEDIAPIPE_ANDROID)
 #include "tensorflow/lite/delegates/nnapi/nnapi_delegate.h"
 #endif  // ANDROID
-/*
-#if !defined(MEDIAPIPE_DISABLE_GL_COMPUTE)
-    const auto& input_tensors =
-        cc->Inputs().Tag("TENSORS_GPU").Get<std::vector<GpuTensor>>();
-    RET_CHECK_GT(input_tensors.size(), 0);
-    MP_RETURN_IF_ERROR(gpu_helper_.RunInGlContext(
-        [this, &input_tensors]() -> ::mediapipe::Status {
-          // Explicit copy input.
-          gpu_data_in_.resize(input_tensors.size());
-          for (int i = 0; i < input_tensors.size(); ++i) {
-            RET_CHECK_CALL(
-                CopyBuffer(input_tensors[i], gpu_data_in_[i]->buffer));
-          }
 
-          return ::mediapipe::OkStatus();
-        }));
-#elif defined(MEDIAPIPE_IOS)
-    const auto& input_tensors =
-        cc->Inputs().Tag("TENSORS_GPU").Get<std::vector<GpuTensor>>();
-    RET_CHECK_GT(input_tensors.size(), 0);
-    // Explicit copy input with conversion float 32 bits to 16 bits.
-    gpu_data_in_.resize(input_tensors.size());
-    id<MTLCommandBuffer> command_buffer = [gpu_helper_ commandBuffer];
-    command_buffer.label = @"TfLiteInferenceCalculatorConvert";
-    id<MTLComputeCommandEncoder> compute_encoder =
-        [command_buffer computeCommandEncoder];
-    [compute_encoder setComputePipelineState:fp32_to_fp16_program_];
-    for (int i = 0; i < input_tensors.size(); ++i) {
-      [compute_encoder setBuffer:input_tensors[i] offset:0 atIndex:0];
-      [compute_encoder setBuffer:gpu_data_in_[i]->buffer offset:0 atIndex:1];
-      constexpr int kWorkgroupSize = 64;  // Block size for GPU shader.
-      MTLSize threads_per_group = MTLSizeMake(kWorkgroupSize, 1, 1);
-      const int threadgroups =
-          NumGroups(gpu_data_in_[i]->elements, kWorkgroupSize);
-      [compute_encoder dispatchThreadgroups:MTLSizeMake(threadgroups, 1, 1)
-                      threadsPerThreadgroup:threads_per_group];
-    }
-    [compute_encoder endEncoding];
-    [command_buffer commit];
-#else
-    RET_CHECK_FAIL() << "GPU processing not enabled.";
-#endif
-  } else {
-    // Read CPU input into tensors.
-    const auto& input_tensors =
-        cc->Inputs().Tag("TENSORS").Get<std::vector<TfLiteTensor>>();
-    RET_CHECK_GT(input_tensors.size(), 0);
-    for (int i = 0; i < input_tensors.size(); ++i) {
-      const TfLiteTensor* input_tensor = &input_tensors[i];
-      RET_CHECK(input_tensor->data.raw);
-      if (use_quantized_tensors_) {
-        const uint8* input_tensor_buffer = input_tensor->data.uint8;
-        uint8* local_tensor_buffer = interpreter_->typed_input_tensor<uint8>(i);
-        std::memcpy(local_tensor_buffer, input_tensor_buffer,
-                    input_tensor->bytes);
-      } else {
-        const float* input_tensor_buffer = input_tensor->data.f;
-        float* local_tensor_buffer = interpreter_->typed_input_tensor<float>(i);
-        std::memcpy(local_tensor_buffer, input_tensor_buffer,
-                    input_tensor->bytes);
-      }
-    }
-  }
-*/
 void stringToFile();
 std::string ASL_Word;
 namespace mediapipe
@@ -162,6 +99,42 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
                                    .Tag(normalizedLandmarkListTag)
                                    .Get<mediapipe::NormalizedLandmarkList>();
     RET_CHECK_GT(landmarkList.landmark_size(), 0) << "Input landmark vector is empty.";
+    // finger states
+    bool thumbIsOpen = false;
+    bool firstFingerIsOpen = false;
+    bool secondFingerIsOpen = false;
+    bool thirdFingerIsOpen = false;
+    bool fourthFingerIsOpen = false;
+
+    float pseudoFixKeyPoint = landmarkList.landmark(2).x();
+    if (landmarkList.landmark(3).x() < pseudoFixKeyPoint && landmarkList.landmark(4).x() < pseudoFixKeyPoint)
+    {
+        thumbIsOpen = true;
+    }
+
+    pseudoFixKeyPoint = landmarkList.landmark(6).y();
+    if (landmarkList.landmark(7).y() < pseudoFixKeyPoint && landmarkList.landmark(8).y() < pseudoFixKeyPoint)
+    {
+        firstFingerIsOpen = true;
+    }
+
+    pseudoFixKeyPoint = landmarkList.landmark(10).y();
+    if (landmarkList.landmark(11).y() < pseudoFixKeyPoint && landmarkList.landmark(12).y() < pseudoFixKeyPoint)
+    {
+        secondFingerIsOpen = true;
+    }
+
+    pseudoFixKeyPoint = landmarkList.landmark(14).y();
+    if (landmarkList.landmark(15).y() < pseudoFixKeyPoint && landmarkList.landmark(16).y() < pseudoFixKeyPoint)
+    {
+        thirdFingerIsOpen = true;
+    }
+
+    pseudoFixKeyPoint = landmarkList.landmark(18).y();
+    if (landmarkList.landmark(19).y() < pseudoFixKeyPoint && landmarkList.landmark(20).y() < pseudoFixKeyPoint)
+    {
+        fourthFingerIsOpen = true;
+    }
 
     float x_mean = 0;
     float x_sdev = 0;
@@ -189,10 +162,7 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     x_sdev = sqrtf(x_sdev);
     y_sdev = sqrtf(y_sdev);
 
-     LOG(INFO) << "X Stn Devi";
-      LOG(INFO) << std::to_string(x_sdev);
-       LOG(INFO) << "Y Stn Devi";
-      LOG(INFO) << std::to_string(y_sdev);
+
      // get z scores
     std::vector<NormalizedLandmark> zscores;
     float zscore_array[42] = {0};
@@ -209,107 +179,52 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
 
     float maxprob = 0;
     int maxindex = 24;
-    std::string model_path = "mediapipe/models/model.tflite";
+    std::string model_path = "mediapipe/models/model_targeted_a.tflite";
     ASSIGN_OR_RETURN(model_path, PathToResourceAsFile(model_path));
     const char *filename = model_path.c_str();
     std::unique_ptr<tflite::Interpreter> interpreter;
     std::unique_ptr<tflite::FlatBufferModel> model = tflite::FlatBufferModel::BuildFromFile(filename);
-
+    int indexModel_Regular = 100;
+    if(indexModel_Regular==100){
     if(model)
     {
         //  Build the interpreter
-        LOG(INFO) << "Build interpreter before";
-        LOG(INFO) << "Build interpreter before resolver";
         tflite::ops::builtin::BuiltinOpResolver resolver;
-        // LOG(INFO) << "Build interpreter before resolver";
-        //model->error_reporter();
-        LOG(INFO) << "resolved reporter\n";
-
         tflite::InterpreterBuilder(*model, resolver)(&interpreter);
-       // tflite::PrintInterpreterState(interpreter.get());
-        LOG(INFO) << "Interpreter";
         interpreter->SetNumThreads(1);
+        indexModel_Regular = 0;
         if(interpreter)
         {
             std::vector<int> sizes = {42};
 
             // Resize input tensors, if desired.
-            LOG(INFO) << "Inputs before";
             interpreter->UseNNAPI(false);
-          //  const int num_threads = 1;
-          //  if(num_threads != 1){
-            //        interpreter->SetNumThreads(num_threads);
-           // }
-            int inputINT = interpreter->inputs()[0];
-            LOG(INFO) << "inputINT";
-             LOG(INFO) << std::to_string(inputINT);
-             LOG(INFO) << "resize Inputs before";
-            interpreter->ResizeInputTensor(interpreter->inputs()[0], {42});
-             LOG(INFO) << "before Inputs before";
 
-            //usleep(1000000);
+            int inputINT = interpreter->inputs()[0];
+
+            interpreter->ResizeInputTensor(interpreter->inputs()[0], {42});
+
             interpreter->SetNumThreads(1);
+            indexModel_Regular = 0;
             if(interpreter->AllocateTensors() == kTfLiteOk)
                {
-                 //TfLiteIntArray* dims = interpreter->tensor(inputINT)->dims;
-                // int len = sizeof(dims->data)/sizeof(dims->data[0]);
-                //  LOG(INFO) << "LENGTH OF DIMENSION DATA";
-               //  LOG(INFO) << len;
-                 //LOG(INFO) << std::to_string(x);
+
                   const auto& input_indices = interpreter->inputs();
-                  LOG(INFO) << "Size of Input Tensor input_indices.size()";
-                  LOG(INFO) << std::to_string(input_indices.size());
-                 /*
-                 int wanted_height = dims->data[1];
-                 int wanted_width = dims->data[2];
-                 int wanted_channels = dims->data[3];
-
-                 dims->data[3] = 4;
-
-                 LOG(INFO) << "Dimension 0??";
-                 LOG(INFO) << std::to_string(dims->data[0]);
-                  LOG(INFO) << "Height";
-                 LOG(INFO) << std::to_string(wanted_height);
-                  LOG(INFO) << "Type";
-                 LOG(INFO) << std::to_string(interpreter->tensor(inputINT)->type);
-                 LOG(INFO) << "Width";
-                 LOG(INFO) << std::to_string(wanted_width);
-                   LOG(INFO) << "Channel";
-                 LOG(INFO) << std::to_string(wanted_channels);
-                  LOG(INFO) << "Dimension Data of the three exist";
-                  LOG(INFO) << std::to_string(dims->data[1]);
-                  LOG(INFO) << std::to_string(dims->data[2]);
-                  LOG(INFO) << std::to_string(dims->data[3]);
-                   LOG(INFO) << std::to_string(dims->data[1]==NULL);
-                  LOG(INFO) << std::to_string(dims->data[2]==NULL);
-                  LOG(INFO) << std::to_string(dims->data[3]==NULL);
-                   LOG(INFO) << "Data Empty";
-                   LOG(INFO) << std::to_string(dims->data == NULL);
-                   LOG(INFO) << "Dimensions Empty";
-                   LOG(INFO) << std::to_string(dims == nullptr);
-                */
-                //if(dims->data[0] > 0 && dims->data[0] < 1000)
-                //{
-                 LOG(INFO) << "after Allocation";
-
-                 LOG(INFO) << "zscore";
-                 LOG(INFO) << std::to_string(zscore_array[0]);
-                 for (int i = 0; i < 42; i++)
+                  for (int i = 0; i < 42; i++)
                  {
                     interpreter->typed_input_tensor<float>(0)[i] = zscore_array[i];
+                    LOG(INFO) << std::to_string(interpreter->typed_input_tensor<float>(0)[39]);
+
                  }
                     //LOG(INFO) << std::to_string(interpreter->typed_input_tensor<float>(0)[41]);
-                    LOG(INFO) << "Before Invoke";
-
+                    indexModel_Regular = 0;
                     if(interpreter->Invoke() == kTfLiteOk)
                     {
-                        LOG(INFO) << "Before Output";
                         float* output = interpreter->typed_output_tensor<float>(0);
 
-                        LOG(INFO) << "After Output";
                         if(output != 0)
                         {
-                            LOG(INFO) << std::to_string(output[0]);
+                            indexModel_Regular = 100;
                             for (int i = 0; i < 24; i++)
                             {
                                 if (output[i] > maxprob)
@@ -319,19 +234,153 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
                                 }
                             }
                         }
-
-                     }
-
                     }
-
-
-            //}
-       }
+               }
+          }
     }
-    std::string letters =  {'G', 'V', 'Y', 'A', 'E', 'L', 'R', 'W', 'Q', 'T', 'I', 'P', 'H', 'F', 'O', 'U', 'M', 'B', 'N', 'D', 'K', 'X', 'S', 'C', 'Z'};
-    ASL_Word = letters[maxindex];
+        //std::string letters =  {'G', 'V', 'Y', 'A', 'E', 'L', 'R', 'W', 'Q', 'T', 'I', 'P', 'H', 'F', 'O', 'U', 'M', 'B', 'N', 'D', 'K', 'X', 'S', 'C', 'Z'};
+        std::string letters  =  {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 
-     if (cc->Outputs().HasTag("ASL")) {
+            if (maxprob > 0.2)
+            {
+                ASL_Word = letters[maxindex];
+            }
+            else
+            {
+                ASL_Word = "Not a letter of the alphabet!";
+            }
+    }
+    //LOG(INFO) << maxprob;
+    else{
+        if (thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && fourthFingerIsOpen)
+        {
+            ASL_Word = "C";
+            LOG(INFO) << "C - ASL Letter!!";
+        }
+
+        else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && fourthFingerIsOpen)
+        {
+            ASL_Word = "B";
+            LOG(INFO) << "B - ASL Letter!";
+        }
+        else if (!thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
+        {
+
+                ASL_Word = "D";
+                 LOG(INFO) << "D - ASL LETTER!";
+        }
+
+        else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && this->areLandmarksClose(landmarkList.landmark(6), landmarkList.landmark(10)))
+        {
+            if (!(this->areLandmarksClose(landmarkList.landmark(12), landmarkList.landmark(8))))
+            {
+                ASL_Word = "U";
+                LOG(INFO) << "U - ASL Letter!";
+            }
+            else
+            {
+                ASL_Word = "R";
+                LOG(INFO) << "R - ASL Letter!";
+            }
+        }
+         else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
+        {
+            if ((this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(6))))
+            {
+                ASL_Word = "K";
+                LOG(INFO) << "K - ASL Letter!";
+            }
+            else
+            {
+                ASL_Word = "V";
+                LOG(INFO) << "V - ASL Letter!";
+            }
+        }
+        else if (!thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && !fourthFingerIsOpen)
+        {
+            ASL_Word = "W";
+            LOG(INFO) << "W - ASL Letter!";
+        }
+
+        else if (thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
+        {
+             ASL_Word = "I LOVE YOU!";
+            LOG(INFO) << "I LOVE YOU!";
+        }
+        else if (thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
+        {
+            ASL_Word = "Y";
+            LOG(INFO) << "Y - ASL Letter!";
+        }
+         else if (!thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && this->areLandmarksClose(landmarkList.landmark(7), landmarkList.landmark(6)))
+        {
+            ASL_Word = "X";
+            LOG(INFO) << "X - ASL LETTER!";
+        }
+        else if (thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(6)))
+        {
+            ASL_Word = "P";
+            LOG(INFO) << "P - ASL LETTER!";
+        }
+        else if (!thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && (this-> areLandmarksClose(landmarkList.landmark(7), landmarkList.landmark(3))))
+        {
+            ASL_Word = "S";
+            LOG(INFO) << "S - ASL LETTER!";
+        }
+        else if (thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
+        {
+            if(this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(9)))
+            {
+                 ASL_Word = "T";
+                 LOG(INFO) << "T - ASL LETTER!";
+            }
+            else if(this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(8)))
+            {
+                ASL_Word = "O";
+                 LOG(INFO) << "O - ASL LETTER!";
+            }
+            else
+            {
+                LOG(INFO) << "A - ASL LETTER!";
+                LOG(INFO) << "A - ASL LETTER!";
+                ASL_Word = "A";
+                //outputString = "A - ASL LETTER!";
+            }
+        }
+        else if (!thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && fourthFingerIsOpen)
+        {
+            ASL_Word = "I";
+            LOG(INFO) << "I - ASL LETTER!";
+        }
+        else if (!firstFingerIsOpen && secondFingerIsOpen && thirdFingerIsOpen && fourthFingerIsOpen && this->areLandmarksClose(landmarkList.landmark(4), landmarkList.landmark(8)))
+        {
+            ASL_Word = "F";
+            LOG(INFO) << "F - ASL LETTER!";
+        }
+        else if (thumbIsOpen && firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
+        {
+            ASL_Word = "L";
+            LOG(INFO) << "L - ASL LETTER!";
+        }
+        else if(!thumbIsOpen && !firstFingerIsOpen && !secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen && !(this-> areLandmarksClose(landmarkList.landmark(7), landmarkList.landmark(3))))
+        {
+            ASL_Word = "E";
+            LOG(INFO) << "E - ASL LETTER!";
+        }
+        else if (thumbIsOpen && firstFingerIsOpen && secondFingerIsOpen && !thirdFingerIsOpen && !fourthFingerIsOpen)
+        {
+            ASL_Word = "H";
+            LOG(INFO) << "H - ASL Letter!!";
+        }
+        else
+        {
+           ASL_Word = "Not in ASL";
+            LOG(INFO) << "Finger States: " << thumbIsOpen << firstFingerIsOpen << secondFingerIsOpen << thirdFingerIsOpen << fourthFingerIsOpen;
+            LOG(INFO) << "___";
+        }
+    indexModel_Regular += 1;
+    }
+    if (cc->Outputs().HasTag("ASL")) {
     cc->Outputs().Tag("ASL").AddPacket(
         MakePacket<std::string>(ASL_Word)
             .At(cc->InputTimestamp()));

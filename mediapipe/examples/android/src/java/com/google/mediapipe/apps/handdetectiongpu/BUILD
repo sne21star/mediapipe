@@ -47,7 +47,6 @@ android_library(
     srcs = glob(["*.java"]),
     assets = [
         ":binary_graph",
-        "//mediapipe/models:model.tflite",
         "//mediapipe/models:palm_detection.tflite",
         "//mediapipe/models:palm_detection_labelmap.txt",
     ],
