@@ -39,13 +39,13 @@ namespace mediapipe {
 
 namespace {
 
-constexpr char kInputFrameTag[] = "INPUT_FRAME";
-constexpr char kOutputFrameTag[] = "OUTPUT_FRAME";
+constexpr char kInputFrameTag[] = "IMAGE";
+constexpr char kOutputFrameTag[] = "IMAGE";
 
 constexpr char kInputVectorTag[] = "VECTOR";
 
-constexpr char kInputFrameTagGpu[] = "INPUT_FRAME_GPU";
-constexpr char kOutputFrameTagGpu[] = "OUTPUT_FRAME_GPU";
+constexpr char kInputFrameTagGpu[] = "IMAGE_GPU";
+constexpr char kOutputFrameTagGpu[] = "IMAGE_GPU";
 
 enum { ATTRIB_VERTEX, ATTRIB_TEXTURE_POSITION, NUM_ATTRIBUTES };
 
@@ -55,13 +55,13 @@ size_t RoundUp(size_t n, size_t m) { return ((n + m - 1) / m) * m; }  // NOLINT
 // When using GPU, this color will become transparent when the calculator
 // merges the annotation overlay with the image frame. As a result, drawing in
 // this color is not supported and it should be set to something unlikely used.
-constexpr int kAnnotationBackgroundColor[] = {100, 101, 102};
+constexpr uchar kAnnotationBackgroundColor = 2;  // Grayscale value.
 }  // namespace
 
 // A calculator for rendering data on images.
 //
 // Inputs:
-//  1. INPUT_FRAME or INPUT_FRAME_GPU (optional): An ImageFrame (or GpuBuffer)
+//  1. IMAGE or IMAGE_GPU (optional): An ImageFrame (or GpuBuffer)
 //     containing the input image.
 //     If output is CPU, and input isn't provided, the renderer creates a
 //     blank canvas with the width, height and color provided in the options.
@@ -73,7 +73,7 @@ constexpr int kAnnotationBackgroundColor[] = {100, 101, 102};
 //     input vector items. These input streams are tagged with "VECTOR".
 //
 // Output:
-//  1. OUTPUT_FRAME or OUTPUT_FRAME_GPU: A rendered ImageFrame (or GpuBuffer).
+//  1. IMAGE or IMAGE_GPU: A rendered ImageFrame (or GpuBuffer).
 //
 // For CPU input frames, only SRGBA, SRGB and GRAY8 format are supported. The
 // output format is the same as input except for GRAY8 where the output is in
@@ -87,13 +87,13 @@ constexpr int kAnnotationBackgroundColor[] = {100, 101, 102};
 // Example config (CPU):
 // node {
 //   calculator: "AnnotationOverlayCalculator"
-//   input_stream: "INPUT_FRAME:image_frames"
+//   input_stream: "IMAGE:image_frames"
 //   input_stream: "render_data_1"
 //   input_stream: "render_data_2"
 //   input_stream: "render_data_3"
 //   input_stream: "VECTOR:0:render_data_vec_0"
 //   input_stream: "VECTOR:1:render_data_vec_1"
-//   output_stream: "OUTPUT_FRAME:decorated_frames"
+//   output_stream: "IMAGE:decorated_frames"
 //   options {
 //     [mediapipe.AnnotationOverlayCalculatorOptions.ext] {
 //     }
@@ -103,13 +103,13 @@ constexpr int kAnnotationBackgroundColor[] = {100, 101, 102};
 // Example config (GPU):
 // node {
 //   calculator: "AnnotationOverlayCalculator"
-//   input_stream: "INPUT_FRAME_GPU:image_frames"
+//   input_stream: "IMAGE_GPU:image_frames"
 //   input_stream: "render_data_1"
 //   input_stream: "render_data_2"
 //   input_stream: "render_data_3"
 //   input_stream: "VECTOR:0:render_data_vec_0"
 //   input_stream: "VECTOR:1:render_data_vec_1"
-//   output_stream: "OUTPUT_FRAME_GPU:decorated_frames"
+//   output_stream: "IMAGE_GPU:decorated_frames"
 //   options {
 //     [mediapipe.AnnotationOverlayCalculatorOptions.ext] {
 //     }
@@ -492,11 +492,9 @@ REGISTER_CALCULATOR(AnnotationOverlayCalculator);
     if (format != mediapipe::ImageFormat::SRGBA &&
         format != mediapipe::ImageFormat::SRGB)
       RET_CHECK_FAIL() << "Unsupported GPU input format: " << format;
-
-    image_mat = absl::make_unique<cv::Mat>(
-        height_, width_, CV_8UC3,
-        cv::Scalar(kAnnotationBackgroundColor[0], kAnnotationBackgroundColor[1],
-                   kAnnotationBackgroundColor[2]));
+    image_mat = absl::make_unique<cv::Mat>(height_, width_, CV_8UC3);
+    memset(image_mat->data, kAnnotationBackgroundColor,
+           height_ * width_ * image_mat->elemSize());
   } else {
     image_mat = absl::make_unique<cv::Mat>(
         options_.canvas_height_px(), options_.canvas_width_px(), CV_8UC3,
@@ -618,9 +616,9 @@ REGISTER_CALCULATOR(AnnotationOverlayCalculator);
   glUniform1i(glGetUniformLocation(program_, "input_frame"), 1);
   glUniform1i(glGetUniformLocation(program_, "overlay"), 2);
   glUniform3f(glGetUniformLocation(program_, "transparent_color"),
-              kAnnotationBackgroundColor[0] / 255.0,
-              kAnnotationBackgroundColor[1] / 255.0,
-              kAnnotationBackgroundColor[2] / 255.0);
+              kAnnotationBackgroundColor / 255.0,
+              kAnnotationBackgroundColor / 255.0,
+              kAnnotationBackgroundColor / 255.0);
 
   // Init texture for opencv rendered frame.
   const auto& input_frame =

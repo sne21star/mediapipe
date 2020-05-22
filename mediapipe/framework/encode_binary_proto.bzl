@@ -36,6 +36,11 @@ def _canonicalize_proto_path_oss(all_protos, genfile_path):
     for s in all_protos.to_list():
         if s.path.startswith(genfile_path):
             repo_name, _, file_name = s.path[len(genfile_path + "/external/"):].partition("/")
+
+            # handle virtual imports
+            if file_name.startswith("_virtual_imports"):
+                repo_name = repo_name + "/" + "/".join(file_name.split("/", 2)[:2])
+                file_name = file_name.split("/", 2)[-1]
             proto_paths.append(genfile_path + "/external/" + repo_name)
             proto_file_names.append(file_name)
         else:
@@ -87,13 +92,19 @@ def _encode_binary_proto_impl(ctx):
                 ctx.executable._proto_compiler.path,
                 "--encode=" + ctx.attr.message_type,
                 "--proto_path=" + ctx.genfiles_dir.path,
+                "--proto_path=" + ctx.bin_dir.path,
                 "--proto_path=.",
             ] + path_list + file_list +
             ["<", textpb.path, ">", binarypb.path],
         ),
         mnemonic = "EncodeProto",
     )
-    return struct(files = depset([binarypb]))
+
+    output_depset = depset([binarypb])
+    return [DefaultInfo(
+        files = output_depset,
+        data_runfiles = ctx.runfiles(transitive_files = output_depset),
+    )]
 
 encode_binary_proto = rule(
     implementation = _encode_binary_proto_impl,
@@ -136,6 +147,7 @@ def _generate_proto_descriptor_set_impl(ctx):
         arguments = [
                         "--descriptor_set_out=%s" % descriptor.path,
                         "--proto_path=" + ctx.genfiles_dir.path,
+                        "--proto_path=" + ctx.bin_dir.path,
                         "--proto_path=.",
                     ] +
                     [s.path for s in all_protos.to_list()],

@@ -14,6 +14,7 @@
 
 #include "mediapipe/framework/tool/name_util.h"
 
+#include <set>
 #include <unordered_map>
 
 #include "absl/strings/str_cat.h"
@@ -66,6 +67,56 @@ std::string GetUnusedSidePacketName(
     ++iter;
   }
   return candidate;
+}
+
+std::string CanonicalNodeName(const CalculatorGraphConfig& graph_config,
+                              int node_id) {
+  const auto& node_config = graph_config.node(node_id);
+  std::string node_name = node_config.name().empty() ? node_config.calculator()
+                                                     : node_config.name();
+  int count = 0;
+  int sequence = 0;
+  for (int i = 0; i < graph_config.node_size(); i++) {
+    const auto& current_node_config = graph_config.node(i);
+    std::string current_node_name = current_node_config.name().empty()
+                                        ? current_node_config.calculator()
+                                        : current_node_config.name();
+    if (node_name == current_node_name) {
+      ++count;
+      if (i < node_id) {
+        ++sequence;
+      }
+    }
+  }
+  if (count <= 1) {
+    return node_name;
+  }
+  return absl::StrCat(node_name, "_", sequence + 1);
+}
+
+std::string ParseNameFromStream(const std::string& stream) {
+  std::string tag, name;
+  int index;
+  MEDIAPIPE_CHECK_OK(tool::ParseTagIndexName(stream, &tag, &index, &name));
+  return name;
+}
+
+std::pair<std::string, int> ParseTagIndexFromStream(const std::string& stream) {
+  std::string tag, name;
+  int index;
+  MEDIAPIPE_CHECK_OK(tool::ParseTagIndexName(stream, &tag, &index, &name));
+  return {tag, index};
+}
+
+std::string CatTag(const std::string& tag, int index) {
+  return absl::StrCat(tag, index <= 0 ? "" : absl::StrCat(":", index));
+}
+
+std::string CatStream(const std::pair<std::string, int>& tag_index,
+                      const std::string& name) {
+  std::string tag = CatTag(tag_index.first, tag_index.second);
+  tag = tag.empty() ? tag : absl::StrCat(tag, ":");
+  return absl::StrCat(tag, name);
 }
 
 }  // namespace tool

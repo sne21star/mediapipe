@@ -52,15 +52,24 @@ struct PolynomialResidual {
   const double out_;
 };
 
+// Computes the amount of delta position change along the fitted polynomial
+// curve, translates the delta from being relative to the origin of the original
+// dimension to being relative to the center of the original dimension, then
+// regulates the delta to avoid moving camera off the frame boundaries.
 float ComputeDelta(const float in, const int original_dimension,
                    const int output_dimension, const double a, const double b,
                    const double c, const double d, const double k) {
+  // The value `out` here represents a normalized distance between the center of
+  // the output window and the origin of the original window.
   float out =
       a * in + b * in * in + c * in * in * in + d * in * in * in * in + k;
-  float delta = (out - 0.5) * 2 * output_dimension;
-  const float max_delta = (original_dimension - output_dimension) / 2.0f;
+  // Translate `out` to a pixel distance between the center of the output window
+  // and the center of the original window. This value can be negative, 0, or
+  // positive.
+  float delta = (out - 0.5) * original_dimension;
 
   // Make sure delta doesn't move the camera off the frame boundary.
+  const float max_delta = (original_dimension - output_dimension) / 2.0f;
   if (delta > max_delta) {
     delta = max_delta;
   } else if (delta < -max_delta) {
@@ -86,7 +95,7 @@ void PolynomialRegressionPathSolver::AddCostFunctionToProblem(
     const std::vector<FocusPointFrame>& focus_point_frames,
     const std::vector<FocusPointFrame>& prior_focus_point_frames,
     const int original_width, const int original_height, const int output_width,
-    const int output_height, std::vector<cv::Mat>* all_xforms) {
+    const int output_height, std::vector<cv::Mat>* all_transforms) {
   RET_CHECK_GE(original_width, output_width);
   RET_CHECK_GE(original_height, output_height);
   const bool should_solve_x_problem = original_width != output_width;
@@ -129,9 +138,10 @@ void PolynomialRegressionPathSolver::AddCostFunctionToProblem(
   Solver::Options options;
   options.linear_solver_type = ceres::DENSE_QR;
 
-  Solver::Summary summary;
-  Solve(options, &problem_x, &summary);
-  all_xforms->clear();
+  Solver::Summary summary_x, summary_y;
+  Solve(options, &problem_x, &summary_x);
+  Solve(options, &problem_y, &summary_y);
+  all_transforms->clear();
   for (int i = 0;
        i < focus_point_frames.size() + prior_focus_point_frames.size(); i++) {
     // Code below assigns values into an affine model, defined as:
@@ -151,7 +161,7 @@ void PolynomialRegressionPathSolver::AddCostFunctionToProblem(
                                        yb_, yc_, yd_, yk_);
       transform.at<float>(1, 2) = delta;
     }
-    all_xforms->push_back(transform);
+    all_transforms->push_back(transform);
   }
   return mediapipe::OkStatus();
 }

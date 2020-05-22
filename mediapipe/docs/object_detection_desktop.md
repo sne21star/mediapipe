@@ -12,13 +12,18 @@ We show the object detection demo with both TensorFlow model and TensorFlow Lite
 
 -   [TensorFlow Object Detection Demo](#tensorflow-object-detection-demo)
 -   [TensorFlow Lite Object Detection Demo](#tensorflow-lite-object-detection-demo)
--   [TensorFlow Lite Object Detection Demo with Webcam (CPU)](#tensorflow-lite-object-detection-demo)
+-   [TensorFlow Lite Object Detection Demo with Webcam (CPU)](#tensorflow-lite-object-detection-demo-with-webcam-cpu)
 
 Note: If MediaPipe depends on OpenCV 2, please see the [known issues with OpenCV 2](#known-issues-with-opencv-2) section.
 
 ### TensorFlow Object Detection Demo
 
-To build and run the TensorFlow example on desktop, run:
+Note: If you would like to run TensorFlow inference on GPU on Linux, please
+follow
+[TensorFlow CUDA Support and Setup on Linux Desktop](gpu.md#tensorflow-cuda-support-and-setup-on-linux-desktop)
+instead.
+
+To build and run the TensorFlow inference example on CPU on desktop, run:
 
 ```bash
 # Note that this command also builds TensorFlow targets from scratch, it may
@@ -26,6 +31,7 @@ To build and run the TensorFlow example on desktop, run:
 $ bazel build -c opt \
     --define MEDIAPIPE_DISABLE_GPU=1 \
     --define no_aws_support=true \
+    --linkopt=-s \
     mediapipe/examples/desktop/object_detection:object_detection_tensorflow
 
 # It should print:
@@ -163,9 +169,9 @@ node {
 # the graph.
 node {
   calculator: "AnnotationOverlayCalculator"
-  input_stream: "INPUT_FRAME:input_video"
+  input_stream: "IMAGE:input_video"
   input_stream: "render_data"
-  output_stream: "OUTPUT_FRAME:output_video"
+  output_stream: "IMAGE:output_video"
 }
 
 # Encodes the annotated images into a video file, adopting properties specified
@@ -214,7 +220,6 @@ To build and run the TensorFlow Lite example on desktop (CPU) with Webcam, run:
 # Video from webcam running on desktop CPU
 $ bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 \
     mediapipe/examples/desktop/object_detection:object_detection_cpu
-
 # It should print:
 #Target //mediapipe/examples/desktop/object_detection:object_detection_cpu up-to-date:
 #  bazel-bin/mediapipe/examples/desktop/object_detection/object_detection_cpu
@@ -397,9 +402,9 @@ node {
 # the graph.
 node {
   calculator: "AnnotationOverlayCalculator"
-  input_stream: "INPUT_FRAME:input_video"
+  input_stream: "IMAGE:input_video"
   input_stream: "render_data"
-  output_stream: "OUTPUT_FRAME:output_video"
+  output_stream: "IMAGE:output_video"
 }
 
 # Encodes the annotated images into a video file, adopting properties specified

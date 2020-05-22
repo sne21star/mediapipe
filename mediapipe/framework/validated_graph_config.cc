@@ -39,6 +39,7 @@
 #include "mediapipe/framework/status_handler.h"
 #include "mediapipe/framework/stream_handler.pb.h"
 #include "mediapipe/framework/thread_pool_executor.pb.h"
+#include "mediapipe/framework/tool/name_util.h"
 #include "mediapipe/framework/tool/status_util.h"
 #include "mediapipe/framework/tool/subgraph_expansion.h"
 #include "mediapipe/framework/tool/validate.h"
@@ -168,31 +169,6 @@ std::string DebugName(const CalculatorGraphConfig& config,
 }
 
 }  // namespace
-
-std::string CanonicalNodeName(const CalculatorGraphConfig& graph_config,
-                              int node_id) {
-  const auto& node_config = graph_config.node(node_id);
-  std::string node_name = node_config.name().empty() ? node_config.calculator()
-                                                     : node_config.name();
-  int count = 0;
-  int sequence = 0;
-  for (int i = 0; i < graph_config.node_size(); i++) {
-    const auto& current_node_config = graph_config.node(i);
-    std::string current_node_name = current_node_config.name().empty()
-                                        ? current_node_config.calculator()
-                                        : current_node_config.name();
-    if (node_name == current_node_name) {
-      ++count;
-      if (i < node_id) {
-        ++sequence;
-      }
-    }
-  }
-  if (count <= 1) {
-    return node_name;
-  }
-  return absl::StrCat(node_name, "_", sequence + 1);
-}
 
 // static
 std::string NodeTypeInfo::NodeTypeToString(NodeType node_type) {
@@ -839,16 +815,25 @@ NodeTypeInfo::NodeRef ValidatedGraphConfig::NodeForSorterIndex(
       sorted_nodes_.push_back(&tmp_calculators.back());
     }
   }
+  if (cyclic) {
+    // This reads from partilly altered config_ (by node Swap()) but we assume
+    // the nodes in the cycle are not altered, as TopologicalSorter reports
+    // cyclicity before processing any node in cycle.
+    auto node_name_formatter = [this](std::string* out, int i) {
+      const auto& n = NodeForSorterIndex(i);
+      absl::StrAppend(out, n.type == NodeTypeInfo::NodeType::CALCULATOR
+                               ? tool::CanonicalNodeName(Config(), n.index)
+                               : DebugName(Config(), n.type, n.index));
+    };
+    return ::mediapipe::UnknownErrorBuilder(MEDIAPIPE_LOC)
+           << "Generator side packet cycle or calculator stream cycle detected "
+              "in graph: ["
+           << absl::StrJoin(cycle_indexes, ", ", node_name_formatter) << "]";
+  }
   generator_configs.Swap(config_.mutable_packet_generator());
   tmp_generators.swap(generators_);
   node_configs.Swap(config_.mutable_node());
   tmp_calculators.swap(calculators_);
-  if (cyclic) {
-    return ::mediapipe::UnknownErrorBuilder(MEDIAPIPE_LOC)
-           << "Generator side packet cycle or calculator stream cycle detected "
-              "in graph.  Cycle indexes: "
-           << absl::StrJoin(cycle_indexes, ", ");
-  }
 #if !(defined(MEDIAPIPE_LITE) || defined(MEDIAPIPE_MOBILE))
   VLOG(2) << "AFTER TOPOLOGICAL SORT:\n" << config_.DebugString();
 #endif  // !(MEDIAPIPE_LITE || MEDIAPIPE_MOBILE)

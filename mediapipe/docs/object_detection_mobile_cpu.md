@@ -29,7 +29,7 @@ adb install bazel-bin/mediapipe/examples/android/src/java/com/google/mediapipe/a
 
 [Source](https://github.com/google/mediapipe/tree/master/mediapipe/examples/ios/handdetectiongpu).
 
-See the general [instructions](./mediapipe_ios_setup.md) for building iOS
+See the general [instructions](./building_examples.md#ios) for building iOS
 examples and generating an Xcode project. This will be the ObjectDetectionCpuApp
 target.
 
@@ -230,9 +230,9 @@ node {
 # Draws annotations and overlays them on top of the input images.
 node {
   calculator: "AnnotationOverlayCalculator"
-  input_stream: "INPUT_FRAME:throttled_input_video_cpu"
+  input_stream: "IMAGE:throttled_input_video_cpu"
   input_stream: "render_data"
-  output_stream: "OUTPUT_FRAME:output_video_cpu"
+  output_stream: "IMAGE:output_video_cpu"
 }
 
 # Transfers the annotated image from CPU back to GPU memory, to be sent out of

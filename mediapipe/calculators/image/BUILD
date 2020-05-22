@@ -87,6 +87,14 @@ mediapipe_cc_proto_library(
 )
 
 mediapipe_cc_proto_library(
+    name = "opencv_encoded_image_to_image_frame_calculator_cc_proto",
+    srcs = ["opencv_encoded_image_to_image_frame_calculator.proto"],
+    cc_deps = ["//mediapipe/framework:calculator_cc_proto"],
+    visibility = ["//visibility:public"],
+    deps = [":opencv_encoded_image_to_image_frame_calculator_proto"],
+)
+
+mediapipe_cc_proto_library(
     name = "mask_overlay_calculator_cc_proto",
     srcs = ["mask_overlay_calculator.proto"],
     cc_deps = ["//mediapipe/framework:calculator_cc_proto"],
@@ -172,6 +180,7 @@ cc_library(
     srcs = ["opencv_encoded_image_to_image_frame_calculator.cc"],
     visibility = ["//visibility:public"],
     deps = [
+        ":opencv_encoded_image_to_image_frame_calculator_cc_proto",
         "//mediapipe/framework:calculator_framework",
         "//mediapipe/framework/formats:image_frame_opencv",
         "//mediapipe/framework/port:opencv_imgcodecs",
@@ -332,6 +341,7 @@ cc_library(
 cc_library(
     name = "image_cropping_calculator",
     srcs = ["image_cropping_calculator.cc"],
+    hdrs = ["image_cropping_calculator.h"],
     copts = select({
         "//mediapipe:apple": [
             "-x objective-c++",
@@ -345,9 +355,7 @@ cc_library(
         ],
         "//conditions:default": [],
     }),
-    visibility = [
-        "//visibility:public",
-    ],
+    visibility = ["//visibility:public"],
     deps = [
         ":image_cropping_calculator_cc_proto",
         "//mediapipe/framework:calculator_framework",
@@ -369,6 +377,22 @@ cc_library(
         ],
     }),
     alwayslink = 1,
+)
+
+cc_test(
+    name = "image_cropping_calculator_test",
+    srcs = ["image_cropping_calculator_test.cc"],
+    deps = [
+        ":image_cropping_calculator",
+        ":image_cropping_calculator_cc_proto",
+        "//mediapipe/framework:calculator_framework",
+        "//mediapipe/framework/formats:rect_cc_proto",
+        "//mediapipe/framework/port:gtest_main",
+        "//mediapipe/framework/port:parse_text_proto",
+        "//mediapipe/framework/port:status",
+        "//mediapipe/framework/tool:tag_map",
+        "//mediapipe/framework/tool:tag_map_helper",
+    ],
 )
 
 cc_library(
@@ -407,9 +431,12 @@ cc_library(
         ":recolor_calculator_cc_proto",
         "//mediapipe/framework:calculator_framework",
         "//mediapipe/framework/formats:image_frame",
+        "//mediapipe/framework/formats:image_frame_opencv",
         "//mediapipe/framework/port:status",
         "//mediapipe/framework/port:ret_check",
         "//mediapipe/util:color_cc_proto",
+        "//mediapipe/framework/port:opencv_core",
+        "//mediapipe/framework/port:opencv_imgproc",
     ] + select({
         "//mediapipe/gpu:disable_gpu": [],
         "//conditions:default": [
@@ -539,6 +566,27 @@ proto_library(
     deps = ["//mediapipe/framework:calculator_proto"],
 )
 
+proto_library(
+    name = "opencv_encoded_image_to_image_frame_calculator_proto",
+    srcs = ["opencv_encoded_image_to_image_frame_calculator.proto"],
+    visibility = ["//visibility:public"],
+    deps = ["//mediapipe/framework:calculator_proto"],
+)
+
+proto_library(
+    name = "feature_detector_calculator_proto",
+    srcs = ["feature_detector_calculator.proto"],
+    deps = ["//mediapipe/framework:calculator_proto"],
+)
+
+mediapipe_cc_proto_library(
+    name = "feature_detector_calculator_cc_proto",
+    srcs = ["feature_detector_calculator.proto"],
+    cc_deps = ["//mediapipe/framework:calculator_cc_proto"],
+    visibility = ["//visibility:public"],
+    deps = [":feature_detector_calculator_proto"],
+)
+
 cc_library(
     name = "mask_overlay_calculator",
     srcs = ["mask_overlay_calculator.cc"],
@@ -551,6 +599,33 @@ cc_library(
         "//mediapipe/gpu:gl_calculator_helper",
         "//mediapipe/gpu:gl_simple_shaders",
         "//mediapipe/gpu:shader_util",
+    ],
+    alwayslink = 1,
+)
+
+cc_library(
+    name = "feature_detector_calculator",
+    srcs = ["feature_detector_calculator.cc"],
+    visibility = ["//mediapipe:__subpackages__"],
+    deps = [
+        ":feature_detector_calculator_cc_proto",
+        "//mediapipe/framework:calculator_framework",
+        "//mediapipe/framework/formats:image_frame",
+        "//mediapipe/framework/formats:image_frame_opencv",
+        "//mediapipe/framework/formats:landmark_cc_proto",
+        "//mediapipe/framework/formats:video_stream_header",
+        "//mediapipe/framework/port:integral_types",
+        "//mediapipe/framework/port:logging",
+        "//mediapipe/framework/port:opencv_core",
+        "//mediapipe/framework/port:opencv_features2d",
+        "//mediapipe/framework/port:opencv_imgproc",
+        "//mediapipe/framework/port:ret_check",
+        "//mediapipe/framework/port:status",
+        "//mediapipe/framework/port:threadpool",
+        "//mediapipe/framework/tool:options_util",
+        "@com_google_absl//absl/memory",
+        "@com_google_absl//absl/synchronization",
+        "@org_tensorflow//tensorflow/lite:framework",
     ],
     alwayslink = 1,
 )

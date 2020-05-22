@@ -61,6 +61,8 @@ videos.
     ```bash
     # cd to the root directory of the MediaPipe repo
     cd -
+
+    pip3 install tf_slim
     python -m mediapipe.examples.desktop.youtube8m.generate_vggish_frozen_graph
     ```
 
@@ -78,7 +80,7 @@ videos.
 5.  Run the MediaPipe binary to extract the features.
 
     ```bash
-    bazel build -c opt \
+    bazel build -c opt --linkopt=-s \
       --define MEDIAPIPE_DISABLE_GPU=1 --define no_aws_support=true \
       mediapipe/examples/desktop/youtube8m:extract_yt8m_features
 
@@ -118,7 +120,7 @@ the inference for both local videos and the dataset
     to local.
 
     ```bash
-    curl -o /tmp/mediapipe/yt8m_baseline_saved_model.tar.gz data.yt8m.org/models/baseline/saved_model.tar.gz
+    curl -o /tmp/mediapipe/yt8m_baseline_saved_model.tar.gz http://data.yt8m.org/models/baseline/saved_model.tar.gz
 
     tar -xvf /tmp/mediapipe/yt8m_baseline_saved_model.tar.gz -C /tmp/mediapipe
     ```
@@ -126,13 +128,13 @@ the inference for both local videos and the dataset
 2.  Build the inference binary.
 
     ```bash
-    bazel build -c opt --define='MEDIAPIPE_DISABLE_GPU=1' \
+    bazel build -c opt --define='MEDIAPIPE_DISABLE_GPU=1' --linkopt=-s \
       mediapipe/examples/desktop/youtube8m:model_inference
     ```
 
 3.  Run the python web server.
 
-    Note: pip install absl-py
+    Note: pip3 install absl-py
 
     ```bash
     python mediapipe/examples/desktop/youtube8m/viewer/server.py --root `pwd`
@@ -154,7 +156,7 @@ the inference for both local videos and the dataset
     to local.
 
     ```bash
-    curl -o /tmp/mediapipe/yt8m_baseline_saved_model.tar.gz data.yt8m.org/models/baseline/saved_model.tar.gz
+    curl -o /tmp/mediapipe/yt8m_baseline_saved_model.tar.gz http://data.yt8m.org/models/baseline/saved_model.tar.gz
 
     tar -xvf /tmp/mediapipe/yt8m_baseline_saved_model.tar.gz -C /tmp/mediapipe
     ```
@@ -162,7 +164,7 @@ the inference for both local videos and the dataset
 3.  Build and run the inference binary.
 
     ```bash
-    bazel build -c opt --define='MEDIAPIPE_DISABLE_GPU=1' \
+    bazel build -c opt --define='MEDIAPIPE_DISABLE_GPU=1' --linkopt=-s \
       mediapipe/examples/desktop/youtube8m:model_inference
 
     # segment_size is the number of seconds window of frames.

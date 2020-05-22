@@ -17,7 +17,7 @@
 #if !defined(__ANDROID__)
 #include "mediapipe/framework/port/file_helpers.h"
 #endif
-#include "absl/strings/substitute.h"
+#include "absl/strings/str_replace.h"
 #include "mediapipe/calculators/tensorflow/tensorflow_session.h"
 #include "mediapipe/calculators/tensorflow/tensorflow_session_from_saved_model_calculator.pb.h"
 #include "mediapipe/framework/calculator_framework.h"
@@ -51,10 +51,11 @@ static constexpr char kStringSavedModelPath[] = "STRING_SAVED_MODEL_PATH";
 #endif
 }
 
-// If options.convert_signature_to_tags() will convert letters to uppercase
-// and replace /'s with _'s. If set, this enables the standard SavedModel
-// classification, regression, and prediction signatures to be used as
-// uppercase INPUTS and OUTPUTS tags for streams.
+// If options.convert_signature_to_tags() is set, will convert letters to
+// uppercase and replace /'s and -'s with _'s. This enables the standard
+// SavedModel classification, regression, and prediction signatures to be used
+// as uppercase INPUTS and OUTPUTS tags for streams and supports other common
+// patterns.
 const std::string MaybeConvertSignatureToTag(
     const std::string& name,
     const TensorFlowSessionFromSavedModelCalculatorOptions& options) {
@@ -63,7 +64,8 @@ const std::string MaybeConvertSignatureToTag(
     output.resize(name.length());
     std::transform(name.begin(), name.end(), output.begin(),
                    [](unsigned char c) { return std::toupper(c); });
-    output = absl::Substitute(output, "/", "_");
+    output = absl::StrReplaceAll(output, {{"/", "_"}});
+    output = absl::StrReplaceAll(output, {{"-", "_"}});
     return output;
   } else {
     return name;
@@ -124,7 +126,7 @@ class TensorFlowSessionFromSavedModelCalculator : public CalculatorBase {
     // Set user specified tags properly.
     // If no tags specified will use tensorflow::kSavedModelTagServe by default.
     std::unordered_set<std::string> tags_set;
-    for (std::string tag : options.saved_model_tag()) {
+    for (const std::string& tag : options.saved_model_tag()) {
       tags_set.insert(tag);
     }
     if (tags_set.empty()) {

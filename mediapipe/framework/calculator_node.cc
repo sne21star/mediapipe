@@ -42,6 +42,7 @@
 #include "mediapipe/framework/port/source_location.h"
 #include "mediapipe/framework/port/status_builder.h"
 #include "mediapipe/framework/timestamp.h"
+#include "mediapipe/framework/tool/name_util.h"
 #include "mediapipe/framework/tool/status_util.h"
 #include "mediapipe/framework/tool/tag_map.h"
 #include "mediapipe/framework/tool/validate_name.h"
@@ -85,7 +86,7 @@ Timestamp CalculatorNode::SourceProcessOrder(
 
   const CalculatorGraphConfig::Node& node_config =
       validated_graph_->Config().node(node_id_);
-  name_ = CanonicalNodeName(validated_graph_->Config(), node_id_);
+  name_ = tool::CanonicalNodeName(validated_graph_->Config(), node_id_);
 
   max_in_flight_ = node_config.max_in_flight();
   max_in_flight_ = max_in_flight_ ? max_in_flight_ : 1;
@@ -96,6 +97,7 @@ Timestamp CalculatorNode::SourceProcessOrder(
 
   const NodeTypeInfo& node_type_info =
       validated_graph_->CalculatorInfos()[node_id_];
+  const CalculatorContract& contract = node_type_info.Contract();
 
   uses_gpu_ =
       node_type_info.InputSidePacketTypes().HasTag(kGpuSharedTagName) ||
@@ -145,6 +147,14 @@ Timestamp CalculatorNode::SourceProcessOrder(
   MP_RETURN_IF_ERROR(InitializeInputStreamHandler(
       use_calc_specified ? handler_config : node_config.input_stream_handler(),
       node_type_info.InputStreamTypes()));
+
+  for (auto& stream : output_stream_handler_->OutputStreams()) {
+    stream->Spec()->offset_enabled =
+        (contract.GetTimestampOffset() != TimestampDiff::Unset());
+    stream->Spec()->offset = contract.GetTimestampOffset();
+  }
+  input_stream_handler_->SetProcessTimestampBounds(
+      contract.GetProcessTimestampBounds());
 
   return InitializeInputStreams(input_stream_managers, output_stream_managers);
 }
@@ -804,7 +814,8 @@ std::string CalculatorNode::DebugName() const {
         input_stream_handler_->FinalizeInputSet(input_timestamp, inputs);
         output_stream_handler_->PrepareOutputs(input_timestamp, outputs);
 
-        VLOG(2) << "Calling Calculator::Process() for node: " << DebugName();
+        VLOG(2) << "Calling Calculator::Process() for node: " << DebugName()
+                << " timestamp: " << input_timestamp;
 
         if (OutputsAreConstant(calculator_context)) {
           // Do nothing.
@@ -815,6 +826,9 @@ std::string CalculatorNode::DebugName() const {
               calculator_context);
           result = calculator_->Process(calculator_context);
         }
+
+        VLOG(2) << "Called Calculator::Process() for node: " << DebugName()
+                << " timestamp: " << input_timestamp;
 
         // Removes one packet from each shard and progresses to the next input
         // timestamp.

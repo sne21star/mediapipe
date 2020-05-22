@@ -87,6 +87,15 @@ proto_library(
 )
 
 proto_library(
+    name = "constant_side_packet_calculator_proto",
+    srcs = ["constant_side_packet_calculator.proto"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//mediapipe/framework:calculator_proto",
+    ],
+)
+
+proto_library(
     name = "clip_vector_size_calculator_proto",
     srcs = ["clip_vector_size_calculator.proto"],
     visibility = ["//visibility:public"],
@@ -173,6 +182,14 @@ mediapipe_cc_proto_library(
     deps = [":gate_calculator_proto"],
 )
 
+mediapipe_cc_proto_library(
+    name = "constant_side_packet_calculator_cc_proto",
+    srcs = ["constant_side_packet_calculator.proto"],
+    cc_deps = ["//mediapipe/framework:calculator_cc_proto"],
+    visibility = ["//visibility:public"],
+    deps = [":constant_side_packet_calculator_proto"],
+)
+
 cc_library(
     name = "add_header_calculator",
     srcs = ["add_header_calculator.cc"],
@@ -211,7 +228,9 @@ cc_library(
         "//mediapipe/framework:calculator_framework",
         "//mediapipe/framework:collection_item_id",
         "//mediapipe/framework:packet",
+        "//mediapipe/framework/formats:detection_cc_proto",
         "//mediapipe/framework/formats:landmark_cc_proto",
+        "//mediapipe/framework/formats:matrix",
         "//mediapipe/framework/formats:rect_cc_proto",
         "//mediapipe/framework/port:integral_types",
         "//mediapipe/framework/port:ret_check",
@@ -232,12 +251,14 @@ cc_library(
         "//mediapipe/framework:calculator_framework",
         "//mediapipe/framework:collection_item_id",
         "//mediapipe/framework:packet",
+        "//mediapipe/framework/formats:classification_cc_proto",
         "//mediapipe/framework/formats:landmark_cc_proto",
         "//mediapipe/framework/formats:rect_cc_proto",
         "//mediapipe/framework/port:integral_types",
         "//mediapipe/framework/port:ret_check",
         "//mediapipe/framework/port:status",
         "//mediapipe/util:render_data_cc_proto",
+        "@org_tensorflow//tensorflow/lite:framework",
     ],
     alwayslink = 1,
 )
@@ -248,10 +269,11 @@ cc_test(
     deps = [
         ":begin_loop_calculator",
         ":end_loop_calculator",
-        "//mediapipe/calculators/core:packet_cloner_calculator",
+        ":gate_calculator",
         "//mediapipe/framework:calculator_context",
         "//mediapipe/framework:calculator_contract",
         "//mediapipe/framework:calculator_framework",
+        "//mediapipe/framework:packet",
         "//mediapipe/framework/port:gtest_main",
         "//mediapipe/framework/port:integral_types",
         "//mediapipe/framework/port:parse_text_proto",
@@ -317,6 +339,7 @@ cc_library(
     deps = [
         ":clip_vector_size_calculator_cc_proto",
         "//mediapipe/framework:calculator_framework",
+        "//mediapipe/framework/formats:detection_cc_proto",
         "//mediapipe/framework/formats:rect_cc_proto",
         "//mediapipe/framework/port:ret_check",
         "//mediapipe/framework/port:status",
@@ -477,6 +500,7 @@ cc_library(
         "//mediapipe/framework/port:integral_types",
         "//mediapipe/framework/port:logging",
         "//mediapipe/framework/port:status",
+        "//mediapipe/framework/tool:options_util",
     ],
     alwayslink = 1,
 )
@@ -594,6 +618,22 @@ cc_library(
 )
 
 cc_test(
+    name = "side_packet_to_stream_calculator_test",
+    srcs = ["side_packet_to_stream_calculator_test.cc"],
+    deps = [
+        ":side_packet_to_stream_calculator",
+        "//mediapipe/framework:calculator_framework",
+        "//mediapipe/framework/port:gtest_main",
+        "//mediapipe/framework/port:integral_types",
+        "//mediapipe/framework/port:parse_text_proto",
+        "//mediapipe/framework/port:status",
+        "//mediapipe/framework/tool:options_util",
+        "@com_google_absl//absl/memory",
+        "@com_google_absl//absl/strings",
+    ],
+)
+
+cc_test(
     name = "immediate_mux_calculator_test",
     srcs = ["immediate_mux_calculator_test.cc"],
     deps = [
@@ -660,15 +700,17 @@ cc_test(
     name = "previous_loopback_calculator_test",
     srcs = ["previous_loopback_calculator_test.cc"],
     deps = [
+        ":gate_calculator",
+        ":make_pair_calculator",
+        ":pass_through_calculator",
         ":previous_loopback_calculator",
-        "//mediapipe/calculators/core:make_pair_calculator",
-        "//mediapipe/calculators/core:pass_through_calculator",
         "//mediapipe/framework:calculator_framework",
         "//mediapipe/framework:calculator_runner",
         "//mediapipe/framework:timestamp",
         "//mediapipe/framework/port:gtest_main",
         "//mediapipe/framework/port:integral_types",
         "//mediapipe/framework/port:parse_text_proto",
+        "//mediapipe/framework/port:status",
         "//mediapipe/framework/stream_handler:immediate_input_stream_handler",
         "//mediapipe/framework/tool:sink",
         "@com_google_absl//absl/time",
@@ -736,9 +778,11 @@ cc_library(
     visibility = ["//visibility:public"],
     deps = [
         ":split_vector_calculator_cc_proto",
+        "//mediapipe/framework/formats:detection_cc_proto",
         "//mediapipe/framework:calculator_framework",
         "//mediapipe/framework/formats:landmark_cc_proto",
         "//mediapipe/framework/formats:rect_cc_proto",
+        "//mediapipe/framework/formats:matrix",
         "//mediapipe/framework/port:ret_check",
         "//mediapipe/framework/port:status",
         "//mediapipe/util:resource_util",
@@ -769,6 +813,38 @@ cc_test(
         "//mediapipe/framework/tool:validate_type",
         "@org_tensorflow//tensorflow/lite:framework",
         "@org_tensorflow//tensorflow/lite/kernels:builtin_ops",
+    ],
+)
+
+cc_library(
+    name = "split_normalized_landmark_list_calculator",
+    srcs = ["split_normalized_landmark_list_calculator.cc"],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":split_vector_calculator_cc_proto",
+        "//mediapipe/framework:calculator_framework",
+        "//mediapipe/framework/formats:landmark_cc_proto",
+        "//mediapipe/framework/port:ret_check",
+        "//mediapipe/framework/port:status",
+        "//mediapipe/util:resource_util",
+    ],
+    alwayslink = 1,
+)
+
+cc_test(
+    name = "split_normalized_landmark_list_calculator_test",
+    srcs = ["split_normalized_landmark_list_calculator_test.cc"],
+    deps = [
+        ":split_normalized_landmark_list_calculator",
+        ":split_vector_calculator_cc_proto",
+        "//mediapipe/framework:calculator_framework",
+        "//mediapipe/framework:calculator_runner",
+        "//mediapipe/framework/deps:file_path",
+        "//mediapipe/framework/formats:landmark_cc_proto",
+        "//mediapipe/framework/port:gtest_main",
+        "//mediapipe/framework/port:integral_types",
+        "//mediapipe/framework/port:parse_text_proto",
+        "//mediapipe/framework/tool:validate_type",
     ],
 )
 
@@ -958,5 +1034,32 @@ cc_test(
         "//mediapipe/framework/port:gtest_main",
         "//mediapipe/framework/port:status",
         "@com_google_absl//absl/memory",
+    ],
+)
+
+cc_library(
+    name = "constant_side_packet_calculator",
+    srcs = ["constant_side_packet_calculator.cc"],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":constant_side_packet_calculator_cc_proto",
+        "//mediapipe/framework:calculator_framework",
+        "//mediapipe/framework:collection_item_id",
+        "//mediapipe/framework/port:ret_check",
+        "//mediapipe/framework/port:status",
+    ],
+    alwayslink = 1,
+)
+
+cc_test(
+    name = "constant_side_packet_calculator_test",
+    srcs = ["constant_side_packet_calculator_test.cc"],
+    deps = [
+        ":constant_side_packet_calculator",
+        "//mediapipe/framework:calculator_framework",
+        "//mediapipe/framework/port:gtest_main",
+        "//mediapipe/framework/port:parse_text_proto",
+        "//mediapipe/framework/port:status",
+        "@com_google_absl//absl/strings",
     ],
 )

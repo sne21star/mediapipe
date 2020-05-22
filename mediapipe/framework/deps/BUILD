@@ -175,6 +175,7 @@ cc_library(
     name = "random",
     hdrs = ["random_base.h"],
     visibility = ["//visibility:public"],
+    deps = ["//mediapipe/framework/port:integral_types"],
 )
 
 cc_library(
@@ -250,6 +251,7 @@ cc_library(
         "//mediapipe/framework/port:logging",
         "@com_google_absl//absl/base:core_headers",
         "@com_google_absl//absl/memory",
+        "@com_google_absl//absl/status",
         "@com_google_absl//absl/strings",
     ],
 )
@@ -302,7 +304,10 @@ cc_library(
 
 cc_library(
     name = "threadpool",
-    srcs = ["threadpool.cc"],
+    srcs = select({
+        "//mediapipe:windows": ["threadpool_std_thread_impl.cc"],
+        "//conditions:default": ["threadpool_pthread_impl.cc"],
+    }),
     hdrs = ["threadpool.h"],
     # Use this library through "mediapipe/framework/port:threadpool".
     visibility = ["//mediapipe/framework/port:__pkg__"],

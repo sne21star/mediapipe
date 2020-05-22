@@ -41,12 +41,6 @@ To build the app yourself, run:
 bazel build -c opt --config=android_arm64 mediapipe/examples/android/src/java/com/google/mediapipe/apps/multihandtrackinggpu
 ```
 
-To build for the 3D mode, run:
-
-```bash
-bazel build -c opt --config=android_arm64 --define 3D=true mediapipe/examples/android/src/java/com/google/mediapipe/apps/multihandtrackinggpu
-```
-
 Once the app is built, install it on Android device with:
 
 ```bash
@@ -57,7 +51,7 @@ adb install bazel-bin/mediapipe/examples/android/src/java/com/google/mediapipe/a
 
 [Source](https://github.com/google/mediapipe/tree/master/mediapipe/examples/ios/multihandtrackinggpu).
 
-See the general [instructions](./mediapipe_ios_setup.md) for building iOS
+See the general [instructions](./building_examples.md#ios) for building iOS
 examples and generating an Xcode project. This will be the HandDetectionGpuApp
 target.
 
@@ -65,12 +59,6 @@ To build on the command line:
 
 ```bash
 bazel build -c opt --config=ios_arm64 mediapipe/examples/ios/multihandtrackinggpu:MultiHandTrackingGpuApp
-```
-
-To build for the 3D mode, run:
-
-```bash
-bazel build -c opt --config=ios_arm64 --define 3D=true mediapipe/examples/ios/multihandtrackinggpu:MultiHandTrackingGpuApp
 ```
 
 ## Graph
@@ -745,11 +733,11 @@ node {
 # a vector of RenderData objects and draws each of them on the input frame.
 node {
   calculator: "AnnotationOverlayCalculator"
-  input_stream: "INPUT_FRAME_GPU:input_image"
+  input_stream: "IMAGE_GPU:input_image"
   input_stream: "detection_render_data"
   input_stream: "multi_hand_rects_render_data"
   input_stream: "multi_palm_rects_render_data"
   input_stream: "VECTOR:0:multi_hand_landmarks_render_data"
-  output_stream: "OUTPUT_FRAME_GPU:output_image"
+  output_stream: "IMAGE_GPU:output_image"
 }
 ```

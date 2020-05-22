@@ -41,3 +41,65 @@ cc_library(
         "@org_tensorflow//tensorflow/lite/kernels:builtin_ops",
     ],
 )
+
+cc_library(
+    name = "tensor_buffer",
+    srcs = ["tensor_buffer.cc"],
+    hdrs = ["tensor_buffer.h"],
+    deps = [
+        "@org_tensorflow//tensorflow/lite:framework",
+        "@com_google_absl//absl/memory",
+        "//mediapipe/framework:port",
+    ] + select({
+        "//mediapipe/gpu:disable_gpu": [],
+        "//mediapipe:ios": [
+            "//mediapipe/gpu:MPPMetalUtil",
+            "//mediapipe/gpu:gl_base",
+        ],
+        "//conditions:default": [
+            "@org_tensorflow//tensorflow/lite/delegates/gpu/gl:gl_buffer",
+            "//mediapipe/gpu:gl_base",
+            "//mediapipe/gpu:gl_context",
+        ],
+    }),
+)
+
+cc_test(
+    name = "tensor_buffer_test",
+    srcs = ["tensor_buffer_test.cc"],
+    deps = [
+        ":tensor_buffer",
+        "//mediapipe/framework/port:gtest_main",
+    ] + select({
+        "//mediapipe/gpu:disable_gpu": [],
+        "//conditions:default": [],
+    }),
+)
+
+cc_library(
+    name = "tflite_gpu_runner",
+    srcs = select({
+        "//mediapipe:ios": [],
+        "//mediapipe:macos": [],
+        "//conditions:default": ["tflite_gpu_runner.cc"],
+    }),
+    hdrs = select({
+        "//mediapipe:ios": [],
+        "//mediapipe:macos": [],
+        "//conditions:default": ["tflite_gpu_runner.h"],
+    }),
+    deps = select({
+        "//mediapipe:ios": [],
+        "//mediapipe:macos": [],
+        "//conditions:default": [
+            "@com_google_absl//absl/strings",
+            "//mediapipe/framework/port:ret_check",
+            "//mediapipe/framework/port:status",
+            "//mediapipe/framework/port:statusor",
+            "@org_tensorflow//tensorflow/lite:framework",
+            "@org_tensorflow//tensorflow/lite/delegates/gpu:api",
+            "@org_tensorflow//tensorflow/lite/delegates/gpu/common:model",
+            "@org_tensorflow//tensorflow/lite/delegates/gpu/gl:api2",
+        ],
+    }) + ["@org_tensorflow//tensorflow/lite/core/api"],
+)

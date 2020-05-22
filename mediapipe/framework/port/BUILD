@@ -96,7 +96,7 @@ cc_library(
     visibility = ["//visibility:public"],
     deps = [
         "//mediapipe/framework:port",
-        "@com_github_glog_glog//:glog",
+        "//third_party:glog",
     ],
 )
 
@@ -177,7 +177,7 @@ cc_library(
     visibility = ["//visibility:public"],
     deps = [
         "//mediapipe/framework:port",
-        "@com_github_glog_glog//:glog",
+        "//third_party:glog",
         "@com_google_absl//absl/time",
     ],
 )
@@ -246,6 +246,7 @@ cc_library(
     visibility = ["//visibility:public"],
     deps = [
         ":opencv_core",
+        "//mediapipe/framework:port",
         "//third_party:opencv",
     ],
 )
@@ -351,6 +352,7 @@ cc_library(
         ":source_location",
         "//mediapipe/framework:port",
         "//mediapipe/framework/deps:status",
+        "@com_google_absl//absl/status",
         "@com_google_absl//absl/strings",
     ],
 )

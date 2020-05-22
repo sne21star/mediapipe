@@ -44,6 +44,14 @@ graphs can be easily adapted to run on CPU v.s. GPU.
 [Object Detection and Tracking with GPU](./object_tracking_mobile_gpu.md) illustrates how to
 use MediaPipe for object detection and tracking.
 
+### Objectron: 3D Object Detection and Tracking with GPU
+
+[MediaPipe Objectron is 3D Object Detection with GPU](./objectron_mobile_gpu.md)
+illustrates mobile real-time 3D object detection and tracking pipeline for every
+day objects like shoes and chairs
+
+*   [Android](./objectron_mobile_gpu.md)
+
 ### Face Detection with GPU
 
 [Face Detection with GPU](./face_detection_mobile_gpu.md) illustrates how to use
@@ -65,6 +73,18 @@ can be easily adapted to run on CPU v.s. GPU.
 *   [Android](./face_detection_mobile_cpu.md)
 *   [iOS](./face_detection_mobile_cpu.md)
 
+### Face Mesh with GPU
+
+[Face Mesh with GPU](./face_mesh_mobile_gpu.md) illustrates how to run the
+MediaPipe Face Mesh pipeline to perform 3D face landmark estimation in real-time
+on mobile devices, utilizing GPU acceleration. The pipeline is based on
+["Real-time Facial Surface Geometry from Monocular Video on Mobile GPUs"](https://arxiv.org/abs/1907.06724),
+and details of the underlying ML models are described in the
+[model card](https://drive.google.com/file/d/1VFC_wIpw4O7xBOiTgUldl79d9LA-LsnA/view).
+
+*   [Android](./face_mesh_mobile_gpu.md)
+*   [iOS](./face_mesh_mobile_gpu.md)
+
 ### Hand Detection with GPU
 
 [Hand Detection with GPU](./hand_detection_mobile_gpu.md) illustrates how to use
@@ -76,7 +96,7 @@ MediaPipe with a TFLite model for hand detection in a GPU-accelerated pipeline.
 ### Hand Tracking with GPU
 
 [Hand Tracking with GPU](./hand_tracking_mobile_gpu.md) illustrates how to use
-MediaPipe with a TFLite model for hand tracking in a GPU-accelerated pipeline.
+MediaPipe with TFLite models for hand tracking in a GPU-accelerated pipeline.
 
 *   [Android](./hand_tracking_mobile_gpu.md)
 *   [iOS](./hand_tracking_mobile_gpu.md)
@@ -84,7 +104,7 @@ MediaPipe with a TFLite model for hand tracking in a GPU-accelerated pipeline.
 ### Multi-Hand Tracking with GPU
 
 [Multi-Hand Tracking with GPU](./multi_hand_tracking_mobile_gpu.md) illustrates
-how to use MediaPipe with a TFLite model for multi-hand tracking in a
+how to use MediaPipe with TFLite models for multi-hand tracking in a
 GPU-accelerated pipeline.
 
 *   [Android](./multi_hand_tracking_mobile_gpu.md)
@@ -100,6 +120,14 @@ and model details are described in the
 [model card](https://sites.google.com/corp/view/perception-cv4arvr/hair-segmentation#h.p_NimuO7PgHxlY).
 
 *   [Android](./hair_segmentation_mobile_gpu.md)
+
+### Template Matching using KNIFT with CPU
+
+[Template Matching using KNIFT on Mobile](./template_matching_mobile_cpu.md)
+shows how to use MediaPipe with TFLite model for template matching using Knift
+on mobile using CPU.
+
+*   [Android](./template_matching_mobile_cpu.md)
 
 ## Desktop
 
@@ -120,7 +148,7 @@ and do the model inference with the baseline model.
 MediaPipe for media processing to prepare video data sets for training a
 TensorFlow model.
 
-### Automatic video cropping
+### AutoFlip - Automatic video cropping
 
 [AutoFlip](./autoflip.md) shows how to use MediaPipe to build an automatic video
 cropping pipeline that can convert an input video to arbitrary aspect ratios.
@@ -142,10 +170,19 @@ GPU with live video from a webcam.
 *   [Desktop GPU](./face_detection_desktop.md)
 *   [Desktop CPU](./face_detection_desktop.md)
 
+### Face Mesh on Desktop with Webcam
+
+[Face Mesh on Desktop with Webcam](./face_mesh_desktop.md) shows how to run the
+MediaPipe Face Mesh pipeline to perform 3D face landmark estimation in real-time
+on desktop with webcam input.
+
+*   [Desktop GPU](./face_mesh_desktop.md)
+*   [Desktop CPU](./face_mesh_desktop.md)
+
 ### Hand Tracking on Desktop with Webcam
 
 [Hand Tracking on Desktop with Webcam](./hand_tracking_desktop.md) shows how to
-use MediaPipe with a TFLite model for hand tracking on desktop using CPU or GPU
+use MediaPipe with TFLite models for hand tracking on desktop using CPU or GPU
 with live video from a webcam.
 
 *   [Desktop GPU](./hand_tracking_desktop.md)
@@ -154,8 +191,8 @@ with live video from a webcam.
 ### Multi-Hand Tracking on Desktop with Webcam
 
 [Multi-Hand Tracking on Desktop with Webcam](./multi_hand_tracking_desktop.md)
-shows how to use MediaPipe with a TFLite model for multi-hand tracking on
-desktop using CPU or GPU with live video from a webcam.
+shows how to use MediaPipe with TFLite models for multi-hand tracking on desktop
+using CPU or GPU with live video from a webcam.
 
 *   [Desktop GPU](./multi_hand_tracking_desktop.md)
 *   [Desktop CPU](./multi_hand_tracking_desktop.md)
@@ -168,7 +205,7 @@ GPU with live video from a webcam.
 
 *   [Desktop GPU](./hair_segmentation_desktop.md)
 
-## Google Coral (machine learning acceleration with Google EdgeTPU)
+## Google Coral (ML acceleration with Google EdgeTPU)
 
 Below are code samples on how to run MediaPipe on Google Coral Dev Board.
 
@@ -184,3 +221,18 @@ EdgeTPU on
 [Face Detection on Coral with Webcam](./face_detection_coral_devboard.md) shows
 how to use quantized face detection TFlite model accelerated with EdgeTPU on
 [Google Coral Dev Board](https://coral.withgoogle.com/products/dev-board).
+
+
+## Web Browser
+
+Below are samples that can directly be run in your web browser.
+See more details in [MediaPipe on the Web](./web.md) and
+[Google Developer blog post](https://mediapipe.page.link/webdevblog)
+
+### [Face Detection In Browser](https://viz.mediapipe.dev/demo/face_detection)
+
+### [Hand Detection In Browser](https://viz.mediapipe.dev/demo/hand_detection)
+
+### [Hand Tracking In Browser](https://viz.mediapipe.dev/demo/hand_tracking)
+
+### [Hair Segmentation In Browser](https://viz.mediapipe.dev/demo/hair_segmentation)

@@ -21,7 +21,7 @@ adb install bazel-bin/mediapipe/examples/android/src/java/com/google/mediapipe/a
 
 [Source](https://github.com/google/mediapipe/tree/master/mediapipe/examples/ios/facedetectiongpu).
 
-See the general [instructions](./mediapipe_ios_setup.md) for building iOS
+See the general [instructions](./building_examples.md#ios) for building iOS
 examples and generating an Xcode project. This will be the FaceDetectionGpuApp
 target.
 
@@ -221,8 +221,8 @@ node {
 # Draws annotations and overlays them on top of the input images.
 node {
   calculator: "AnnotationOverlayCalculator"
-  input_stream: "INPUT_FRAME_GPU:throttled_input_video"
+  input_stream: "IMAGE_GPU:throttled_input_video"
   input_stream: "render_data"
-  output_stream: "OUTPUT_FRAME_GPU:output_video"
+  output_stream: "IMAGE_GPU:output_video"
 }
 ```

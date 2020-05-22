@@ -17,6 +17,7 @@ package com.google.mediapipe.components;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.media.AudioFormat;
+import android.os.Handler;
 import android.util.Log;
 import com.google.common.base.Preconditions;
 import com.google.mediapipe.framework.AndroidAssetUtil;
@@ -30,6 +31,7 @@ import com.google.mediapipe.framework.PacketGetter;
 import com.google.mediapipe.framework.SurfaceOutput;
 import com.google.mediapipe.framework.TextureFrame;
 import java.io.File;
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -45,18 +47,19 @@ import javax.annotation.Nullable;
 public class FrameProcessor implements TextureFrameProcessor, AudioDataProcessor {
   private static final String TAG = "FrameProcessor";
   private static final int BYTES_PER_MONO_SAMPLE = 2; // 16 bit PCM encoding.
+  private static final int AUDIO_ENCODING = AudioFormat.ENCODING_PCM_16BIT;
 
   private List<TextureFrameConsumer> videoConsumers = new ArrayList<>();
   private List<AudioDataConsumer> audioConsumers = new ArrayList<>();
   private Graph mediapipeGraph;
   private AndroidPacketCreator packetCreator;
   private OnWillAddFrameListener addFrameListener;
+  private ErrorListener asyncErrorListener;
   private String videoInputStream;
   private String videoInputStreamCpu;
   private String videoOutputStream;
   private SurfaceOutput videoSurfaceOutput;
   private final AtomicBoolean started = new AtomicBoolean(false);
-  private boolean hybridPath = false;
   // Input stream of audio data. Can be null.
   private String audioInputStream;
   // Output stream of audio data. Can be null.
@@ -122,10 +125,46 @@ public class FrameProcessor implements TextureFrameProcessor, AudioDataProcessor
 
       mediapipeGraph.setParentGlContext(parentNativeContext);
     } catch (MediaPipeException e) {
+      // TODO: do not suppress exceptions here!
       Log.e(TAG, "Mediapipe error: ", e);
     }
 
     videoSurfaceOutput = mediapipeGraph.addSurfaceOutput(videoOutputStream);
+  }
+
+  /** Callback for errors occurring during processing in the graph. */
+  public interface ErrorListener {
+    void onError(RuntimeException error);
+  }
+
+  /**
+   * Sets a callback to be invoked when exceptions are thrown in one FrameProcessor's input
+   * callbacks (such as onNewFrame, onNewAudioData).
+   *
+   * @param listener the callback.
+   */
+  public void setAsynchronousErrorListener(@Nullable ErrorListener listener) {
+    this.asyncErrorListener = listener;
+  }
+
+  /**
+   * Sets a callback to be invoked when exceptions are thrown in one FrameProcessor's input
+   * callbacks (such as onNewFrame, onNewAudioData).
+   *
+   * @param listener the callback.
+   * @param handler if not null, the callback will be posted on this handler.
+   */
+  public void setAsynchronousErrorListener(
+      @Nullable ErrorListener listener, @Nullable Handler handler) {
+    setAsynchronousErrorListener(
+        handler == null
+            ? listener
+            : (RuntimeException e) -> {
+              handler.post(
+                  () -> {
+                    listener.onError(e);
+                  });
+            });
   }
 
   /**
@@ -155,6 +194,7 @@ public class FrameProcessor implements TextureFrameProcessor, AudioDataProcessor
     if (audioOutputStream != null) {
       AudioFormat audioFormat =
           new AudioFormat.Builder()
+              .setEncoding(AUDIO_ENCODING)
               .setSampleRate((int) audioSampleRateInHz)
               .setChannelMask(numAudioChannels)
               .build();
@@ -168,7 +208,8 @@ public class FrameProcessor implements TextureFrameProcessor, AudioDataProcessor
                 currentAudioConsumers = audioConsumers;
               }
               for (AudioDataConsumer consumer : currentAudioConsumers) {
-                byte[] audioData = PacketGetter.getAudioByteData(packet);
+                byte[] buffer = PacketGetter.getAudioByteData(packet);
+                ByteBuffer audioData = ByteBuffer.wrap(buffer);
                 consumer.onNewAudioData(audioData, packet.getTimestamp(), audioFormat);
               }
             }
@@ -210,10 +251,6 @@ public class FrameProcessor implements TextureFrameProcessor, AudioDataProcessor
 
   public void setVideoInputStreamCpu(String inputStream) {
     videoInputStreamCpu = inputStream;
-  }
-
-  public void setHybridPath() {
-    hybridPath = true;
   }
 
   /** Adds a callback to the graph to process packets from the specified output stream. */
@@ -261,8 +298,17 @@ public class FrameProcessor implements TextureFrameProcessor, AudioDataProcessor
         mediapipeGraph.closeAllPacketSources();
         mediapipeGraph.waitUntilGraphDone();
       } catch (MediaPipeException e) {
-        Log.e(TAG, "Mediapipe error: ", e);
+        // Note: errors during Process are reported at the earliest opportunity,
+        // which may be addPacket or waitUntilDone, depending on timing. For consistency,
+        // we want to always report them using the same async handler if installed.
+        if (asyncErrorListener != null) {
+          asyncErrorListener.onError(e);
+        } else {
+          // TODO: do not suppress exceptions here!
+          Log.e(TAG, "Mediapipe error: ", e);
+        }
       }
+
       try {
         mediapipeGraph.tearDown();
       } catch (MediaPipeException e) {
@@ -300,35 +346,63 @@ public class FrameProcessor implements TextureFrameProcessor, AudioDataProcessor
   }
 
   @Override
-  public void onNewFrame(final TextureFrame frame) {
-    if (Log.isLoggable(TAG, Log.VERBOSE)) {
-      Log.v(
-          TAG,
-          String.format(
-              "Input tex: %d width: %d height: %d",
-              frame.getTextureName(), frame.getWidth(), frame.getHeight()));
-    }
-
-    if (!maybeAcceptNewFrame()) {
-      frame.release();
-      return;
-    }
-
-    if (addFrameListener != null) {
-      addFrameListener.onWillAddFrame(frame.getTimestamp());
-    }
-
-    Packet imagePacket = packetCreator.createGpuBuffer(frame);
-
+  public void onNewFrame(TextureFrame frame) {
+    Packet imagePacket = null;
+    long timestamp = frame.getTimestamp();
     try {
-      // addConsumablePacketToInputStream allows the graph to take exclusive ownership of the
-      // packet, which may allow for more memory optimizations.
-      mediapipeGraph.addConsumablePacketToInputStream(
-          videoInputStream, imagePacket, frame.getTimestamp());
-    } catch (MediaPipeException e) {
-      Log.e(TAG, "Mediapipe error: ", e);
+      if (Log.isLoggable(TAG, Log.VERBOSE)) {
+        Log.v(
+            TAG,
+            String.format(
+                "Input tex: %d width: %d height: %d",
+                frame.getTextureName(), frame.getWidth(), frame.getHeight()));
+      }
+
+      if (!maybeAcceptNewFrame()) {
+        return;
+      }
+
+      if (addFrameListener != null) {
+        addFrameListener.onWillAddFrame(timestamp);
+      }
+
+      imagePacket = packetCreator.createGpuBuffer(frame);
+      // imagePacket takes ownership of frame and will release it.
+      frame = null;
+
+      try {
+        // addConsumablePacketToInputStream allows the graph to take exclusive ownership of the
+        // packet, which may allow for more memory optimizations.
+        mediapipeGraph.addConsumablePacketToInputStream(
+            videoInputStream, imagePacket, timestamp);
+        // If addConsumablePacket succeeded, we don't need to release the packet ourselves.
+        imagePacket = null;
+      } catch (MediaPipeException e) {
+        // TODO: do not suppress exceptions here!
+        if (asyncErrorListener == null) {
+          Log.e(TAG, "Mediapipe error: ", e);
+        } else {
+          throw e;
+        }
+      }
+    } catch (RuntimeException e) {
+      if (asyncErrorListener != null) {
+        asyncErrorListener.onError(e);
+      } else {
+        throw e;
+      }
+    } finally {
+      if (imagePacket != null) {
+        // In case of error, addConsumablePacketToInputStream will not release the packet, so we
+        // have to release it ourselves. (We could also re-try adding, but we don't).
+        imagePacket.release();
+      }
+      if (frame != null) {
+        // imagePacket will release frame if it has been created, but if not, we need to
+        // release it.
+        frame.release();
+      }
     }
-    imagePacket.release();
   }
 
   /**
@@ -338,31 +412,54 @@ public class FrameProcessor implements TextureFrameProcessor, AudioDataProcessor
    * instance of FrameProcessor should only ever use this or the other variant for onNewFrame().
    */
   public void onNewFrame(final Bitmap bitmap, long timestamp) {
-    if (!maybeAcceptNewFrame()) {
-      return;
-    }
-
-    if (!hybridPath && addFrameListener != null) {
-      addFrameListener.onWillAddFrame(timestamp);
-    }
-
-    Packet packet = getPacketCreator().createRgbImageFrame(bitmap);
-
+    Packet packet = null;
     try {
-      // addConsumablePacketToInputStream allows the graph to take exclusive ownership of the
-      // packet, which may allow for more memory optimizations.
-      mediapipeGraph.addConsumablePacketToInputStream(videoInputStreamCpu, packet, timestamp);
-    } catch (MediaPipeException e) {
-      Log.e(TAG, "Mediapipe error: ", e);
+      if (!maybeAcceptNewFrame()) {
+        return;
+      }
+
+      if (addFrameListener != null) {
+        addFrameListener.onWillAddFrame(timestamp);
+      }
+
+      packet = getPacketCreator().createRgbImageFrame(bitmap);
+
+      try {
+        // addConsumablePacketToInputStream allows the graph to take exclusive ownership of the
+        // packet, which may allow for more memory optimizations.
+        mediapipeGraph.addConsumablePacketToInputStream(videoInputStreamCpu, packet, timestamp);
+        packet = null;
+      } catch (MediaPipeException e) {
+        // TODO: do not suppress exceptions here!
+        if (asyncErrorListener == null) {
+          Log.e(TAG, "Mediapipe error: ", e);
+        } else {
+          throw e;
+        }
+      }
+    } catch (RuntimeException e) {
+      if (asyncErrorListener != null) {
+        asyncErrorListener.onError(e);
+      } else {
+        throw e;
+      }
+    } finally {
+      if (packet != null) {
+        packet.release();
+      }
     }
-    packet.release();
   }
 
   public void waitUntilIdle() {
     try {
       mediapipeGraph.waitUntilGraphIdle();
     } catch (MediaPipeException e) {
-      Log.e(TAG, "Mediapipe error: ", e);
+      if (asyncErrorListener != null) {
+        asyncErrorListener.onError(e);
+      } else {
+        // TODO: do not suppress exceptions here!
+        Log.e(TAG, "Mediapipe error: ", e);
+      }
     }
   }
 
@@ -375,26 +472,50 @@ public class FrameProcessor implements TextureFrameProcessor, AudioDataProcessor
   }
 
   @Override
-  public void onNewAudioData(byte[] audioData, long timestampMicros, AudioFormat audioFormat) {
-    if (audioFormat.getChannelCount() != numAudioChannels
-        || audioFormat.getSampleRate() != audioSampleRate) {
-      Log.e(TAG, "Producer's AudioFormat doesn't match FrameProcessor's AudioFormat");
-      return;
-    }
-    Preconditions.checkNotNull(audioInputStream);
-
-    int numSamples = audioData.length / BYTES_PER_MONO_SAMPLE / numAudioChannels;
-    byte[] data = audioData;
-    Packet audioPacket = packetCreator.createAudioPacket(data, numAudioChannels, numSamples);
+  public void onNewAudioData(ByteBuffer audioData, long timestampMicros, AudioFormat audioFormat) {
+    Packet audioPacket = null;
     try {
-      // addConsumablePacketToInputStream allows the graph to take exclusive ownership of the
-      // packet, which may allow for more memory optimizations.
-      mediapipeGraph.addConsumablePacketToInputStream(
-          audioInputStream, audioPacket, timestampMicros);
-    } catch (MediaPipeException e) {
-      Log.e(TAG, "Mediapipe error: ", e);
+      if (!started.getAndSet(true)) {
+        startGraph();
+      }
+
+      if (audioFormat.getChannelCount() != numAudioChannels
+          || audioFormat.getSampleRate() != audioSampleRate
+          || audioFormat.getEncoding() != AUDIO_ENCODING) {
+        Log.e(TAG, "Producer's AudioFormat doesn't match FrameProcessor's AudioFormat");
+        return;
+      }
+      Preconditions.checkNotNull(audioInputStream);
+
+      int numSamples = audioData.limit() / BYTES_PER_MONO_SAMPLE / numAudioChannels;
+      audioPacket = packetCreator.createAudioPacket(audioData, numAudioChannels, numSamples);
+      try {
+        // addConsumablePacketToInputStream allows the graph to take exclusive ownership of the
+        // packet, which may allow for more memory optimizations.
+        mediapipeGraph.addConsumablePacketToInputStream(
+            audioInputStream, audioPacket, timestampMicros);
+        audioPacket = null;
+      } catch (MediaPipeException e) {
+        // TODO: do not suppress exceptions here!
+        if (asyncErrorListener == null) {
+          Log.e(TAG, "Mediapipe error: ", e);
+        } else {
+          throw e;
+        }
+      }
+    } catch (RuntimeException e) {
+      if (asyncErrorListener != null) {
+        asyncErrorListener.onError(e);
+      } else {
+        throw e;
+      }
+    } finally {
+      if (audioPacket != null) {
+        // In case of error, addConsumablePacketToInputStream will not release the packet, so we
+        // have to release it ourselves. (We could also re-try adding, but we don't).
+        audioPacket.release();
+      }
     }
-    audioPacket.release();
   }
 
   public void addAudioConsumer(AudioDataConsumer consumer) {

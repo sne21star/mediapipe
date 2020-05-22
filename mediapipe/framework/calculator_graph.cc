@@ -127,7 +127,13 @@ CalculatorGraph::CalculatorGraph(const CalculatorGraphConfig& config)
 // Defining the destructor here lets us use incomplete types in the header;
 // they only need to be fully visible here, where their destructor is
 // instantiated.
-CalculatorGraph::~CalculatorGraph() {}
+CalculatorGraph::~CalculatorGraph() {
+  // Stop periodic profiler output to ublock Executor destructors.
+  ::mediapipe::Status status = profiler()->Stop();
+  if (!status.ok()) {
+    LOG(ERROR) << "During graph destruction: " << status;
+  }
+}
 
 ::mediapipe::Status CalculatorGraph::InitializePacketGeneratorGraph(
     const std::map<std::string, Packet>& side_packets) {
@@ -314,7 +320,7 @@ CalculatorGraph::~CalculatorGraph() {}
   }
 
   if (!::mediapipe::ContainsKey(executors_, "")) {
-    MP_RETURN_IF_ERROR(InitializeDefaultExecutor(*default_executor_options,
+    MP_RETURN_IF_ERROR(InitializeDefaultExecutor(default_executor_options,
                                                  use_application_thread));
   }
 
@@ -322,7 +328,7 @@ CalculatorGraph::~CalculatorGraph() {}
 }
 
 ::mediapipe::Status CalculatorGraph::InitializeDefaultExecutor(
-    const ThreadPoolExecutorOptions& default_executor_options,
+    const ThreadPoolExecutorOptions* default_executor_options,
     bool use_application_thread) {
   // If specified, run synchronously on the calling thread.
   if (use_application_thread) {
@@ -335,7 +341,9 @@ CalculatorGraph::~CalculatorGraph() {}
   }
 
   // Check the number of threads specified in the proto.
-  int num_threads = default_executor_options.num_threads();
+  int num_threads = default_executor_options == nullptr
+                        ? 0
+                        : default_executor_options->num_threads();
 
   // If the default (0 or -1) was specified, pick a suitable number of threads
   // depending on the number of processors in this system and the number of
@@ -1209,12 +1217,14 @@ Packet CalculatorGraph::GetServicePacket(const GraphServiceBase& service) {
 }
 
 ::mediapipe::Status CalculatorGraph::CreateDefaultThreadPool(
-    const ThreadPoolExecutorOptions& default_executor_options,
+    const ThreadPoolExecutorOptions* default_executor_options,
     int num_threads) {
   MediaPipeOptions extendable_options;
   ThreadPoolExecutorOptions* options =
       extendable_options.MutableExtension(ThreadPoolExecutorOptions::ext);
-  *options = default_executor_options;
+  if (default_executor_options != nullptr) {
+    options->CopyFrom(*default_executor_options);
+  }
   options->set_num_threads(num_threads);
   // clang-format off
   ASSIGN_OR_RETURN(Executor* executor,
@@ -1295,7 +1305,7 @@ void PrintTimingToInfo(const std::string& label, int64 timer_value) {
                    "%02lld days, %02lld:%02lld:%02lld.%03lld (total seconds: "
                    "%lld.%06lld)",
                    days, hours, minutes, seconds, milliseconds, total_seconds,
-                   timer_value % 1000000ll);
+                   timer_value % int64{1000000});
 }
 
 bool MetricElementComparator(const std::pair<std::string, int64>& e1,
