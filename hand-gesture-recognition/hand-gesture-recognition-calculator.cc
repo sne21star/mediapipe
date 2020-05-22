@@ -238,10 +238,10 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
                }
           }
     }
-        //std::string letters =  {'G', 'V', 'Y', 'A', 'E', 'L', 'R', 'W', 'Q', 'T', 'I', 'P', 'H', 'F', 'O', 'U', 'M', 'B', 'N', 'D', 'K', 'X', 'S', 'C', 'Z'};
+       // std::string letters =  {'G', 'V', 'Y', 'A', 'E', 'L', 'R', 'W', 'Q', 'T', 'I', 'P', 'H', 'F', 'O', 'U', 'M', 'B', 'N', 'D', 'K', 'X', 'S', 'C', 'Z'};
         std::string letters  =  {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 
-            if (maxprob > 0.2)
+            if (maxprob > 0.3)
             {
                 ASL_Word = letters[maxindex];
             }

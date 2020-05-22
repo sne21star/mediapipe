@@ -73,7 +73,7 @@ objc_library(
         ":model",
         "//mediapipe/graphs/hand_tracking:hand_tracking_mobile_gpu_binary_graph",
         "//mediapipe/models:palm_detection.tflite",
-	"//mediapipe/models:model.tflite",
+	    "//mediapipe/models:model_targeted_a.tflite",
         "//mediapipe/models:palm_detection_labelmap.txt",
     ],
     sdk_frameworks = [

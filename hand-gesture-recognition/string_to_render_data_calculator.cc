@@ -24,8 +24,8 @@ namespace {
 
 constexpr char kTextTag[] = "TEXT";
 constexpr char kRenderDataTag[] = "RENDER_DATA";
-constexpr double kTextLineXPos = 0.55;
-constexpr double kTextLineHeight = 0.5;
+constexpr double kTextLineXPos = 0.055;
+constexpr double kTextLineHeight = 0.05;
 constexpr double kTextFontHeight = 0.05;
 
 }  // namespace

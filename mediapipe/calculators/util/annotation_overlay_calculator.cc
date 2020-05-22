@@ -459,8 +459,9 @@ REGISTER_CALCULATOR(AnnotationOverlayCalculator);
       for (int i = 0; i < input_frame.PixelDataSize(); i++) {
         const auto& pix = input_frame.PixelData()[i];
         for (int c = 0; c < target_num_channels; c++) {
-          image_mat->data[i * target_num_channels + c] = pix;
+          image_mat->data[i * target_num_channels + c] = pix; 
         }
+
       }
     } else {
       // Make of a copy since the input frame may be consumed by other nodes.
