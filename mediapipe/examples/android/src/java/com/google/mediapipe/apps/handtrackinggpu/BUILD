@@ -36,17 +36,14 @@ android_binary(
     name = "handtrackinggpu",
     srcs = glob(["*.java"]),
     assets = [
-<<<<<<< HEAD
         ":binary_graph",
         ":model",
         "//mediapipe/models:model.tflite",
          "//mediapipe/models:model_targeted_a.tflite",
         "//mediapipe/models:model_targeted_b.tflite",
-=======
         "//mediapipe/graphs/hand_tracking:hand_tracking_mobile_gpu.binarypb",
         "//mediapipe/models:handedness.txt",
         "//mediapipe/models:hand_landmark.tflite",
->>>>>>> upstream/master
         "//mediapipe/models:palm_detection.tflite",
         "//mediapipe/models:palm_detection_labelmap.txt",
     ],

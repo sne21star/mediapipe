@@ -88,11 +88,8 @@ mediapipe_simple_subgraph(
         "//mediapipe/calculators/util:landmarks_to_render_data_calculator",
         "//mediapipe/calculators/util:rect_transformation_calculator",
         "//mediapipe/calculators/util:thresholding_calculator",
-<<<<<<< HEAD
         "//hand-gesture-recognition:hand-gesture-recognition-calculator",
-=======
         "//mediapipe/graphs/hand_tracking/calculators:hand_detections_to_rects_calculator",
->>>>>>> upstream/master
     ],
 )
 

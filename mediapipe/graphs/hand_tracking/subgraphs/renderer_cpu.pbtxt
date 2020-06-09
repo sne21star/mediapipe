@@ -133,10 +133,6 @@ node {
   input_stream: "landmark_render_data"
   input_stream: "handedness_render_data"
   input_stream: "rect_render_data"
-<<<<<<< HEAD
   input_stream: "text_render_data"
   output_stream: "OUTPUT_FRAME:output_image"
-=======
-  output_stream: "IMAGE:output_image"
->>>>>>> upstream/master
 }

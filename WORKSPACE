@@ -254,8 +254,6 @@ http_archive(
     strip_prefix = "google-toolbox-for-mac-2.2.1",
     build_file = "@//third_party:google_toolbox_for_mac.BUILD",
 )
-<<<<<<< HEAD
-=======
 
 # Maven dependencies.
 
@@ -337,4 +335,4 @@ http_archive(
 
 load("@org_tensorflow//tensorflow:workspace.bzl", "tf_workspace")
 tf_workspace(tf_repo_name = "org_tensorflow")
->>>>>>> upstream/master
+
