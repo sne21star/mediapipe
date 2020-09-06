@@ -23,7 +23,7 @@ MIN_IOS_VERSION = "10.0"
 
 ios_application(
     name = "MultiHandTrackingGpuApp",
-    bundle_id = "com.google.mediapipe.MultiHandTrackingGpu",
+    bundle_id = "edu.purdue.ecn.das",
     families = [
         "iphone",
         "ipad",
