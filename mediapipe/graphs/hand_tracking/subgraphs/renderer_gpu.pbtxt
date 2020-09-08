@@ -130,8 +130,7 @@ node {
   input_stream: "IMAGE_GPU:input_image"
   input_stream: "detection_render_data"
   input_stream: "landmark_render_data"
-  input_stream: "handedness_render_data"
   input_stream: "rect_render_data"
   input_stream: "text_render_data"
-  output_stream: "OUTPUT_FRAME_GPU:output_image"
+  output_stream: "IMAGE_GPU:output_image"
 }

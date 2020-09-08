@@ -56,6 +56,7 @@ objc_library(
         "//mediapipe/models:handedness.txt",
         "//mediapipe/models:palm_detection.tflite",
 	    "//mediapipe/models:model_targeted_a.tflite",
+        "//mediapipe/models:model_targeted_b.tflite",
         "//mediapipe/models:palm_detection_labelmap.txt",
     ],
     sdk_frameworks = [
