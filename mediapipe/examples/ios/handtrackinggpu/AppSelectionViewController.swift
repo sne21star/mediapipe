@@ -8,9 +8,10 @@
 import UIKit
 
 class AppSelectionViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Gif_Animals.loadGif(name: "Animal")
+        //Gif_Alphabet.loadGif(name: "Alphabet")
 
         // Do any additional setup after loading the view.
     }
