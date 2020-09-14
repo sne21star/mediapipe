@@ -1,0 +1,10 @@
+{
+  "optionSet" : {
+    "BazelPath" : {
+      "p" : "/usr/local/Cellar/bazel/3.2.0/bin/bazel"
+    },
+    "WorkspaceRootPath" : {
+      "p" : "/Users/snehamahapatra/Desktop/Spring2020/EPCS412/CNN_ASL/mediapipe/mediapipe"
+    }
+  }
+}

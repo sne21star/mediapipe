@@ -1,0 +1,3196 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E7441DD0046B07B00000000 /* trace_builder.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F970046B07B00000000 /* trace_builder.cc */; };
+		4E7441DD019A627500000000 /* clock.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97019A627500000000 /* clock.cc */; };
+		4E7441DD068B602200000000 /* MPPInputSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97068B602200000000 /* MPPInputSource.m */; };
+		4E7441DD06E1F2DB00000000 /* gl_calculator_helper_impl_ios.mm in Sources */ = {isa = PBXBuildFile; fileRef = E0707F9706E1F2DB00000000 /* gl_calculator_helper_impl_ios.mm */; };
+		4E7441DD06FAEB5A00000000 /* fill_packet_set.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F9706FAEB5A00000000 /* fill_packet_set.cc */; };
+		4E7441DD0781B76B00000000 /* sink.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F970781B76B00000000 /* sink.cc */; };
+		4E7441DD0C7EC44400000000 /* gl_context_eagl.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F970C7EC44400000000 /* gl_context_eagl.cc */; };
+		4E7441DD0F569F7800000000 /* calculator_context.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F970F569F7800000000 /* calculator_context.cc */; };
+		4E7441DD14AF5A0500000000 /* calculator_contract.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F9714AF5A0500000000 /* calculator_contract.cc */; };
+		4E7441DD1741551B00000000 /* ret_check.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F971741551B00000000 /* ret_check.cc */; };
+		4E7441DD1A8D678C00000000 /* MPPDisplayLinkWeakTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = E0707F971A8D678C00000000 /* MPPDisplayLinkWeakTarget.m */; };
+		4E7441DD1B03E02200000000 /* default_input_stream_handler.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F971B03E02200000000 /* default_input_stream_handler.cc */; };
+		4E7441DD1B3D549E00000000 /* registration.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F971B3D549E00000000 /* registration.cc */; };
+		4E7441DD1C203CE800000000 /* MPPGLViewRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = E0707F971C203CE800000000 /* MPPGLViewRenderer.mm */; };
+		4E7441DD1CD62F0A00000000 /* gl_calculator_helper_impl_common.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F971CD62F0A00000000 /* gl_calculator_helper_impl_common.cc */; };
+		4E7441DD2229F48900000000 /* thread_pool_executor.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F972229F48900000000 /* thread_pool_executor.cc */; };
+		4E7441DD2CC0855E00000000 /* subgraph.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F972CC0855E00000000 /* subgraph.cc */; };
+		4E7441DD2D4BF7B700000000 /* input_side_packet_handler.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F972D4BF7B700000000 /* input_side_packet_handler.cc */; };
+		4E7441DD2F85D0C400000000 /* MPPGraph.mm in Sources */ = {isa = PBXBuildFile; fileRef = E0707F972F85D0C400000000 /* MPPGraph.mm */; };
+		4E7441DD2FD8967000000000 /* subgraph_expansion.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F972FD8967000000000 /* subgraph_expansion.cc */; };
+		4E7441DD34A2A10800000000 /* in_order_output_stream_handler.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F9734A2A10800000000 /* in_order_output_stream_handler.cc */; };
+		4E7441DD34CF1B9A00000000 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0707F9734CF1B9A00000000 /* AppDelegate.m */; };
+		4E7441DD354C992500000000 /* monotonic_clock.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97354C992500000000 /* monotonic_clock.cc */; };
+		4E7441DD3B0678C900000000 /* NSError+util_status.mm in Sources */ = {isa = PBXBuildFile; fileRef = E0707F973B0678C900000000 /* NSError+util_status.mm */; };
+		4E7441DD3CE2D50400000000 /* scheduler_queue.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F973CE2D50400000000 /* scheduler_queue.cc */; };
+		4E7441DD3EC400B900000000 /* output_stream_shard.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F973EC400B900000000 /* output_stream_shard.cc */; };
+		4E7441DD3FF67A0700000000 /* packet_generator_graph.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F973FF67A0700000000 /* packet_generator_graph.cc */; };
+		4E7441DD4054F75D00000000 /* collection_item_id.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F974054F75D00000000 /* collection_item_id.cc */; };
+		4E7441DD4256AC7700000000 /* legacy_calculator_support.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F974256AC7700000000 /* legacy_calculator_support.cc */; };
+		4E7441DD427F97B700000000 /* registration_token.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97427F97B700000000 /* registration_token.cc */; };
+		4E7441DD475885A500000000 /* calculator_registry_util.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97475885A500000000 /* calculator_registry_util.cc */; };
+		4E7441DD4A56785100000000 /* calculator_base.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F974A56785100000000 /* calculator_base.cc */; };
+		4E7441DD567E731F00000000 /* profiler_resource_util_ios.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97567E731F00000000 /* profiler_resource_util_ios.cc */; };
+		4E7441DD56BF070900000000 /* image_frame.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F9756BF070900000000 /* image_frame.cc */; };
+		4E7441DD5C4291BC00000000 /* graph_output_stream.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F975C4291BC00000000 /* graph_output_stream.cc */; };
+		4E7441DD625C322800000000 /* callback_packet_calculator.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97625C322800000000 /* callback_packet_calculator.cc */; };
+		4E7441DD6597841900000000 /* gpu_buffer_multi_pool.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F976597841900000000 /* gpu_buffer_multi_pool.cc */; };
+		4E7441DD6922738900000000 /* input_stream_shard.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F976922738900000000 /* input_stream_shard.cc */; };
+		4E7441DD6BED0B1F00000000 /* name_util.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F976BED0B1F00000000 /* name_util.cc */; };
+		4E7441DD6C102BFC00000000 /* executor.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F976C102BFC00000000 /* executor.cc */; };
+		4E7441DD703D09CD00000000 /* MPPTimestampConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97703D09CD00000000 /* MPPTimestampConverter.mm */; };
+		4E7441DD71F5DE7D00000000 /* calculator_node.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F9771F5DE7D00000000 /* calculator_node.cc */; };
+		4E7441DD798C27D600000000 /* gl_context.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97798C27D600000000 /* gl_context.cc */; };
+		4E7441DD7EB9931B00000000 /* tag_map.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F977EB9931B00000000 /* tag_map.cc */; };
+		4E7441DD8464E59700000000 /* packet_type.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F978464E59700000000 /* packet_type.cc */; };
+		4E7441DD85B014BA00000000 /* MPPGraphGPUData.mm in Sources */ = {isa = PBXBuildFile; fileRef = E0707F9785B014BA00000000 /* MPPGraphGPUData.mm */; };
+		4E7441DD8A78CDA600000000 /* validate.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F978A78CDA600000000 /* validate.cc */; };
+		4E7441DD8B575A2E00000000 /* counter_factory.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F978B575A2E00000000 /* counter_factory.cc */; };
+		4E7441DD9BDD29CA00000000 /* pixel_buffer_pool_util.mm in Sources */ = {isa = PBXBuildFile; fileRef = E0707F979BDD29CA00000000 /* pixel_buffer_pool_util.mm */; };
+		4E7441DDA1D3740400000000 /* status_builder.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97A1D3740400000000 /* status_builder.cc */; };
+		4E7441DDA350D71E00000000 /* scheduler.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97A350D71E00000000 /* scheduler.cc */; };
+		4E7441DDA377762200000000 /* timestamp.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97A377762200000000 /* timestamp.cc */; };
+		4E7441DDA780E9A600000000 /* proto_util_lite.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97A780E9A600000000 /* proto_util_lite.cc */; };
+		4E7441DDA825CBED00000000 /* threadpool_pthread_impl.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97A825CBED00000000 /* threadpool_pthread_impl.cc */; };
+		4E7441DDA88889BD00000000 /* validate_name.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97A88889BD00000000 /* validate_name.cc */; };
+		4E7441DDAA662CB600000000 /* gpu_shared_data_internal.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97AA662CB600000000 /* gpu_shared_data_internal.cc */; };
+		4E7441DDAFA9D29200000000 /* output_side_packet_impl.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97AFA9D29200000000 /* output_side_packet_impl.cc */; };
+		4E7441DDAFE0472400000000 /* output_stream_manager.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97AFE0472400000000 /* output_stream_manager.cc */; };
+		4E7441DDB65F382800000000 /* gpu_service.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97B65F382800000000 /* gpu_service.cc */; };
+		4E7441DDBC55115300000000 /* util.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97BC55115300000000 /* util.cc */; };
+		4E7441DDBC737FC800000000 /* MPPPlayerInputSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97BC737FC800000000 /* MPPPlayerInputSource.m */; };
+		4E7441DDBDC3846200000000 /* gl_context_profiler.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97BDC3846200000000 /* gl_context_profiler.cc */; };
+		4E7441DDBFE67CC100000000 /* MPPCameraInputSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97BFE67CC100000000 /* MPPCameraInputSource.m */; };
+		4E7441DDC1B96B2300000000 /* gl_calculator_helper.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97C1B96B2300000000 /* gl_calculator_helper.cc */; };
+		4E7441DDC234CF5800000000 /* gl_simple_shaders.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97C234CF5800000000 /* gl_simple_shaders.cc */; };
+		4E7441DDC259A90B00000000 /* calculator_graph.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97C259A90B00000000 /* calculator_graph.cc */; };
+		4E7441DDC337C41400000000 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97C337C41400000000 /* ViewController.mm */; };
+		4E7441DDC404A47900000000 /* MPPLayerRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97C404A47900000000 /* MPPLayerRenderer.m */; };
+		4E7441DDC49AF4B600000000 /* output_stream_handler.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97C49AF4B600000000 /* output_stream_handler.cc */; };
+		4E7441DDC49B738A00000000 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97C49B738A00000000 /* main.m */; };
+		4E7441DDC7E682ED00000000 /* validated_graph_config.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97C7E682ED00000000 /* validated_graph_config.cc */; };
+		4E7441DDD1A2041300000000 /* status.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97D1A2041300000000 /* status.cc */; };
+		4E7441DDD1C480B500000000 /* calculator_state.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97D1C480B500000000 /* calculator_state.cc */; };
+		4E7441DDD1EAD15200000000 /* packet.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97D1EAD15200000000 /* packet.cc */; };
+		4E7441DDD4E7DCE500000000 /* cpu_util.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97D4E7DCE500000000 /* cpu_util.cc */; };
+		4E7441DDD51F4C6E00000000 /* template_expander.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97D51F4C6E00000000 /* template_expander.cc */; };
+		4E7441DDD6DFC88600000000 /* calculator_context_manager.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97D6DFC88600000000 /* calculator_context_manager.cc */; };
+		4E7441DDE14FA3D900000000 /* graph_tracer.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97E14FA3D900000000 /* graph_tracer.cc */; };
+		4E7441DDE2F9613F00000000 /* graph_profiler.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97E2F9613F00000000 /* graph_profiler.cc */; };
+		4E7441DDE33BB79900000000 /* topologicalsorter.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97E33BB79900000000 /* topologicalsorter.cc */; };
+		4E7441DDE3BBA65F00000000 /* gl_quad_renderer.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97E3BBA65F00000000 /* gl_quad_renderer.cc */; };
+		4E7441DDE91D081800000000 /* status_util.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97E91D081800000000 /* status_util.cc */; };
+		4E7441DDE9B132D700000000 /* shader_util.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97E9B132D700000000 /* shader_util.cc */; };
+		4E7441DDE9ED2E6200000000 /* gpu_buffer_format.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97E9ED2E6200000000 /* gpu_buffer_format.cc */; };
+		4E7441DDF17ED23500000000 /* input_stream_manager.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97F17ED23500000000 /* input_stream_manager.cc */; };
+		4E7441DDF36AAB3600000000 /* delegating_executor.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97F36AAB3600000000 /* delegating_executor.cc */; };
+		4E7441DDF8F8481400000000 /* statusor.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97F8F8481400000000 /* statusor.cc */; };
+		4E7441DDFC9C1C1900000000 /* input_stream_handler.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97FC9C1C1900000000 /* input_stream_handler.cc */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9931F9A0079A3DD500000000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2A6F216428F4B8400000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7E28F80079A3DD400000000;
+		};
+		9931F9A014AEDC1D00000000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2A6F216428F4B8400000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7E28F8014AEDC1C00000000;
+		};
+		9931F9A021397EF700000000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2A6F216428F4B8400000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7E28F8021397EF600000000;
+		};
+		9931F9A02A73AD2900000000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2A6F216428F4B8400000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 326DA36C2A73AD2800000000;
+		};
+		9931F9A0348F8CFD00000000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2A6F216428F4B8400000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7E28F80348F8CFC00000000;
+		};
+		9931F9A03E12974700000000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2A6F216428F4B8400000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7E28F803E12974600000000;
+		};
+		9931F9A053810A2300000000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2A6F216428F4B8400000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7E28F8053810A2200000000;
+		};
+		9931F9A056F7330700000000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2A6F216428F4B8400000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7E28F8056F7330600000000;
+		};
+		9931F9A05CD9973F00000000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2A6F216428F4B8400000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7E28F805CD9973E00000000;
+		};
+		9931F9A0947DCA2100000000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2A6F216428F4B8400000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7E28F80947DCA2000000000;
+		};
+		9931F9A0A696441900000000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2A6F216428F4B8400000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7E28F80A696441800000000;
+		};
+		9931F9A0A86909CB00000000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2A6F216428F4B8400000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7E28F80A86909CA00000000;
+		};
+		9931F9A0BB46C4E300000000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2A6F216428F4B8400000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7E28F80BB46C4E200000000;
+		};
+		9931F9A0E0F3415F00000000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2A6F216428F4B8400000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7E28F80E0F3415E00000000;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E0707F970046B07B00000000 /* trace_builder.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = trace_builder.cc; path = mediapipe/framework/profiler/trace_builder.cc; sourceTree = "<group>"; };
+		E0707F97019A627500000000 /* clock.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = clock.cc; path = mediapipe/framework/deps/clock.cc; sourceTree = "<group>"; };
+		E0707F9701EE93C100000000 /* calculator_framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = calculator_framework.h; path = mediapipe/framework/calculator_framework.h; sourceTree = "<group>"; };
+		E0707F970346EBBF00000000 /* hand_landmark.tflite */ = {isa = PBXFileReference; lastKnownFileType = dyn.age81k3xqrf4gn; name = hand_landmark.tflite; path = mediapipe/models/hand_landmark.tflite; sourceTree = "<group>"; };
+		E0707F970478000B00000000 /* numbers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = numbers.h; path = mediapipe/framework/deps/numbers.h; sourceTree = "<group>"; };
+		E0707F97047B827500000000 /* packet_generator_graph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = packet_generator_graph.h; path = mediapipe/framework/packet_generator_graph.h; sourceTree = "<group>"; };
+		E0707F9705E83A6A00000000 /* HandTrackingGpuApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = HandTrackingGpuApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0707F97068B602200000000 /* MPPInputSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MPPInputSource.m; path = mediapipe/objc/MPPInputSource.m; sourceTree = "<group>"; };
+		E0707F9706E1F2DB00000000 /* gl_calculator_helper_impl_ios.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = gl_calculator_helper_impl_ios.mm; path = mediapipe/gpu/gl_calculator_helper_impl_ios.mm; sourceTree = "<group>"; };
+		E0707F9706FAEB5A00000000 /* fill_packet_set.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = fill_packet_set.cc; path = mediapipe/framework/tool/fill_packet_set.cc; sourceTree = "<group>"; };
+		E0707F970714DF1200000000 /* shader_util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = shader_util.h; path = mediapipe/gpu/shader_util.h; sourceTree = "<group>"; };
+		E0707F970781B76B00000000 /* sink.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = sink.cc; path = mediapipe/framework/tool/sink.cc; sourceTree = "<group>"; };
+		E0707F970790CDE000000000 /* strong_int.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = strong_int.h; path = mediapipe/framework/deps/strong_int.h; sourceTree = "<group>"; };
+		E0707F970ABED9EF00000000 /* gpu_buffer_multi_pool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gpu_buffer_multi_pool.h; path = mediapipe/gpu/gpu_buffer_multi_pool.h; sourceTree = "<group>"; };
+		E0707F970C6157AB00000000 /* status.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = status.h; path = mediapipe/framework/deps/status.h; sourceTree = "<group>"; };
+		E0707F970C7EC44400000000 /* gl_context_eagl.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = gl_context_eagl.cc; path = mediapipe/gpu/gl_context_eagl.cc; sourceTree = "<group>"; };
+		E0707F970CC269D600000000 /* subgraph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = subgraph.h; path = mediapipe/framework/subgraph.h; sourceTree = "<group>"; };
+		E0707F970F569F7800000000 /* calculator_context.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = calculator_context.cc; path = mediapipe/framework/calculator_context.cc; sourceTree = "<group>"; };
+		E0707F970F60C01600000000 /* lib_idx_mediapipe_layer_renderer_gl_calculator_helper_ios_mediapipe_framework_ios_mediapipe_gl_view_renderer_DFF84B5D_ios_min10.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = lib_idx_mediapipe_layer_renderer_gl_calculator_helper_ios_mediapipe_framework_ios_mediapipe_gl_view_renderer_DFF84B5D_ios_min10.0.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0707F9711A3713E00000000 /* lib_idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = lib_idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10.0.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0707F9712B2943700000000 /* threadpool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = threadpool.h; path = mediapipe/framework/deps/threadpool.h; sourceTree = "<group>"; };
+		E0707F9712ED401600000000 /* timestamp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = timestamp.h; path = mediapipe/framework/timestamp.h; sourceTree = "<group>"; };
+		E0707F9714AF5A0500000000 /* calculator_contract.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = calculator_contract.cc; path = mediapipe/framework/calculator_contract.cc; sourceTree = "<group>"; };
+		E0707F9714E747F400000000 /* lib_idx_registration_token_gpu_service_20AEE6FB_ios_min10.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = lib_idx_registration_token_gpu_service_20AEE6FB_ios_min10.0.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0707F9715DAAB6600000000 /* platform_specific_profiling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = platform_specific_profiling.h; path = mediapipe/framework/platform_specific_profiling.h; sourceTree = "<group>"; };
+		E0707F9716CD2C9200000000 /* advanced_proto_lite_inc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = advanced_proto_lite_inc.h; path = mediapipe/framework/port/advanced_proto_lite_inc.h; sourceTree = "<group>"; };
+		E0707F971741551B00000000 /* ret_check.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ret_check.cc; path = mediapipe/framework/deps/ret_check.cc; sourceTree = "<group>"; };
+		E0707F971893340500000000 /* input_stream_handler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = input_stream_handler.h; path = mediapipe/framework/input_stream_handler.h; sourceTree = "<group>"; };
+		E0707F971A0D57E000000000 /* tag_map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tag_map.h; path = mediapipe/framework/tool/tag_map.h; sourceTree = "<group>"; };
+		E0707F971A8D678C00000000 /* MPPDisplayLinkWeakTarget.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MPPDisplayLinkWeakTarget.m; path = mediapipe/objc/MPPDisplayLinkWeakTarget.m; sourceTree = "<group>"; };
+		E0707F971AD63D1A00000000 /* input_stream_shard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = input_stream_shard.h; path = mediapipe/framework/input_stream_shard.h; sourceTree = "<group>"; };
+		E0707F971B03E02200000000 /* default_input_stream_handler.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = default_input_stream_handler.cc; path = mediapipe/framework/stream_handler/default_input_stream_handler.cc; sourceTree = "<group>"; };
+		E0707F971B3D549E00000000 /* registration.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = registration.cc; path = mediapipe/framework/deps/registration.cc; sourceTree = "<group>"; };
+		E0707F971BA6D0FE00000000 /* lib_idx_output_stream_manager_calculator_node_default_input_stream_handler_graph_output_stream_in_order_output_stream_handler_input_stream_handler_output_stream_handler_997A2E1C_ios_min10.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = lib_idx_output_stream_manager_calculator_node_default_input_stream_handler_graph_output_stream_in_order_output_stream_handler_input_stream_handler_output_stream_handler_997A2E1C_ios_min10.0.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0707F971C203CE800000000 /* MPPGLViewRenderer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = MPPGLViewRenderer.mm; path = mediapipe/objc/MPPGLViewRenderer.mm; sourceTree = "<group>"; };
+		E0707F971CD62F0A00000000 /* gl_calculator_helper_impl_common.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = gl_calculator_helper_impl_common.cc; path = mediapipe/gpu/gl_calculator_helper_impl_common.cc; sourceTree = "<group>"; };
+		E0707F971FF628EC00000000 /* BUILD */ = {isa = PBXFileReference; lastKnownFileType = text; name = BUILD; path = "tulsi-workspace//BUILD"; sourceTree = "<group>"; };
+		E0707F972041B2C800000000 /* in_order_output_stream_handler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = in_order_output_stream_handler.h; path = mediapipe/framework/stream_handler/in_order_output_stream_handler.h; sourceTree = "<group>"; };
+		E0707F972110775E00000000 /* core_proto_inc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = core_proto_inc.h; path = mediapipe/framework/port/core_proto_inc.h; sourceTree = "<group>"; };
+		E0707F972169CFF600000000 /* clock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = clock.h; path = mediapipe/framework/deps/clock.h; sourceTree = "<group>"; };
+		E0707F972229F48900000000 /* thread_pool_executor.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = thread_pool_executor.cc; path = mediapipe/framework/thread_pool_executor.cc; sourceTree = "<group>"; };
+		E0707F972256552F00000000 /* map_util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = map_util.h; path = mediapipe/framework/port/map_util.h; sourceTree = "<group>"; };
+		E0707F97237A3D4300000000 /* BUILD */ = {isa = PBXFileReference; lastKnownFileType = text; name = BUILD; path = mediapipe/gpu/BUILD; sourceTree = "<group>"; };
+		E0707F9723FC04FA00000000 /* BUILD */ = {isa = PBXFileReference; lastKnownFileType = text; name = BUILD; path = mediapipe/framework/profiler/BUILD; sourceTree = "<group>"; };
+		E0707F972500A59100000000 /* status_builder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = status_builder.h; path = mediapipe/framework/deps/status_builder.h; sourceTree = "<group>"; };
+		E0707F97259AB1AB00000000 /* BUILD */ = {isa = PBXFileReference; lastKnownFileType = text; name = BUILD; path = mediapipe/framework/stream_handler/BUILD; sourceTree = "<group>"; };
+		E0707F972A2A391200000000 /* calculator_context.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = calculator_context.h; path = mediapipe/framework/calculator_context.h; sourceTree = "<group>"; };
+		E0707F972AD5949400000000 /* palm_detection_labelmap.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = palm_detection_labelmap.txt; path = mediapipe/models/palm_detection_labelmap.txt; sourceTree = "<group>"; };
+		E0707F972C23D5D900000000 /* packet_type.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = packet_type.h; path = mediapipe/framework/packet_type.h; sourceTree = "<group>"; };
+		E0707F972CC0855E00000000 /* subgraph.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = subgraph.cc; path = mediapipe/framework/subgraph.cc; sourceTree = "<group>"; };
+		E0707F972D4BF7B700000000 /* input_side_packet_handler.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = input_side_packet_handler.cc; path = mediapipe/framework/input_side_packet_handler.cc; sourceTree = "<group>"; };
+		E0707F972F85D0C400000000 /* MPPGraph.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = MPPGraph.mm; path = mediapipe/objc/MPPGraph.mm; sourceTree = "<group>"; };
+		E0707F972FD8967000000000 /* subgraph_expansion.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = subgraph_expansion.cc; path = mediapipe/framework/tool/subgraph_expansion.cc; sourceTree = "<group>"; };
+		E0707F973039C01600000000 /* calculator_node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = calculator_node.h; path = mediapipe/framework/calculator_node.h; sourceTree = "<group>"; };
+		E0707F9730AA945A00000000 /* gl_context.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gl_context.h; path = mediapipe/gpu/gl_context.h; sourceTree = "<group>"; };
+		E0707F9732C3E21400000000 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = mediapipe/examples/ios/handtrackinggpu/ViewController.h; sourceTree = "<group>"; };
+		E0707F9734A2A10800000000 /* in_order_output_stream_handler.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = in_order_output_stream_handler.cc; path = mediapipe/framework/stream_handler/in_order_output_stream_handler.cc; sourceTree = "<group>"; };
+		E0707F9734B487D800000000 /* scheduler_queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = scheduler_queue.h; path = mediapipe/framework/scheduler_queue.h; sourceTree = "<group>"; };
+		E0707F9734CF1B9A00000000 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = mediapipe/examples/ios/handtrackinggpu/AppDelegate.m; sourceTree = "<group>"; };
+		E0707F97352185BD00000000 /* counter_factory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = counter_factory.h; path = mediapipe/framework/counter_factory.h; sourceTree = "<group>"; };
+		E0707F97354C992500000000 /* monotonic_clock.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = monotonic_clock.cc; path = mediapipe/framework/deps/monotonic_clock.cc; sourceTree = "<group>"; };
+		E0707F97378F2A5100000000 /* output_side_packet_impl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = output_side_packet_impl.h; path = mediapipe/framework/output_side_packet_impl.h; sourceTree = "<group>"; };
+		E0707F9739132F5C00000000 /* lib_idx_profiler_resource_util_9FE97AC4_ios_min10.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = lib_idx_profiler_resource_util_9FE97AC4_ios_min10.0.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0707F9739997ECF00000000 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text; name = Base; path = mediapipe/examples/ios/handtrackinggpu/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E0707F973A6A394500000000 /* status_macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = status_macros.h; path = mediapipe/framework/deps/status_macros.h; sourceTree = "<group>"; };
+		E0707F973B0678C900000000 /* NSError+util_status.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "NSError+util_status.mm"; path = "mediapipe/objc/NSError+util_status.mm"; sourceTree = "<group>"; };
+		E0707F973CE2D50400000000 /* scheduler_queue.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = scheduler_queue.cc; path = mediapipe/framework/scheduler_queue.cc; sourceTree = "<group>"; };
+		E0707F973D56116700000000 /* gpu_buffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gpu_buffer.h; path = mediapipe/gpu/gpu_buffer.h; sourceTree = "<group>"; };
+		E0707F973EC400B900000000 /* output_stream_shard.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = output_stream_shard.cc; path = mediapipe/framework/output_stream_shard.cc; sourceTree = "<group>"; };
+		E0707F973FF67A0700000000 /* packet_generator_graph.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = packet_generator_graph.cc; path = mediapipe/framework/packet_generator_graph.cc; sourceTree = "<group>"; };
+		E0707F97400C956700000000 /* aligned_malloc_and_free.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = aligned_malloc_and_free.h; path = mediapipe/framework/port/aligned_malloc_and_free.h; sourceTree = "<group>"; };
+		E0707F97401A3A0100000000 /* BUILD */ = {isa = PBXFileReference; lastKnownFileType = text; name = BUILD; path = mediapipe/examples/ios/BUILD; sourceTree = "<group>"; };
+		E0707F974054F75D00000000 /* collection_item_id.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = collection_item_id.cc; path = mediapipe/framework/collection_item_id.cc; sourceTree = "<group>"; };
+		E0707F97409A266E00000000 /* graph_profiler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = graph_profiler.h; path = mediapipe/framework/profiler/graph_profiler.h; sourceTree = "<group>"; };
+		E0707F97418FD32300000000 /* thread_options.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = thread_options.h; path = mediapipe/framework/deps/thread_options.h; sourceTree = "<group>"; };
+		E0707F9741ED36C400000000 /* status_builder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = status_builder.h; path = mediapipe/framework/port/status_builder.h; sourceTree = "<group>"; };
+		E0707F974256AC7700000000 /* legacy_calculator_support.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = legacy_calculator_support.cc; path = mediapipe/framework/legacy_calculator_support.cc; sourceTree = "<group>"; };
+		E0707F97427F97B700000000 /* registration_token.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = registration_token.cc; path = mediapipe/framework/deps/registration_token.cc; sourceTree = "<group>"; };
+		E0707F9746DCF0B900000000 /* gl_quad_renderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gl_quad_renderer.h; path = mediapipe/gpu/gl_quad_renderer.h; sourceTree = "<group>"; };
+		E0707F97475885A500000000 /* calculator_registry_util.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = calculator_registry_util.cc; path = mediapipe/framework/calculator_registry_util.cc; sourceTree = "<group>"; };
+		E0707F97478AC16900000000 /* topologicalsorter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = topologicalsorter.h; path = mediapipe/framework/deps/topologicalsorter.h; sourceTree = "<group>"; };
+		E0707F9748CD17DC00000000 /* proto_ns.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = proto_ns.h; path = mediapipe/framework/port/proto_ns.h; sourceTree = "<group>"; };
+		E0707F9749B11EBF00000000 /* no_destructor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = no_destructor.h; path = mediapipe/framework/deps/no_destructor.h; sourceTree = "<group>"; };
+		E0707F974A2F720400000000 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text; name = Base; path = mediapipe/examples/ios/handtrackinggpu/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E0707F974A56785100000000 /* calculator_base.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = calculator_base.cc; path = mediapipe/framework/calculator_base.cc; sourceTree = "<group>"; };
+		E0707F974F63741C00000000 /* status.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = status.h; path = mediapipe/framework/port/status.h; sourceTree = "<group>"; };
+		E0707F97501D9E5A00000000 /* port.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = port.h; path = mediapipe/framework/port/port.h; sourceTree = "<group>"; };
+		E0707F975055B31B00000000 /* source_location.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = source_location.h; path = mediapipe/framework/port/source_location.h; sourceTree = "<group>"; };
+		E0707F9750D3218000000000 /* executor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = executor.h; path = mediapipe/framework/executor.h; sourceTree = "<group>"; };
+		E0707F975194F87A00000000 /* MPPCameraInputSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MPPCameraInputSource.h; path = mediapipe/objc/MPPCameraInputSource.h; sourceTree = "<group>"; };
+		E0707F9751D3690B00000000 /* output_stream_manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = output_stream_manager.h; path = mediapipe/framework/output_stream_manager.h; sourceTree = "<group>"; };
+		E0707F97567E731F00000000 /* profiler_resource_util_ios.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = profiler_resource_util_ios.cc; path = mediapipe/framework/profiler/profiler_resource_util_ios.cc; sourceTree = "<group>"; };
+		E0707F9756BF070900000000 /* image_frame.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = image_frame.cc; path = mediapipe/framework/formats/image_frame.cc; sourceTree = "<group>"; };
+		E0707F97571E9A8F00000000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = mediapipe/examples/ios/handtrackinggpu/Info.plist; sourceTree = "<group>"; };
+		E0707F9758260E2800000000 /* BUILD */ = {isa = PBXFileReference; lastKnownFileType = text; name = BUILD; path = mediapipe/objc/BUILD; sourceTree = "<group>"; };
+		E0707F975976921700000000 /* source_location.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = source_location.h; path = mediapipe/framework/deps/source_location.h; sourceTree = "<group>"; };
+		E0707F975A3229BC00000000 /* statusor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = statusor.h; path = mediapipe/framework/deps/statusor.h; sourceTree = "<group>"; };
+		E0707F975C2705BE00000000 /* demangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = demangle.h; path = mediapipe/framework/demangle.h; sourceTree = "<group>"; };
+		E0707F975C4291BC00000000 /* graph_output_stream.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = graph_output_stream.cc; path = mediapipe/framework/graph_output_stream.cc; sourceTree = "<group>"; };
+		E0707F975D2C01C800000000 /* lib_idx_scheduler_queue_00D9FD43_ios_min10.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = lib_idx_scheduler_queue_00D9FD43_ios_min10.0.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0707F976024EA3800000000 /* mediapipe_profiling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mediapipe_profiling.h; path = mediapipe/framework/mediapipe_profiling.h; sourceTree = "<group>"; };
+		E0707F97625C322800000000 /* callback_packet_calculator.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = callback_packet_calculator.cc; path = mediapipe/calculators/internal/callback_packet_calculator.cc; sourceTree = "<group>"; };
+		E0707F976463BE5800000000 /* validate_name.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = validate_name.h; path = mediapipe/framework/tool/validate_name.h; sourceTree = "<group>"; };
+		E0707F9764A1AEB500000000 /* MPPGraph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MPPGraph.h; path = mediapipe/objc/MPPGraph.h; sourceTree = "<group>"; };
+		E0707F976597841900000000 /* gpu_buffer_multi_pool.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = gpu_buffer_multi_pool.cc; path = mediapipe/gpu/gpu_buffer_multi_pool.cc; sourceTree = "<group>"; };
+		E0707F9766EDBDC600000000 /* BUILD */ = {isa = PBXFileReference; lastKnownFileType = text; name = BUILD; path = tulsi/BUILD; sourceTree = "<group>"; };
+		E0707F97684855B300000000 /* MPPGLViewRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MPPGLViewRenderer.h; path = mediapipe/objc/MPPGLViewRenderer.h; sourceTree = "<group>"; };
+		E0707F9768523AD700000000 /* model_targeted_a.tflite */ = {isa = PBXFileReference; lastKnownFileType = dyn.age81k3xqrf4gn; name = model_targeted_a.tflite; path = mediapipe/models/model_targeted_a.tflite; sourceTree = "<group>"; };
+		E0707F976910179400000000 /* lib_idx_shader_util_gl_quad_renderer_gpu_buffer_format_84BF7823_ios_min10.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = lib_idx_shader_util_gl_quad_renderer_gpu_buffer_format_84BF7823_ios_min10.0.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0707F976922738900000000 /* input_stream_shard.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = input_stream_shard.cc; path = mediapipe/framework/input_stream_shard.cc; sourceTree = "<group>"; };
+		E0707F976B87A17800000000 /* subgraph_expansion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = subgraph_expansion.h; path = mediapipe/framework/tool/subgraph_expansion.h; sourceTree = "<group>"; };
+		E0707F976BED0B1F00000000 /* name_util.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = name_util.cc; path = mediapipe/framework/tool/name_util.cc; sourceTree = "<group>"; };
+		E0707F976C102BFC00000000 /* executor.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = executor.cc; path = mediapipe/framework/executor.cc; sourceTree = "<group>"; };
+		E0707F976CD5370900000000 /* legacy_calculator_support.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = legacy_calculator_support.h; path = mediapipe/framework/legacy_calculator_support.h; sourceTree = "<group>"; };
+		E0707F976D98B30F00000000 /* calculator_registry_util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = calculator_registry_util.h; path = mediapipe/framework/calculator_registry_util.h; sourceTree = "<group>"; };
+		E0707F976DDF588D00000000 /* gpu_buffer_format.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gpu_buffer_format.h; path = mediapipe/gpu/gpu_buffer_format.h; sourceTree = "<group>"; };
+		E0707F976FDF0E5100000000 /* gl_simple_shaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gl_simple_shaders.h; path = mediapipe/gpu/gl_simple_shaders.h; sourceTree = "<group>"; };
+		E0707F97703D09CD00000000 /* MPPTimestampConverter.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = MPPTimestampConverter.mm; path = mediapipe/objc/MPPTimestampConverter.mm; sourceTree = "<group>"; };
+		E0707F9771F5DE7D00000000 /* calculator_node.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = calculator_node.cc; path = mediapipe/framework/calculator_node.cc; sourceTree = "<group>"; };
+		E0707F97730BB6B700000000 /* NSError+util_status.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSError+util_status.h"; path = "mediapipe/objc/NSError+util_status.h"; sourceTree = "<group>"; };
+		E0707F97738A3FA700000000 /* gl_base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gl_base.h; path = mediapipe/gpu/gl_base.h; sourceTree = "<group>"; };
+		E0707F977392F13F00000000 /* type_map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = type_map.h; path = mediapipe/framework/type_map.h; sourceTree = "<group>"; };
+		E0707F9773CCC5CC00000000 /* lib_idx_mediapipe_input_sources_ios_B5C92B5F_ios_min10.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = lib_idx_mediapipe_input_sources_ios_B5C92B5F_ios_min10.0.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0707F97743996C300000000 /* graph_output_stream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = graph_output_stream.h; path = mediapipe/framework/graph_output_stream.h; sourceTree = "<group>"; };
+		E0707F97748F552600000000 /* BUILD */ = {isa = PBXFileReference; lastKnownFileType = text; name = BUILD; path = mediapipe/framework/tool/BUILD; sourceTree = "<group>"; };
+		E0707F9778C86CCE00000000 /* handedness.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = handedness.txt; path = mediapipe/models/handedness.txt; sourceTree = "<group>"; };
+		E0707F97798C27D600000000 /* gl_context.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = gl_context.cc; path = mediapipe/gpu/gl_context.cc; sourceTree = "<group>"; };
+		E0707F977A4FF05100000000 /* validated_graph_config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = validated_graph_config.h; path = mediapipe/framework/validated_graph_config.h; sourceTree = "<group>"; };
+		E0707F977CF2A3D500000000 /* BUILD */ = {isa = PBXFileReference; lastKnownFileType = text; name = BUILD; path = mediapipe/calculators/internal/BUILD; sourceTree = "<group>"; };
+		E0707F977E0A25B000000000 /* MPPGraphGPUData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MPPGraphGPUData.h; path = mediapipe/gpu/MPPGraphGPUData.h; sourceTree = "<group>"; };
+		E0707F977EB31F0A00000000 /* counter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = counter.h; path = mediapipe/framework/counter.h; sourceTree = "<group>"; };
+		E0707F977EB9931B00000000 /* tag_map.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = tag_map.cc; path = mediapipe/framework/tool/tag_map.cc; sourceTree = "<group>"; };
+		E0707F978041231A00000000 /* trace_buffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = trace_buffer.h; path = mediapipe/framework/profiler/trace_buffer.h; sourceTree = "<group>"; };
+		E0707F9780DC8B6B00000000 /* ret_check.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ret_check.h; path = mediapipe/framework/port/ret_check.h; sourceTree = "<group>"; };
+		E0707F978130AB9800000000 /* calculator_state.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = calculator_state.h; path = mediapipe/framework/calculator_state.h; sourceTree = "<group>"; };
+		E0707F97816ECA0200000000 /* BUILD */ = {isa = PBXFileReference; lastKnownFileType = text; name = BUILD; path = mediapipe/framework/port/BUILD; sourceTree = "<group>"; };
+		E0707F978258926F00000000 /* CFHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CFHolder.h; path = mediapipe/objc/CFHolder.h; sourceTree = "<group>"; };
+		E0707F978464E59700000000 /* packet_type.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = packet_type.cc; path = mediapipe/framework/packet_type.cc; sourceTree = "<group>"; };
+		E0707F97857FCFB000000000 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = mediapipe/examples/ios/handtrackinggpu/AppDelegate.h; sourceTree = "<group>"; };
+		E0707F9785B014BA00000000 /* MPPGraphGPUData.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = MPPGraphGPUData.mm; path = mediapipe/gpu/MPPGraphGPUData.mm; sourceTree = "<group>"; };
+		E0707F97865FDB8A00000000 /* input_side_packet_handler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = input_side_packet_handler.h; path = mediapipe/framework/input_side_packet_handler.h; sourceTree = "<group>"; };
+		E0707F9789D0970000000000 /* gl_calculator_helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gl_calculator_helper.h; path = mediapipe/gpu/gl_calculator_helper.h; sourceTree = "<group>"; };
+		E0707F978A78CDA600000000 /* validate.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = validate.cc; path = mediapipe/framework/tool/validate.cc; sourceTree = "<group>"; };
+		E0707F978AC1284D00000000 /* threadpool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = threadpool.h; path = mediapipe/framework/port/threadpool.h; sourceTree = "<group>"; };
+		E0707F978B575A2E00000000 /* counter_factory.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = counter_factory.cc; path = mediapipe/framework/counter_factory.cc; sourceTree = "<group>"; };
+		E0707F978BC5BAFF00000000 /* output_stream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = output_stream.h; path = mediapipe/framework/output_stream.h; sourceTree = "<group>"; };
+		E0707F978BE29B9700000000 /* registration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = registration.h; path = mediapipe/framework/deps/registration.h; sourceTree = "<group>"; };
+		E0707F978C5FD75400000000 /* validate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = validate.h; path = mediapipe/framework/tool/validate.h; sourceTree = "<group>"; };
+		E0707F978E62E19800000000 /* calculator_base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = calculator_base.h; path = mediapipe/framework/calculator_base.h; sourceTree = "<group>"; };
+		E0707F978EC8A40B00000000 /* BUILD */ = {isa = PBXFileReference; lastKnownFileType = text; name = BUILD; path = mediapipe/framework/deps/BUILD; sourceTree = "<group>"; };
+		E0707F97906C263C00000000 /* numbers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = numbers.h; path = mediapipe/framework/port/numbers.h; sourceTree = "<group>"; };
+		E0707F9792D395E800000000 /* MPPTimestampConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MPPTimestampConverter.h; path = mediapipe/objc/MPPTimestampConverter.h; sourceTree = "<group>"; };
+		E0707F97934391AD00000000 /* scheduler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = scheduler.h; path = mediapipe/framework/scheduler.h; sourceTree = "<group>"; };
+		E0707F97935D192700000000 /* statusor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = statusor.h; path = mediapipe/framework/port/statusor.h; sourceTree = "<group>"; };
+		E0707F979558255A00000000 /* BUILD */ = {isa = PBXFileReference; lastKnownFileType = text; name = BUILD; path = mediapipe/util/BUILD; sourceTree = "<group>"; };
+		E0707F9795E2BA6E00000000 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; name = Info.plist; path = "tulsi-workspace/_tulsi-includes/x/x/mediapipe/examples/ios/handtrackinggpu/HandTrackingGpuApp-intermediates/Info.plist"; sourceTree = "<group>"; };
+		E0707F979606DBCE00000000 /* gpu_service.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gpu_service.h; path = mediapipe/gpu/gpu_service.h; sourceTree = "<group>"; };
+		E0707F97964805E800000000 /* calculator_registry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = calculator_registry.h; path = mediapipe/framework/calculator_registry.h; sourceTree = "<group>"; };
+		E0707F97985FD55A00000000 /* graph_service.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = graph_service.h; path = mediapipe/framework/graph_service.h; sourceTree = "<group>"; };
+		E0707F979891FB7200000000 /* output_stream_poller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = output_stream_poller.h; path = mediapipe/framework/output_stream_poller.h; sourceTree = "<group>"; };
+		E0707F979AD8E99700000000 /* options_util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = options_util.h; path = mediapipe/framework/tool/options_util.h; sourceTree = "<group>"; };
+		E0707F979B51697800000000 /* gpu_shared_data_internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gpu_shared_data_internal.h; path = mediapipe/gpu/gpu_shared_data_internal.h; sourceTree = "<group>"; };
+		E0707F979BDD29CA00000000 /* pixel_buffer_pool_util.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = pixel_buffer_pool_util.mm; path = mediapipe/gpu/pixel_buffer_pool_util.mm; sourceTree = "<group>"; };
+		E0707F979E642F0100000000 /* aligned_malloc_and_free.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = aligned_malloc_and_free.h; path = mediapipe/framework/deps/aligned_malloc_and_free.h; sourceTree = "<group>"; };
+		E0707F97A0957F0200000000 /* BUILD */ = {isa = PBXFileReference; lastKnownFileType = text; name = BUILD; path = mediapipe/examples/ios/handtrackinggpu/BUILD; sourceTree = "<group>"; };
+		E0707F97A0B2F03600000000 /* lib_idx_gl_simple_shaders_9BE47DE4_ios_min10.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = lib_idx_gl_simple_shaders_9BE47DE4_ios_min10.0.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0707F97A0C336B600000000 /* MPPPlayerInputSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MPPPlayerInputSource.h; path = mediapipe/objc/MPPPlayerInputSource.h; sourceTree = "<group>"; };
+		E0707F97A1641C0C00000000 /* lib_idx_gl_context_C983A10F_ios_min10.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = lib_idx_gl_context_C983A10F_ios_min10.0.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0707F97A1D3740400000000 /* status_builder.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = status_builder.cc; path = mediapipe/framework/deps/status_builder.cc; sourceTree = "<group>"; };
+		E0707F97A211C0A100000000 /* profiler_resource_util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = profiler_resource_util.h; path = mediapipe/framework/profiler/profiler_resource_util.h; sourceTree = "<group>"; };
+		E0707F97A245621300000000 /* sink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = sink.h; path = mediapipe/framework/tool/sink.h; sourceTree = "<group>"; };
+		E0707F97A253E9C600000000 /* thread_pool_executor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = thread_pool_executor.h; path = mediapipe/framework/thread_pool_executor.h; sourceTree = "<group>"; };
+		E0707F97A350D71E00000000 /* scheduler.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = scheduler.cc; path = mediapipe/framework/scheduler.cc; sourceTree = "<group>"; };
+		E0707F97A377762200000000 /* timestamp.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = timestamp.cc; path = mediapipe/framework/timestamp.cc; sourceTree = "<group>"; };
+		E0707F97A37D084500000000 /* status_macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = status_macros.h; path = mediapipe/framework/port/status_macros.h; sourceTree = "<group>"; };
+		E0707F97A582DBF900000000 /* graph_tracer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = graph_tracer.h; path = mediapipe/framework/profiler/graph_tracer.h; sourceTree = "<group>"; };
+		E0707F97A58C1D9100000000 /* image_frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = image_frame.h; path = mediapipe/framework/formats/image_frame.h; sourceTree = "<group>"; };
+		E0707F97A634DCF300000000 /* statusor_internals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = statusor_internals.h; path = mediapipe/framework/deps/statusor_internals.h; sourceTree = "<group>"; };
+		E0707F97A67600CC00000000 /* cpu_util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = cpu_util.h; path = mediapipe/util/cpu_util.h; sourceTree = "<group>"; };
+		E0707F97A6BFDC3600000000 /* collection_item_id.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = collection_item_id.h; path = mediapipe/framework/collection_item_id.h; sourceTree = "<group>"; };
+		E0707F97A780E9A600000000 /* proto_util_lite.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = proto_util_lite.cc; path = mediapipe/framework/tool/proto_util_lite.cc; sourceTree = "<group>"; };
+		E0707F97A7C5777400000000 /* sharded_map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = sharded_map.h; path = mediapipe/framework/profiler/sharded_map.h; sourceTree = "<group>"; };
+		E0707F97A825CBED00000000 /* threadpool_pthread_impl.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = threadpool_pthread_impl.cc; path = mediapipe/framework/deps/threadpool_pthread_impl.cc; sourceTree = "<group>"; };
+		E0707F97A88889BD00000000 /* validate_name.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = validate_name.cc; path = mediapipe/framework/tool/validate_name.cc; sourceTree = "<group>"; };
+		E0707F97A91CE36400000000 /* fill_packet_set.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fill_packet_set.h; path = mediapipe/framework/tool/fill_packet_set.h; sourceTree = "<group>"; };
+		E0707F97AA662CB600000000 /* gpu_shared_data_internal.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = gpu_shared_data_internal.cc; path = mediapipe/gpu/gpu_shared_data_internal.cc; sourceTree = "<group>"; };
+		E0707F97AA88715900000000 /* status_handler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = status_handler.h; path = mediapipe/framework/status_handler.h; sourceTree = "<group>"; };
+		E0707F97AC477FA000000000 /* lib_idx_sink_calculator_graph_gpu_buffer_multi_pool_D5C77C6B_ios_min10.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = lib_idx_sink_calculator_graph_gpu_buffer_multi_pool_D5C77C6B_ios_min10.0.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0707F97AFA9D29200000000 /* output_side_packet_impl.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = output_side_packet_impl.cc; path = mediapipe/framework/output_side_packet_impl.cc; sourceTree = "<group>"; };
+		E0707F97AFE0472400000000 /* output_stream_manager.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = output_stream_manager.cc; path = mediapipe/framework/output_stream_manager.cc; sourceTree = "<group>"; };
+		E0707F97B0A8913E00000000 /* scheduler_shared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = scheduler_shared.h; path = mediapipe/framework/scheduler_shared.h; sourceTree = "<group>"; };
+		E0707F97B15BCC8C00000000 /* name_util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = name_util.h; path = mediapipe/framework/tool/name_util.h; sourceTree = "<group>"; };
+		E0707F97B227B07500000000 /* packet_set.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = packet_set.h; path = mediapipe/framework/packet_set.h; sourceTree = "<group>"; };
+		E0707F97B65F382800000000 /* gpu_service.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = gpu_service.cc; path = mediapipe/gpu/gpu_service.cc; sourceTree = "<group>"; };
+		E0707F97B7B5F90600000000 /* topologicalsorter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = topologicalsorter.h; path = mediapipe/framework/port/topologicalsorter.h; sourceTree = "<group>"; };
+		E0707F97B8180A2200000000 /* output_stream_handler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = output_stream_handler.h; path = mediapipe/framework/output_stream_handler.h; sourceTree = "<group>"; };
+		E0707F97B83BDC1C00000000 /* output_side_packet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = output_side_packet.h; path = mediapipe/framework/output_side_packet.h; sourceTree = "<group>"; };
+		E0707F97BC55115300000000 /* util.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = util.cc; path = mediapipe/objc/util.cc; sourceTree = "<group>"; };
+		E0707F97BC737FC800000000 /* MPPPlayerInputSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MPPPlayerInputSource.m; path = mediapipe/objc/MPPPlayerInputSource.m; sourceTree = "<group>"; };
+		E0707F97BC9B804900000000 /* calculator_context_manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = calculator_context_manager.h; path = mediapipe/framework/calculator_context_manager.h; sourceTree = "<group>"; };
+		E0707F97BDC3846200000000 /* gl_context_profiler.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = gl_context_profiler.cc; path = mediapipe/framework/profiler/gl_context_profiler.cc; sourceTree = "<group>"; };
+		E0707F97BDFC6B5400000000 /* model_targeted_b.tflite */ = {isa = PBXFileReference; lastKnownFileType = dyn.age81k3xqrf4gn; name = model_targeted_b.tflite; path = mediapipe/models/model_targeted_b.tflite; sourceTree = "<group>"; };
+		E0707F97BDFF62B000000000 /* logging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = logging.h; path = mediapipe/framework/port/logging.h; sourceTree = "<group>"; };
+		E0707F97BF540A8200000000 /* input_stream_manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = input_stream_manager.h; path = mediapipe/framework/input_stream_manager.h; sourceTree = "<group>"; };
+		E0707F97BFAD56BC00000000 /* registration_token.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = registration_token.h; path = mediapipe/framework/deps/registration_token.h; sourceTree = "<group>"; };
+		E0707F97BFE67CC100000000 /* MPPCameraInputSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MPPCameraInputSource.m; path = mediapipe/objc/MPPCameraInputSource.m; sourceTree = "<group>"; };
+		E0707F97C00B576800000000 /* delegating_executor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = delegating_executor.h; path = mediapipe/framework/delegating_executor.h; sourceTree = "<group>"; };
+		E0707F97C014B09B00000000 /* trace_builder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = trace_builder.h; path = mediapipe/framework/profiler/trace_builder.h; sourceTree = "<group>"; };
+		E0707F97C1B96B2300000000 /* gl_calculator_helper.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = gl_calculator_helper.cc; path = mediapipe/gpu/gl_calculator_helper.cc; sourceTree = "<group>"; };
+		E0707F97C234CF5800000000 /* gl_simple_shaders.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = gl_simple_shaders.cc; path = mediapipe/gpu/gl_simple_shaders.cc; sourceTree = "<group>"; };
+		E0707F97C259A90B00000000 /* calculator_graph.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = calculator_graph.cc; path = mediapipe/framework/calculator_graph.cc; sourceTree = "<group>"; };
+		E0707F97C337C41400000000 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = ViewController.mm; path = mediapipe/examples/ios/handtrackinggpu/ViewController.mm; sourceTree = "<group>"; };
+		E0707F97C404A47900000000 /* MPPLayerRenderer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MPPLayerRenderer.m; path = mediapipe/objc/MPPLayerRenderer.m; sourceTree = "<group>"; };
+		E0707F97C49AF4B600000000 /* output_stream_handler.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = output_stream_handler.cc; path = mediapipe/framework/output_stream_handler.cc; sourceTree = "<group>"; };
+		E0707F97C49B738A00000000 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = mediapipe/examples/ios/handtrackinggpu/main.m; sourceTree = "<group>"; };
+		E0707F97C4DF977E00000000 /* graph_support.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = graph_support.h; path = mediapipe/gpu/graph_support.h; sourceTree = "<group>"; };
+		E0707F97C59A310800000000 /* integral_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = integral_types.h; path = mediapipe/framework/port/integral_types.h; sourceTree = "<group>"; };
+		E0707F97C64933D900000000 /* BUILD */ = {isa = PBXFileReference; lastKnownFileType = text; name = BUILD; path = mediapipe/framework/BUILD; sourceTree = "<group>"; };
+		E0707F97C7A7E33E00000000 /* map_util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = map_util.h; path = mediapipe/framework/deps/map_util.h; sourceTree = "<group>"; };
+		E0707F97C7E682ED00000000 /* validated_graph_config.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = validated_graph_config.cc; path = mediapipe/framework/validated_graph_config.cc; sourceTree = "<group>"; };
+		E0707F97C919C45C00000000 /* output_stream_shard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = output_stream_shard.h; path = mediapipe/framework/output_stream_shard.h; sourceTree = "<group>"; };
+		E0707F97C9D59E2100000000 /* input_stream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = input_stream.h; path = mediapipe/framework/input_stream.h; sourceTree = "<group>"; };
+		E0707F97CA78DAD600000000 /* canonical_errors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = canonical_errors.h; path = mediapipe/framework/deps/canonical_errors.h; sourceTree = "<group>"; };
+		E0707F97CB13FB6900000000 /* default_input_stream_handler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = default_input_stream_handler.h; path = mediapipe/framework/stream_handler/default_input_stream_handler.h; sourceTree = "<group>"; };
+		E0707F97CBBBB1D300000000 /* BUILD */ = {isa = PBXFileReference; lastKnownFileType = text; name = BUILD; path = mediapipe/BUILD; sourceTree = "<group>"; };
+		E0707F97CC94180400000000 /* calculator_graph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = calculator_graph.h; path = mediapipe/framework/calculator_graph.h; sourceTree = "<group>"; };
+		E0707F97CD8D991E00000000 /* MPPLayerRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MPPLayerRenderer.h; path = mediapipe/objc/MPPLayerRenderer.h; sourceTree = "<group>"; };
+		E0707F97CDD5A48A00000000 /* status_util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = status_util.h; path = mediapipe/framework/tool/status_util.h; sourceTree = "<group>"; };
+		E0707F97CEABB31000000000 /* palm_detection.tflite */ = {isa = PBXFileReference; lastKnownFileType = dyn.age81k3xqrf4gn; name = palm_detection.tflite; path = mediapipe/models/palm_detection.tflite; sourceTree = "<group>"; };
+		E0707F97CECB906600000000 /* lib_idx_pixel_buffer_pool_util_11B1CF81_ios_min10.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = lib_idx_pixel_buffer_pool_util_11B1CF81_ios_min10.0.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0707F97CF91394000000000 /* gl_context_internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gl_context_internal.h; path = mediapipe/gpu/gl_context_internal.h; sourceTree = "<group>"; };
+		E0707F97CFA9E74F00000000 /* BUILD */ = {isa = PBXFileReference; lastKnownFileType = text; name = BUILD; path = mediapipe/framework/formats/BUILD; sourceTree = "<group>"; };
+		E0707F97D1A2041300000000 /* status.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = status.cc; path = mediapipe/framework/deps/status.cc; sourceTree = "<group>"; };
+		E0707F97D1C480B500000000 /* calculator_state.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = calculator_state.cc; path = mediapipe/framework/calculator_state.cc; sourceTree = "<group>"; };
+		E0707F97D1EAD15200000000 /* packet.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = packet.cc; path = mediapipe/framework/packet.cc; sourceTree = "<group>"; };
+		E0707F97D336F6DA00000000 /* lib_idx_MPPGraphGPUData_6980D839_ios_min10.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = lib_idx_MPPGraphGPUData_6980D839_ios_min10.0.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0707F97D4E7DCE500000000 /* cpu_util.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = cpu_util.cc; path = mediapipe/util/cpu_util.cc; sourceTree = "<group>"; };
+		E0707F97D51F4C6E00000000 /* template_expander.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = template_expander.cc; path = mediapipe/framework/tool/template_expander.cc; sourceTree = "<group>"; };
+		E0707F97D5D4CC7200000000 /* safe_int.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = safe_int.h; path = mediapipe/framework/deps/safe_int.h; sourceTree = "<group>"; };
+		E0707F97D6DFC88600000000 /* calculator_context_manager.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = calculator_context_manager.cc; path = mediapipe/framework/calculator_context_manager.cc; sourceTree = "<group>"; };
+		E0707F97D90942EE00000000 /* circular_buffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = circular_buffer.h; path = mediapipe/framework/profiler/circular_buffer.h; sourceTree = "<group>"; };
+		E0707F97D921487400000000 /* pixel_buffer_pool_util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pixel_buffer_pool_util.h; path = mediapipe/gpu/pixel_buffer_pool_util.h; sourceTree = "<group>"; };
+		E0707F97DF22EADD00000000 /* canonical_errors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = canonical_errors.h; path = mediapipe/framework/port/canonical_errors.h; sourceTree = "<group>"; };
+		E0707F97E14FA3D900000000 /* graph_tracer.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = graph_tracer.cc; path = mediapipe/framework/profiler/graph_tracer.cc; sourceTree = "<group>"; };
+		E0707F97E2F9613F00000000 /* graph_profiler.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = graph_profiler.cc; path = mediapipe/framework/profiler/graph_profiler.cc; sourceTree = "<group>"; };
+		E0707F97E2FCEED500000000 /* calculator_contract.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = calculator_contract.h; path = mediapipe/framework/calculator_contract.h; sourceTree = "<group>"; };
+		E0707F97E33BB79900000000 /* topologicalsorter.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = topologicalsorter.cc; path = mediapipe/framework/deps/topologicalsorter.cc; sourceTree = "<group>"; };
+		E0707F97E34D44D900000000 /* template_expander.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = template_expander.h; path = mediapipe/framework/tool/template_expander.h; sourceTree = "<group>"; };
+		E0707F97E3BBA65F00000000 /* gl_quad_renderer.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = gl_quad_renderer.cc; path = mediapipe/gpu/gl_quad_renderer.cc; sourceTree = "<group>"; };
+		E0707F97E6A66A4800000000 /* lib_idx_validated_graph_config_calculator_base_calculator_context_calculator_context_manager_calculator_contract_calculator_registry_util_calculator_state_callback_packet_calculator_cl_etc_7C1AD98D_ios_min10.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = lib_idx_validated_graph_config_calculator_base_calculator_context_calculator_context_manager_calculator_contract_calculator_registry_util_calculator_state_callback_packet_calculator_cl_etc_7C1AD98D_ios_min10.0.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0707F97E73EA71100000000 /* any_proto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = any_proto.h; path = mediapipe/framework/port/any_proto.h; sourceTree = "<group>"; };
+		E0707F97E91D081800000000 /* status_util.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = status_util.cc; path = mediapipe/framework/tool/status_util.cc; sourceTree = "<group>"; };
+		E0707F97E9B132D700000000 /* shader_util.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = shader_util.cc; path = mediapipe/gpu/shader_util.cc; sourceTree = "<group>"; };
+		E0707F97E9ED2E6200000000 /* gpu_buffer_format.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = gpu_buffer_format.cc; path = mediapipe/gpu/gpu_buffer_format.cc; sourceTree = "<group>"; };
+		E0707F97EED214BD00000000 /* port.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = port.h; path = mediapipe/framework/port.h; sourceTree = "<group>"; };
+		E0707F97EEE4F6BC00000000 /* ret_check.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ret_check.h; path = mediapipe/framework/deps/ret_check.h; sourceTree = "<group>"; };
+		E0707F97F17ED23500000000 /* input_stream_manager.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = input_stream_manager.cc; path = mediapipe/framework/input_stream_manager.cc; sourceTree = "<group>"; };
+		E0707F97F28DCF7300000000 /* packet_generator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = packet_generator.h; path = mediapipe/framework/packet_generator.h; sourceTree = "<group>"; };
+		E0707F97F29F98A600000000 /* type_util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = type_util.h; path = mediapipe/framework/tool/type_util.h; sourceTree = "<group>"; };
+		E0707F97F33D30D800000000 /* gl_thread_collector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gl_thread_collector.h; path = mediapipe/gpu/gl_thread_collector.h; sourceTree = "<group>"; };
+		E0707F97F36AAB3600000000 /* delegating_executor.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = delegating_executor.cc; path = mediapipe/framework/delegating_executor.cc; sourceTree = "<group>"; };
+		E0707F97F526324800000000 /* util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = util.h; path = mediapipe/objc/util.h; sourceTree = "<group>"; };
+		E0707F97F804776100000000 /* monotonic_clock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = monotonic_clock.h; path = mediapipe/framework/deps/monotonic_clock.h; sourceTree = "<group>"; };
+		E0707F97F8F8481400000000 /* statusor.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = statusor.cc; path = mediapipe/framework/deps/statusor.cc; sourceTree = "<group>"; };
+		E0707F97F90BFBC200000000 /* proto_util_lite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = proto_util_lite.h; path = mediapipe/framework/tool/proto_util_lite.h; sourceTree = "<group>"; };
+		E0707F97FA64DDC100000000 /* packet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = packet.h; path = mediapipe/framework/packet.h; sourceTree = "<group>"; };
+		E0707F97FA8D5D9700000000 /* gl_calculator_helper_impl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gl_calculator_helper_impl.h; path = mediapipe/gpu/gl_calculator_helper_impl.h; sourceTree = "<group>"; };
+		E0707F97FC5157CE00000000 /* MPPInputSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MPPInputSource.h; path = mediapipe/objc/MPPInputSource.h; sourceTree = "<group>"; };
+		E0707F97FC9C1C1900000000 /* input_stream_handler.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = input_stream_handler.cc; path = mediapipe/framework/input_stream_handler.cc; sourceTree = "<group>"; };
+		E0707F97FE21421500000000 /* collection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = collection.h; path = mediapipe/framework/collection.h; sourceTree = "<group>"; };
+		E0707F97FF38A60C00000000 /* MPPDisplayLinkWeakTarget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MPPDisplayLinkWeakTarget.h; path = mediapipe/objc/MPPDisplayLinkWeakTarget.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		3E9DBDE800C6630900000000 /* Indexer */ = {
+			isa = PBXGroup;
+			children = (
+				E0707F9711A3713E00000000 /* lib_idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10.0.a */,
+				E0707F97D336F6DA00000000 /* lib_idx_MPPGraphGPUData_6980D839_ios_min10.0.a */,
+				E0707F97A1641C0C00000000 /* lib_idx_gl_context_C983A10F_ios_min10.0.a */,
+				E0707F97A0B2F03600000000 /* lib_idx_gl_simple_shaders_9BE47DE4_ios_min10.0.a */,
+				E0707F9773CCC5CC00000000 /* lib_idx_mediapipe_input_sources_ios_B5C92B5F_ios_min10.0.a */,
+				E0707F970F60C01600000000 /* lib_idx_mediapipe_layer_renderer_gl_calculator_helper_ios_mediapipe_framework_ios_mediapipe_gl_view_renderer_DFF84B5D_ios_min10.0.a */,
+				E0707F971BA6D0FE00000000 /* lib_idx_output_stream_manager_calculator_node_default_input_stream_handler_graph_output_stream_in_order_output_stream_handler_input_stream_handler_output_stream_handler_997A2E1C_ios_min10.0.a */,
+				E0707F97CECB906600000000 /* lib_idx_pixel_buffer_pool_util_11B1CF81_ios_min10.0.a */,
+				E0707F9739132F5C00000000 /* lib_idx_profiler_resource_util_9FE97AC4_ios_min10.0.a */,
+				E0707F9714E747F400000000 /* lib_idx_registration_token_gpu_service_20AEE6FB_ios_min10.0.a */,
+				E0707F975D2C01C800000000 /* lib_idx_scheduler_queue_00D9FD43_ios_min10.0.a */,
+				E0707F976910179400000000 /* lib_idx_shader_util_gl_quad_renderer_gpu_buffer_format_84BF7823_ios_min10.0.a */,
+				E0707F97AC477FA000000000 /* lib_idx_sink_calculator_graph_gpu_buffer_multi_pool_D5C77C6B_ios_min10.0.a */,
+				E0707F97E6A66A4800000000 /* lib_idx_validated_graph_config_calculator_base_calculator_context_calculator_context_manager_calculator_contract_calculator_registry_util_calculator_state_callback_packet_calculator_cl_etc_7C1AD98D_ios_min10.0.a */,
+			);
+			name = Indexer;
+			sourceTree = "<group>";
+		};
+		3E9DBDE80EA2461400000000 /* examples */ = {
+			isa = PBXGroup;
+			children = (
+				3E9DBDE8EFCFA3AB00000000 /* ios */,
+			);
+			name = examples;
+			sourceTree = "<group>";
+		};
+		3E9DBDE80EA2461400000001 /* examples */ = {
+			isa = PBXGroup;
+			children = (
+				3E9DBDE8EFCFA3AB00000001 /* ios */,
+			);
+			name = examples;
+			sourceTree = "<group>";
+		};
+		3E9DBDE80EC809A000000000 /* internal */ = {
+			isa = PBXGroup;
+			children = (
+				E0707F977CF2A3D500000000 /* BUILD */,
+				E0707F97625C322800000000 /* callback_packet_calculator.cc */,
+			);
+			name = internal;
+			sourceTree = "<group>";
+		};
+		3E9DBDE81323554C00000000 /* / */ = {
+			isa = PBXGroup;
+			children = (
+				E0707F971FF628EC00000000 /* BUILD */,
+			);
+			name = /;
+			sourceTree = "<group>";
+		};
+		3E9DBDE8307E232500000000 /* gpu */ = {
+			isa = PBXGroup;
+			children = (
+				E0707F97237A3D4300000000 /* BUILD */,
+				E0707F977E0A25B000000000 /* MPPGraphGPUData.h */,
+				E0707F9785B014BA00000000 /* MPPGraphGPUData.mm */,
+				E0707F97738A3FA700000000 /* gl_base.h */,
+				E0707F97C1B96B2300000000 /* gl_calculator_helper.cc */,
+				E0707F9789D0970000000000 /* gl_calculator_helper.h */,
+				E0707F97FA8D5D9700000000 /* gl_calculator_helper_impl.h */,
+				E0707F971CD62F0A00000000 /* gl_calculator_helper_impl_common.cc */,
+				E0707F9706E1F2DB00000000 /* gl_calculator_helper_impl_ios.mm */,
+				E0707F97798C27D600000000 /* gl_context.cc */,
+				E0707F9730AA945A00000000 /* gl_context.h */,
+				E0707F970C7EC44400000000 /* gl_context_eagl.cc */,
+				E0707F97CF91394000000000 /* gl_context_internal.h */,
+				E0707F97E3BBA65F00000000 /* gl_quad_renderer.cc */,
+				E0707F9746DCF0B900000000 /* gl_quad_renderer.h */,
+				E0707F97C234CF5800000000 /* gl_simple_shaders.cc */,
+				E0707F976FDF0E5100000000 /* gl_simple_shaders.h */,
+				E0707F97F33D30D800000000 /* gl_thread_collector.h */,
+				E0707F973D56116700000000 /* gpu_buffer.h */,
+				E0707F97E9ED2E6200000000 /* gpu_buffer_format.cc */,
+				E0707F976DDF588D00000000 /* gpu_buffer_format.h */,
+				E0707F976597841900000000 /* gpu_buffer_multi_pool.cc */,
+				E0707F970ABED9EF00000000 /* gpu_buffer_multi_pool.h */,
+				E0707F97B65F382800000000 /* gpu_service.cc */,
+				E0707F979606DBCE00000000 /* gpu_service.h */,
+				E0707F97AA662CB600000000 /* gpu_shared_data_internal.cc */,
+				E0707F979B51697800000000 /* gpu_shared_data_internal.h */,
+				E0707F97C4DF977E00000000 /* graph_support.h */,
+				E0707F97D921487400000000 /* pixel_buffer_pool_util.h */,
+				E0707F979BDD29CA00000000 /* pixel_buffer_pool_util.mm */,
+				E0707F97E9B132D700000000 /* shader_util.cc */,
+				E0707F970714DF1200000000 /* shader_util.h */,
+			);
+			name = gpu;
+			sourceTree = "<group>";
+		};
+		3E9DBDE837446BC700000000 /* calculators */ = {
+			isa = PBXGroup;
+			children = (
+				3E9DBDE80EC809A000000000 /* internal */,
+			);
+			name = calculators;
+			sourceTree = "<group>";
+		};
+		3E9DBDE84321269F00000000 /* mainGroup */ = {
+			isa = PBXGroup;
+			children = (
+				3E9DBDE81323554C00000000 /* / */,
+				3E9DBDE8A238D8AA00000000 /* Products */,
+				3E9DBDE8E5373A7400000001 /* mediapipe */,
+				3E9DBDE8F3C874DB00000000 /* tulsi */,
+			);
+			name = mainGroup;
+			sourceTree = SOURCE_ROOT;
+		};
+		3E9DBDE86C98F76300000000 /* deps */ = {
+			isa = PBXGroup;
+			children = (
+				E0707F978EC8A40B00000000 /* BUILD */,
+				E0707F979E642F0100000000 /* aligned_malloc_and_free.h */,
+				E0707F97CA78DAD600000000 /* canonical_errors.h */,
+				E0707F97019A627500000000 /* clock.cc */,
+				E0707F972169CFF600000000 /* clock.h */,
+				E0707F97C7A7E33E00000000 /* map_util.h */,
+				E0707F97354C992500000000 /* monotonic_clock.cc */,
+				E0707F97F804776100000000 /* monotonic_clock.h */,
+				E0707F9749B11EBF00000000 /* no_destructor.h */,
+				E0707F970478000B00000000 /* numbers.h */,
+				E0707F971B3D549E00000000 /* registration.cc */,
+				E0707F978BE29B9700000000 /* registration.h */,
+				E0707F97427F97B700000000 /* registration_token.cc */,
+				E0707F97BFAD56BC00000000 /* registration_token.h */,
+				E0707F971741551B00000000 /* ret_check.cc */,
+				E0707F97EEE4F6BC00000000 /* ret_check.h */,
+				E0707F97D5D4CC7200000000 /* safe_int.h */,
+				E0707F975976921700000000 /* source_location.h */,
+				E0707F97D1A2041300000000 /* status.cc */,
+				E0707F970C6157AB00000000 /* status.h */,
+				E0707F97A1D3740400000000 /* status_builder.cc */,
+				E0707F972500A59100000000 /* status_builder.h */,
+				E0707F973A6A394500000000 /* status_macros.h */,
+				E0707F97F8F8481400000000 /* statusor.cc */,
+				E0707F975A3229BC00000000 /* statusor.h */,
+				E0707F97A634DCF300000000 /* statusor_internals.h */,
+				E0707F970790CDE000000000 /* strong_int.h */,
+				E0707F97418FD32300000000 /* thread_options.h */,
+				E0707F9712B2943700000000 /* threadpool.h */,
+				E0707F97A825CBED00000000 /* threadpool_pthread_impl.cc */,
+				E0707F97E33BB79900000000 /* topologicalsorter.cc */,
+				E0707F97478AC16900000000 /* topologicalsorter.h */,
+			);
+			name = deps;
+			sourceTree = "<group>";
+		};
+		3E9DBDE87B6851EB00000000 /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				E0707F97748F552600000000 /* BUILD */,
+				E0707F9706FAEB5A00000000 /* fill_packet_set.cc */,
+				E0707F97A91CE36400000000 /* fill_packet_set.h */,
+				E0707F976BED0B1F00000000 /* name_util.cc */,
+				E0707F97B15BCC8C00000000 /* name_util.h */,
+				E0707F979AD8E99700000000 /* options_util.h */,
+				E0707F97A780E9A600000000 /* proto_util_lite.cc */,
+				E0707F97F90BFBC200000000 /* proto_util_lite.h */,
+				E0707F970781B76B00000000 /* sink.cc */,
+				E0707F97A245621300000000 /* sink.h */,
+				E0707F97E91D081800000000 /* status_util.cc */,
+				E0707F97CDD5A48A00000000 /* status_util.h */,
+				E0707F972FD8967000000000 /* subgraph_expansion.cc */,
+				E0707F976B87A17800000000 /* subgraph_expansion.h */,
+				E0707F977EB9931B00000000 /* tag_map.cc */,
+				E0707F971A0D57E000000000 /* tag_map.h */,
+				E0707F97D51F4C6E00000000 /* template_expander.cc */,
+				E0707F97E34D44D900000000 /* template_expander.h */,
+				E0707F97F29F98A600000000 /* type_util.h */,
+				E0707F978A78CDA600000000 /* validate.cc */,
+				E0707F978C5FD75400000000 /* validate.h */,
+				E0707F97A88889BD00000000 /* validate_name.cc */,
+				E0707F976463BE5800000000 /* validate_name.h */,
+			);
+			name = tool;
+			sourceTree = "<group>";
+		};
+		3E9DBDE87D766D4300000000 /* stream_handler */ = {
+			isa = PBXGroup;
+			children = (
+				E0707F97259AB1AB00000000 /* BUILD */,
+				E0707F971B03E02200000000 /* default_input_stream_handler.cc */,
+				E0707F97CB13FB6900000000 /* default_input_stream_handler.h */,
+				E0707F9734A2A10800000000 /* in_order_output_stream_handler.cc */,
+				E0707F972041B2C800000000 /* in_order_output_stream_handler.h */,
+			);
+			name = stream_handler;
+			sourceTree = "<group>";
+		};
+		3E9DBDE8814424DA00000000 /* _tulsi-includes */ = {
+			isa = PBXGroup;
+			children = (
+				3E9DBDE8C9C1353200000000 /* x */,
+			);
+			name = "_tulsi-includes";
+			sourceTree = "<group>";
+		};
+		3E9DBDE881B9EA0300000000 /* port */ = {
+			isa = PBXGroup;
+			children = (
+				E0707F97816ECA0200000000 /* BUILD */,
+				E0707F9716CD2C9200000000 /* advanced_proto_lite_inc.h */,
+				E0707F97400C956700000000 /* aligned_malloc_and_free.h */,
+				E0707F97E73EA71100000000 /* any_proto.h */,
+				E0707F97DF22EADD00000000 /* canonical_errors.h */,
+				E0707F972110775E00000000 /* core_proto_inc.h */,
+				E0707F97C59A310800000000 /* integral_types.h */,
+				E0707F97BDFF62B000000000 /* logging.h */,
+				E0707F972256552F00000000 /* map_util.h */,
+				E0707F97906C263C00000000 /* numbers.h */,
+				E0707F97501D9E5A00000000 /* port.h */,
+				E0707F9748CD17DC00000000 /* proto_ns.h */,
+				E0707F9780DC8B6B00000000 /* ret_check.h */,
+				E0707F975055B31B00000000 /* source_location.h */,
+				E0707F974F63741C00000000 /* status.h */,
+				E0707F9741ED36C400000000 /* status_builder.h */,
+				E0707F97A37D084500000000 /* status_macros.h */,
+				E0707F97935D192700000000 /* statusor.h */,
+				E0707F978AC1284D00000000 /* threadpool.h */,
+				E0707F97B7B5F90600000000 /* topologicalsorter.h */,
+			);
+			name = port;
+			sourceTree = "<group>";
+		};
+		3E9DBDE885F87F4300000000 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				E0707F970346EBBF00000000 /* hand_landmark.tflite */,
+				E0707F9778C86CCE00000000 /* handedness.txt */,
+				E0707F9768523AD700000000 /* model_targeted_a.tflite */,
+				E0707F97BDFC6B5400000000 /* model_targeted_b.tflite */,
+				E0707F97CEABB31000000000 /* palm_detection.tflite */,
+				E0707F972AD5949400000000 /* palm_detection_labelmap.txt */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		3E9DBDE892D59F4D00000000 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				E0707F97C64933D900000000 /* BUILD */,
+				E0707F974A56785100000000 /* calculator_base.cc */,
+				E0707F978E62E19800000000 /* calculator_base.h */,
+				E0707F970F569F7800000000 /* calculator_context.cc */,
+				E0707F972A2A391200000000 /* calculator_context.h */,
+				E0707F97D6DFC88600000000 /* calculator_context_manager.cc */,
+				E0707F97BC9B804900000000 /* calculator_context_manager.h */,
+				E0707F9714AF5A0500000000 /* calculator_contract.cc */,
+				E0707F97E2FCEED500000000 /* calculator_contract.h */,
+				E0707F9701EE93C100000000 /* calculator_framework.h */,
+				E0707F97C259A90B00000000 /* calculator_graph.cc */,
+				E0707F97CC94180400000000 /* calculator_graph.h */,
+				E0707F9771F5DE7D00000000 /* calculator_node.cc */,
+				E0707F973039C01600000000 /* calculator_node.h */,
+				E0707F97964805E800000000 /* calculator_registry.h */,
+				E0707F97475885A500000000 /* calculator_registry_util.cc */,
+				E0707F976D98B30F00000000 /* calculator_registry_util.h */,
+				E0707F97D1C480B500000000 /* calculator_state.cc */,
+				E0707F978130AB9800000000 /* calculator_state.h */,
+				E0707F97FE21421500000000 /* collection.h */,
+				E0707F974054F75D00000000 /* collection_item_id.cc */,
+				E0707F97A6BFDC3600000000 /* collection_item_id.h */,
+				E0707F977EB31F0A00000000 /* counter.h */,
+				E0707F978B575A2E00000000 /* counter_factory.cc */,
+				E0707F97352185BD00000000 /* counter_factory.h */,
+				E0707F97F36AAB3600000000 /* delegating_executor.cc */,
+				E0707F97C00B576800000000 /* delegating_executor.h */,
+				E0707F975C2705BE00000000 /* demangle.h */,
+				3E9DBDE86C98F76300000000 /* deps */,
+				E0707F976C102BFC00000000 /* executor.cc */,
+				E0707F9750D3218000000000 /* executor.h */,
+				3E9DBDE8ACEC187B00000000 /* formats */,
+				E0707F975C4291BC00000000 /* graph_output_stream.cc */,
+				E0707F97743996C300000000 /* graph_output_stream.h */,
+				E0707F97985FD55A00000000 /* graph_service.h */,
+				E0707F972D4BF7B700000000 /* input_side_packet_handler.cc */,
+				E0707F97865FDB8A00000000 /* input_side_packet_handler.h */,
+				E0707F97C9D59E2100000000 /* input_stream.h */,
+				E0707F97FC9C1C1900000000 /* input_stream_handler.cc */,
+				E0707F971893340500000000 /* input_stream_handler.h */,
+				E0707F97F17ED23500000000 /* input_stream_manager.cc */,
+				E0707F97BF540A8200000000 /* input_stream_manager.h */,
+				E0707F976922738900000000 /* input_stream_shard.cc */,
+				E0707F971AD63D1A00000000 /* input_stream_shard.h */,
+				E0707F974256AC7700000000 /* legacy_calculator_support.cc */,
+				E0707F976CD5370900000000 /* legacy_calculator_support.h */,
+				E0707F976024EA3800000000 /* mediapipe_profiling.h */,
+				E0707F97B83BDC1C00000000 /* output_side_packet.h */,
+				E0707F97AFA9D29200000000 /* output_side_packet_impl.cc */,
+				E0707F97378F2A5100000000 /* output_side_packet_impl.h */,
+				E0707F978BC5BAFF00000000 /* output_stream.h */,
+				E0707F97C49AF4B600000000 /* output_stream_handler.cc */,
+				E0707F97B8180A2200000000 /* output_stream_handler.h */,
+				E0707F97AFE0472400000000 /* output_stream_manager.cc */,
+				E0707F9751D3690B00000000 /* output_stream_manager.h */,
+				E0707F979891FB7200000000 /* output_stream_poller.h */,
+				E0707F973EC400B900000000 /* output_stream_shard.cc */,
+				E0707F97C919C45C00000000 /* output_stream_shard.h */,
+				E0707F97D1EAD15200000000 /* packet.cc */,
+				E0707F97FA64DDC100000000 /* packet.h */,
+				E0707F97F28DCF7300000000 /* packet_generator.h */,
+				E0707F973FF67A0700000000 /* packet_generator_graph.cc */,
+				E0707F97047B827500000000 /* packet_generator_graph.h */,
+				E0707F97B227B07500000000 /* packet_set.h */,
+				E0707F978464E59700000000 /* packet_type.cc */,
+				E0707F972C23D5D900000000 /* packet_type.h */,
+				E0707F9715DAAB6600000000 /* platform_specific_profiling.h */,
+				3E9DBDE881B9EA0300000000 /* port */,
+				E0707F97EED214BD00000000 /* port.h */,
+				3E9DBDE8D78DBCE900000000 /* profiler */,
+				E0707F97A350D71E00000000 /* scheduler.cc */,
+				E0707F97934391AD00000000 /* scheduler.h */,
+				E0707F973CE2D50400000000 /* scheduler_queue.cc */,
+				E0707F9734B487D800000000 /* scheduler_queue.h */,
+				E0707F97B0A8913E00000000 /* scheduler_shared.h */,
+				E0707F97AA88715900000000 /* status_handler.h */,
+				3E9DBDE87D766D4300000000 /* stream_handler */,
+				E0707F972CC0855E00000000 /* subgraph.cc */,
+				E0707F970CC269D600000000 /* subgraph.h */,
+				E0707F972229F48900000000 /* thread_pool_executor.cc */,
+				E0707F97A253E9C600000000 /* thread_pool_executor.h */,
+				E0707F97A377762200000000 /* timestamp.cc */,
+				E0707F9712ED401600000000 /* timestamp.h */,
+				3E9DBDE87B6851EB00000000 /* tool */,
+				E0707F977392F13F00000000 /* type_map.h */,
+				E0707F97C7E682ED00000000 /* validated_graph_config.cc */,
+				E0707F977A4FF05100000000 /* validated_graph_config.h */,
+			);
+			name = framework;
+			sourceTree = "<group>";
+		};
+		3E9DBDE8942DC62900000000 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				E0707F979558255A00000000 /* BUILD */,
+				E0707F97D4E7DCE500000000 /* cpu_util.cc */,
+				E0707F97A67600CC00000000 /* cpu_util.h */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
+		3E9DBDE8A0D26E1600000000 /* objc */ = {
+			isa = PBXGroup;
+			children = (
+				E0707F9758260E2800000000 /* BUILD */,
+				E0707F978258926F00000000 /* CFHolder.h */,
+				E0707F975194F87A00000000 /* MPPCameraInputSource.h */,
+				E0707F97BFE67CC100000000 /* MPPCameraInputSource.m */,
+				E0707F97FF38A60C00000000 /* MPPDisplayLinkWeakTarget.h */,
+				E0707F971A8D678C00000000 /* MPPDisplayLinkWeakTarget.m */,
+				E0707F97684855B300000000 /* MPPGLViewRenderer.h */,
+				E0707F971C203CE800000000 /* MPPGLViewRenderer.mm */,
+				E0707F9764A1AEB500000000 /* MPPGraph.h */,
+				E0707F972F85D0C400000000 /* MPPGraph.mm */,
+				E0707F97FC5157CE00000000 /* MPPInputSource.h */,
+				E0707F97068B602200000000 /* MPPInputSource.m */,
+				E0707F97CD8D991E00000000 /* MPPLayerRenderer.h */,
+				E0707F97C404A47900000000 /* MPPLayerRenderer.m */,
+				E0707F97A0C336B600000000 /* MPPPlayerInputSource.h */,
+				E0707F97BC737FC800000000 /* MPPPlayerInputSource.m */,
+				E0707F9792D395E800000000 /* MPPTimestampConverter.h */,
+				E0707F97703D09CD00000000 /* MPPTimestampConverter.mm */,
+				E0707F97730BB6B700000000 /* NSError+util_status.h */,
+				E0707F973B0678C900000000 /* NSError+util_status.mm */,
+				E0707F97BC55115300000000 /* util.cc */,
+				E0707F97F526324800000000 /* util.h */,
+			);
+			name = objc;
+			sourceTree = "<group>";
+		};
+		3E9DBDE8A238D8AA00000000 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E0707F9705E83A6A00000000 /* HandTrackingGpuApp.app */,
+				3E9DBDE800C6630900000000 /* Indexer */,
+				3E9DBDE8814424DA00000000 /* _tulsi-includes */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3E9DBDE8AB5A8EC700000000 /* HandTrackingGpuApp-intermediates */ = {
+			isa = PBXGroup;
+			children = (
+				E0707F9795E2BA6E00000000 /* Info.plist */,
+			);
+			name = "HandTrackingGpuApp-intermediates";
+			sourceTree = "<group>";
+		};
+		3E9DBDE8ACEC187B00000000 /* formats */ = {
+			isa = PBXGroup;
+			children = (
+				E0707F97CFA9E74F00000000 /* BUILD */,
+				E0707F9756BF070900000000 /* image_frame.cc */,
+				E0707F97A58C1D9100000000 /* image_frame.h */,
+			);
+			name = formats;
+			sourceTree = "<group>";
+		};
+		3E9DBDE8C9C1353200000000 /* x */ = {
+			isa = PBXGroup;
+			children = (
+				3E9DBDE8C9C1353200000001 /* x */,
+			);
+			name = x;
+			sourceTree = "<group>";
+		};
+		3E9DBDE8C9C1353200000001 /* x */ = {
+			isa = PBXGroup;
+			children = (
+				3E9DBDE8E5373A7400000000 /* mediapipe */,
+			);
+			name = x;
+			sourceTree = "<group>";
+		};
+		3E9DBDE8D78DBCE900000000 /* profiler */ = {
+			isa = PBXGroup;
+			children = (
+				E0707F9723FC04FA00000000 /* BUILD */,
+				E0707F97D90942EE00000000 /* circular_buffer.h */,
+				E0707F97BDC3846200000000 /* gl_context_profiler.cc */,
+				E0707F97E2F9613F00000000 /* graph_profiler.cc */,
+				E0707F97409A266E00000000 /* graph_profiler.h */,
+				E0707F97E14FA3D900000000 /* graph_tracer.cc */,
+				E0707F97A582DBF900000000 /* graph_tracer.h */,
+				E0707F97A211C0A100000000 /* profiler_resource_util.h */,
+				E0707F97567E731F00000000 /* profiler_resource_util_ios.cc */,
+				E0707F97A7C5777400000000 /* sharded_map.h */,
+				E0707F978041231A00000000 /* trace_buffer.h */,
+				E0707F970046B07B00000000 /* trace_builder.cc */,
+				E0707F97C014B09B00000000 /* trace_builder.h */,
+			);
+			name = profiler;
+			sourceTree = "<group>";
+		};
+		3E9DBDE8DE4C73FD00000000 /* handtrackinggpu */ = {
+			isa = PBXGroup;
+			children = (
+				3E9DBDE8AB5A8EC700000000 /* HandTrackingGpuApp-intermediates */,
+			);
+			name = handtrackinggpu;
+			sourceTree = "<group>";
+		};
+		3E9DBDE8DE4C73FD00000001 /* handtrackinggpu */ = {
+			isa = PBXGroup;
+			children = (
+				E0707F97857FCFB000000000 /* AppDelegate.h */,
+				E0707F9734CF1B9A00000000 /* AppDelegate.m */,
+				E0707F97A0957F0200000000 /* BUILD */,
+				E0707F97571E9A8F00000000 /* Info.plist */,
+				D8D592DA34F0553C00000000 /* LaunchScreen.storyboard */,
+				D8D592DAEC50D40A00000000 /* Main.storyboard */,
+				E0707F9732C3E21400000000 /* ViewController.h */,
+				E0707F97C337C41400000000 /* ViewController.mm */,
+				E0707F97C49B738A00000000 /* main.m */,
+			);
+			name = handtrackinggpu;
+			sourceTree = "<group>";
+		};
+		3E9DBDE8E5373A7400000000 /* mediapipe */ = {
+			isa = PBXGroup;
+			children = (
+				3E9DBDE80EA2461400000000 /* examples */,
+			);
+			name = mediapipe;
+			sourceTree = "<group>";
+		};
+		3E9DBDE8E5373A7400000001 /* mediapipe */ = {
+			isa = PBXGroup;
+			children = (
+				E0707F97CBBBB1D300000000 /* BUILD */,
+				3E9DBDE837446BC700000000 /* calculators */,
+				3E9DBDE80EA2461400000001 /* examples */,
+				3E9DBDE892D59F4D00000000 /* framework */,
+				3E9DBDE8307E232500000000 /* gpu */,
+				3E9DBDE885F87F4300000000 /* models */,
+				3E9DBDE8A0D26E1600000000 /* objc */,
+				3E9DBDE8942DC62900000000 /* util */,
+			);
+			name = mediapipe;
+			sourceTree = "<group>";
+		};
+		3E9DBDE8EFCFA3AB00000000 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				3E9DBDE8DE4C73FD00000000 /* handtrackinggpu */,
+			);
+			name = ios;
+			sourceTree = "<group>";
+		};
+		3E9DBDE8EFCFA3AB00000001 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				E0707F97401A3A0100000000 /* BUILD */,
+				3E9DBDE8DE4C73FD00000001 /* handtrackinggpu */,
+			);
+			name = ios;
+			sourceTree = "<group>";
+		};
+		3E9DBDE8F3C874DB00000000 /* tulsi */ = {
+			isa = PBXGroup;
+			children = (
+				E0707F9766EDBDC600000000 /* BUILD */,
+			);
+			name = tulsi;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		326DA36C2A73AD2800000000 /* _bazel_clean_ */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "\"/usr/local/Cellar/bazel/3.2.0/bin/bazel\" \"bazel-bin\"";
+			buildConfigurationList = DD6A929ADAAC455300000000 /* Build configuration list for PBXLegacyTarget "_bazel_clean_" */;
+			buildPhases = (
+			);
+			buildToolPath = "${PROJECT_FILE_PATH}/.tulsi/Scripts/bazel_clean.sh";
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = _bazel_clean_;
+			passBuildSettingsInEnvironment = 1;
+			productName = _bazel_clean_;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		B7E28F80079A3DD400000000 /* _idx_registration_token_gpu_service_20AEE6FB_ios_min10.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD6A929A4CFCDAE500000000 /* Build configuration list for PBXNativeTarget "_idx_registration_token_gpu_service_20AEE6FB_ios_min10.0" */;
+			buildPhases = (
+				4D2CE23E0000000000000005 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DBD91F52A73AD2900000000 /* PBXTargetDependency */,
+			);
+			name = _idx_registration_token_gpu_service_20AEE6FB_ios_min10.0;
+			productName = _idx_registration_token_gpu_service_20AEE6FB_ios_min10.0;
+			productReference = E0707F9714E747F400000000 /* lib_idx_registration_token_gpu_service_20AEE6FB_ios_min10.0.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B7E28F8014AEDC1C00000000 /* _idx_mediapipe_input_sources_ios_B5C92B5F_ios_min10.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD6A929A56B31F2D00000000 /* Build configuration list for PBXNativeTarget "_idx_mediapipe_input_sources_ios_B5C92B5F_ios_min10.0" */;
+			buildPhases = (
+				4D2CE23E0000000000000001 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DBD91F52A73AD2900000000 /* PBXTargetDependency */,
+			);
+			name = _idx_mediapipe_input_sources_ios_B5C92B5F_ios_min10.0;
+			productName = _idx_mediapipe_input_sources_ios_B5C92B5F_ios_min10.0;
+			productReference = E0707F9773CCC5CC00000000 /* lib_idx_mediapipe_input_sources_ios_B5C92B5F_ios_min10.0.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B7E28F8021397EF600000000 /* _idx_gl_simple_shaders_9BE47DE4_ios_min10.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD6A929A6F4E589D00000000 /* Build configuration list for PBXNativeTarget "_idx_gl_simple_shaders_9BE47DE4_ios_min10.0" */;
+			buildPhases = (
+				4D2CE23E0000000000000007 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DBD91F52A73AD2900000000 /* PBXTargetDependency */,
+			);
+			name = _idx_gl_simple_shaders_9BE47DE4_ios_min10.0;
+			productName = _idx_gl_simple_shaders_9BE47DE4_ios_min10.0;
+			productReference = E0707F97A0B2F03600000000 /* lib_idx_gl_simple_shaders_9BE47DE4_ios_min10.0.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B7E28F80348F8CFC00000000 /* _idx_MPPGraphGPUData_6980D839_ios_min10.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD6A929AD41CD82100000000 /* Build configuration list for PBXNativeTarget "_idx_MPPGraphGPUData_6980D839_ios_min10.0" */;
+			buildPhases = (
+				4D2CE23E0000000000000008 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DBD91F52A73AD2900000000 /* PBXTargetDependency */,
+				8DBD91F53E12974700000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F5E0F3415F00000000 /* PBXTargetDependency */,
+			);
+			name = _idx_MPPGraphGPUData_6980D839_ios_min10.0;
+			productName = _idx_MPPGraphGPUData_6980D839_ios_min10.0;
+			productReference = E0707F97D336F6DA00000000 /* lib_idx_MPPGraphGPUData_6980D839_ios_min10.0.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B7E28F803E12974600000000 /* _idx_sink_calculator_graph_gpu_buffer_multi_pool_D5C77C6B_ios_min10.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD6A929A2E425AA000000000 /* Build configuration list for PBXNativeTarget "_idx_sink_calculator_graph_gpu_buffer_multi_pool_D5C77C6B_ios_min10.0" */;
+			buildPhases = (
+				4D2CE23E0000000000000009 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DBD91F52A73AD2900000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F5947DCA2100000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F5A86909CB00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F5947DCA2100000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F5947DCA2100000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F556F7330700000000 /* PBXTargetDependency */,
+				8DBD91F5079A3DD500000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+			);
+			name = _idx_sink_calculator_graph_gpu_buffer_multi_pool_D5C77C6B_ios_min10.0;
+			productName = _idx_sink_calculator_graph_gpu_buffer_multi_pool_D5C77C6B_ios_min10.0;
+			productReference = E0707F97AC477FA000000000 /* lib_idx_sink_calculator_graph_gpu_buffer_multi_pool_D5C77C6B_ios_min10.0.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B7E28F8053810A2200000000 /* _idx_mediapipe_layer_renderer_gl_calculator_helper_ios_mediapipe_framework_ios_mediapipe_gl_view_renderer_DFF84B5D_ios_min10.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD6A929A42624DC000000000 /* Build configuration list for PBXNativeTarget "_idx_mediapipe_layer_renderer_gl_calculator_helper_ios_mediapipe_framework_ios_mediapipe_gl_view_renderer_DFF84B5D_ios_min10.0" */;
+			buildPhases = (
+				4D2CE23E0000000000000002 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DBD91F52A73AD2900000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F5BB46C4E300000000 /* PBXTargetDependency */,
+				8DBD91F5348F8CFD00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F556F7330700000000 /* PBXTargetDependency */,
+				8DBD91F5079A3DD500000000 /* PBXTargetDependency */,
+				8DBD91F53E12974700000000 /* PBXTargetDependency */,
+				8DBD91F5BB46C4E300000000 /* PBXTargetDependency */,
+				8DBD91F521397EF700000000 /* PBXTargetDependency */,
+				8DBD91F5E0F3415F00000000 /* PBXTargetDependency */,
+			);
+			name = _idx_mediapipe_layer_renderer_gl_calculator_helper_ios_mediapipe_framework_ios_mediapipe_gl_view_renderer_DFF84B5D_ios_min10.0;
+			productName = _idx_mediapipe_layer_renderer_gl_calculator_helper_ios_mediapipe_framework_ios_mediapipe_gl_view_renderer_DFF84B5D_ios_min10.0;
+			productReference = E0707F970F60C01600000000 /* lib_idx_mediapipe_layer_renderer_gl_calculator_helper_ios_mediapipe_framework_ios_mediapipe_gl_view_renderer_DFF84B5D_ios_min10.0.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B7E28F8056F7330600000000 /* _idx_pixel_buffer_pool_util_11B1CF81_ios_min10.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD6A929AF227A0B200000000 /* Build configuration list for PBXNativeTarget "_idx_pixel_buffer_pool_util_11B1CF81_ios_min10.0" */;
+			buildPhases = (
+				4D2CE23E000000000000000C /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DBD91F52A73AD2900000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+			);
+			name = _idx_pixel_buffer_pool_util_11B1CF81_ios_min10.0;
+			productName = _idx_pixel_buffer_pool_util_11B1CF81_ios_min10.0;
+			productReference = E0707F97CECB906600000000 /* lib_idx_pixel_buffer_pool_util_11B1CF81_ios_min10.0.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B7E28F805CD9973E00000000 /* _idx_validated_graph_config_calculator_base_calculator_context_calculator_context_manager_calculator_contract_calculator_registry_util_calculator_state_callback_packet_calculator_cl_etc_7C1AD98D_ios_min10.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD6A929ADF00DB7F00000000 /* Build configuration list for PBXNativeTarget "_idx_validated_graph_config_calculator_base_calculator_context_calculator_context_manager_calculator_contract_calculator_registry_util_calculator_state_callback_packet_calculator_cl_etc_7C1AD98D_ios_min10.0" */;
+			buildPhases = (
+				4D2CE23E0000000000000003 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DBD91F52A73AD2900000000 /* PBXTargetDependency */,
+				8DBD91F5A696441900000000 /* PBXTargetDependency */,
+				8DBD91F5079A3DD500000000 /* PBXTargetDependency */,
+			);
+			name = _idx_validated_graph_config_calculator_base_calculator_context_calculator_context_manager_calculator_contract_calculator_registry_util_calculator_state_callback_packet_calculator_cl_etc_7C1AD98D_ios_min10.0;
+			productName = _idx_validated_graph_config_calculator_base_calculator_context_calculator_context_manager_calculator_contract_calculator_registry_util_calculator_state_callback_packet_calculator_cl_etc_7C1AD98D_ios_min10.0;
+			productReference = E0707F97E6A66A4800000000 /* lib_idx_validated_graph_config_calculator_base_calculator_context_calculator_context_manager_calculator_contract_calculator_registry_util_calculator_state_callback_packet_calculator_cl_etc_7C1AD98D_ios_min10.0.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B7E28F80947DCA2000000000 /* _idx_output_stream_manager_calculator_node_default_input_stream_handler_graph_output_stream_in_order_output_stream_handler_input_stream_handler_output_stream_handler_997A2E1C_ios_min10.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD6A929AD83CDCDC00000000 /* Build configuration list for PBXNativeTarget "_idx_output_stream_manager_calculator_node_default_input_stream_handler_graph_output_stream_in_order_output_stream_handler_input_stream_handler_output_stream_handler_997A2E1C_ios_min10.0" */;
+			buildPhases = (
+				4D2CE23E000000000000000A /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DBD91F52A73AD2900000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+			);
+			name = _idx_output_stream_manager_calculator_node_default_input_stream_handler_graph_output_stream_in_order_output_stream_handler_input_stream_handler_output_stream_handler_997A2E1C_ios_min10.0;
+			productName = _idx_output_stream_manager_calculator_node_default_input_stream_handler_graph_output_stream_in_order_output_stream_handler_input_stream_handler_output_stream_handler_997A2E1C_ios_min10.0;
+			productReference = E0707F971BA6D0FE00000000 /* lib_idx_output_stream_manager_calculator_node_default_input_stream_handler_graph_output_stream_in_order_output_stream_handler_input_stream_handler_output_stream_handler_997A2E1C_ios_min10.0.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B7E28F80A696441800000000 /* _idx_profiler_resource_util_9FE97AC4_ios_min10.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD6A929A8E22EE8600000000 /* Build configuration list for PBXNativeTarget "_idx_profiler_resource_util_9FE97AC4_ios_min10.0" */;
+			buildPhases = (
+				4D2CE23E0000000000000004 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DBD91F52A73AD2900000000 /* PBXTargetDependency */,
+			);
+			name = _idx_profiler_resource_util_9FE97AC4_ios_min10.0;
+			productName = _idx_profiler_resource_util_9FE97AC4_ios_min10.0;
+			productReference = E0707F9739132F5C00000000 /* lib_idx_profiler_resource_util_9FE97AC4_ios_min10.0.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B7E28F80A86909CA00000000 /* _idx_scheduler_queue_00D9FD43_ios_min10.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD6A929A02B0AC5D00000000 /* Build configuration list for PBXNativeTarget "_idx_scheduler_queue_00D9FD43_ios_min10.0" */;
+			buildPhases = (
+				4D2CE23E000000000000000B /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DBD91F52A73AD2900000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F5947DCA2100000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+			);
+			name = _idx_scheduler_queue_00D9FD43_ios_min10.0;
+			productName = _idx_scheduler_queue_00D9FD43_ios_min10.0;
+			productReference = E0707F975D2C01C800000000 /* lib_idx_scheduler_queue_00D9FD43_ios_min10.0.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B7E28F80BB46C4E200000000 /* _idx_shader_util_gl_quad_renderer_gpu_buffer_format_84BF7823_ios_min10.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD6A929AC3E4C36400000000 /* Build configuration list for PBXNativeTarget "_idx_shader_util_gl_quad_renderer_gpu_buffer_format_84BF7823_ios_min10.0" */;
+			buildPhases = (
+				4D2CE23E0000000000000006 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DBD91F52A73AD2900000000 /* PBXTargetDependency */,
+				8DBD91F521397EF700000000 /* PBXTargetDependency */,
+			);
+			name = _idx_shader_util_gl_quad_renderer_gpu_buffer_format_84BF7823_ios_min10.0;
+			productName = _idx_shader_util_gl_quad_renderer_gpu_buffer_format_84BF7823_ios_min10.0;
+			productReference = E0707F976910179400000000 /* lib_idx_shader_util_gl_quad_renderer_gpu_buffer_format_84BF7823_ios_min10.0.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B7E28F80C320043400000000 /* HandTrackingGpuApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD6A929AFE093F8300000000 /* Build configuration list for PBXNativeTarget "HandTrackingGpuApp" */;
+			buildPhases = (
+				DA926BAF06FBA17700000000 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DBD91F52A73AD2900000000 /* PBXTargetDependency */,
+			);
+			name = HandTrackingGpuApp;
+			productName = HandTrackingGpuApp;
+			productReference = E0707F9705E83A6A00000000 /* HandTrackingGpuApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B7E28F80E0F3415E00000000 /* _idx_gl_context_C983A10F_ios_min10.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD6A929ACE0B36DD00000000 /* Build configuration list for PBXNativeTarget "_idx_gl_context_C983A10F_ios_min10.0" */;
+			buildPhases = (
+				4D2CE23E000000000000000D /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DBD91F52A73AD2900000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+				8DBD91F55CD9973F00000000 /* PBXTargetDependency */,
+			);
+			name = _idx_gl_context_C983A10F_ios_min10.0;
+			productName = _idx_gl_context_C983A10F_ios_min10.0;
+			productReference = E0707F97A1641C0C00000000 /* lib_idx_gl_context_C983A10F_ios_min10.0.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B7E28F80E948F46A00000000 /* _idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD6A929A6CCFD91B00000000 /* Build configuration list for PBXNativeTarget "_idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10.0" */;
+			buildPhases = (
+				4D2CE23E0000000000000000 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DBD91F52A73AD2900000000 /* PBXTargetDependency */,
+				8DBD91F514AEDC1D00000000 /* PBXTargetDependency */,
+				8DBD91F553810A2300000000 /* PBXTargetDependency */,
+				8DBD91F553810A2300000000 /* PBXTargetDependency */,
+			);
+			name = _idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10.0;
+			productName = _idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10.0;
+			productReference = E0707F9711A3713E00000000 /* lib_idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10.0.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D2A6F216428F4B8400000000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 1000;
+			};
+			buildConfigurationList = DD6A929A4E3B421600000000 /* Build configuration list for PBXProject "Mediapipe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+				Base,
+			);
+			mainGroup = 3E9DBDE84321269F00000000 /* mainGroup */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B7E28F80C320043400000000 /* HandTrackingGpuApp */,
+				326DA36C2A73AD2800000000 /* _bazel_clean_ */,
+				B7E28F80E948F46A00000000 /* _idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10.0 */,
+				B7E28F80348F8CFC00000000 /* _idx_MPPGraphGPUData_6980D839_ios_min10.0 */,
+				B7E28F80E0F3415E00000000 /* _idx_gl_context_C983A10F_ios_min10.0 */,
+				B7E28F8021397EF600000000 /* _idx_gl_simple_shaders_9BE47DE4_ios_min10.0 */,
+				B7E28F8014AEDC1C00000000 /* _idx_mediapipe_input_sources_ios_B5C92B5F_ios_min10.0 */,
+				B7E28F8053810A2200000000 /* _idx_mediapipe_layer_renderer_gl_calculator_helper_ios_mediapipe_framework_ios_mediapipe_gl_view_renderer_DFF84B5D_ios_min10.0 */,
+				B7E28F80947DCA2000000000 /* _idx_output_stream_manager_calculator_node_default_input_stream_handler_graph_output_stream_in_order_output_stream_handler_input_stream_handler_output_stream_handler_997A2E1C_ios_min10.0 */,
+				B7E28F8056F7330600000000 /* _idx_pixel_buffer_pool_util_11B1CF81_ios_min10.0 */,
+				B7E28F80A696441800000000 /* _idx_profiler_resource_util_9FE97AC4_ios_min10.0 */,
+				B7E28F80079A3DD400000000 /* _idx_registration_token_gpu_service_20AEE6FB_ios_min10.0 */,
+				B7E28F80A86909CA00000000 /* _idx_scheduler_queue_00D9FD43_ios_min10.0 */,
+				B7E28F80BB46C4E200000000 /* _idx_shader_util_gl_quad_renderer_gpu_buffer_format_84BF7823_ios_min10.0 */,
+				B7E28F803E12974600000000 /* _idx_sink_calculator_graph_gpu_buffer_multi_pool_D5C77C6B_ios_min10.0 */,
+				B7E28F805CD9973E00000000 /* _idx_validated_graph_config_calculator_base_calculator_context_calculator_context_manager_calculator_contract_calculator_registry_util_calculator_state_callback_packet_calculator_cl_etc_7C1AD98D_ios_min10.0 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DA926BAF06FBA17700000000 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			inputPaths = (
+				"$(TARGET_BUILD_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "set -e\n\nexec \"${PROJECT_FILE_PATH}/.tulsi/Scripts/bazel_build.py\" //mediapipe/examples/ios/handtrackinggpu:HandTrackingGpuApp --bazel \"/usr/local/Cellar/bazel/3.2.0/bin/bazel\" --bazel_bin_path \"bazel-bin\" --verbose ";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4D2CE23E0000000000000000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				4E7441DD34CF1B9A00000000 /* AppDelegate.m in Sources */,
+				4E7441DDC337C41400000000 /* ViewController.mm in Sources */,
+				4E7441DDC49B738A00000000 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D2CE23E0000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				4E7441DDBFE67CC100000000 /* MPPCameraInputSource.m in Sources */,
+				4E7441DD1A8D678C00000000 /* MPPDisplayLinkWeakTarget.m in Sources */,
+				4E7441DD068B602200000000 /* MPPInputSource.m in Sources */,
+				4E7441DDBC737FC800000000 /* MPPPlayerInputSource.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D2CE23E0000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				4E7441DDC404A47900000000 /* MPPLayerRenderer.m in Sources */,
+				4E7441DDC1B96B2300000000 /* gl_calculator_helper.cc in Sources */,
+				4E7441DD06E1F2DB00000000 /* gl_calculator_helper_impl_ios.mm in Sources */,
+				4E7441DD1CD62F0A00000000 /* gl_calculator_helper_impl_common.cc in Sources */,
+				4E7441DD2F85D0C400000000 /* MPPGraph.mm in Sources */,
+				4E7441DD703D09CD00000000 /* MPPTimestampConverter.mm in Sources */,
+				4E7441DD3B0678C900000000 /* NSError+util_status.mm in Sources */,
+				4E7441DD1C203CE800000000 /* MPPGLViewRenderer.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D2CE23E0000000000000003 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				4E7441DDC7E682ED00000000 /* validated_graph_config.cc in Sources */,
+				4E7441DD4A56785100000000 /* calculator_base.cc in Sources */,
+				4E7441DD0F569F7800000000 /* calculator_context.cc in Sources */,
+				4E7441DDD6DFC88600000000 /* calculator_context_manager.cc in Sources */,
+				4E7441DD14AF5A0500000000 /* calculator_contract.cc in Sources */,
+				4E7441DD475885A500000000 /* calculator_registry_util.cc in Sources */,
+				4E7441DDD1C480B500000000 /* calculator_state.cc in Sources */,
+				4E7441DD625C322800000000 /* callback_packet_calculator.cc in Sources */,
+				4E7441DD019A627500000000 /* clock.cc in Sources */,
+				4E7441DD354C992500000000 /* monotonic_clock.cc in Sources */,
+				4E7441DD4054F75D00000000 /* collection_item_id.cc in Sources */,
+				4E7441DD8B575A2E00000000 /* counter_factory.cc in Sources */,
+				4E7441DDD4E7DCE500000000 /* cpu_util.cc in Sources */,
+				4E7441DDF36AAB3600000000 /* delegating_executor.cc in Sources */,
+				4E7441DD6C102BFC00000000 /* executor.cc in Sources */,
+				4E7441DD06FAEB5A00000000 /* fill_packet_set.cc in Sources */,
+				4E7441DDBDC3846200000000 /* gl_context_profiler.cc in Sources */,
+				4E7441DDE2F9613F00000000 /* graph_profiler.cc in Sources */,
+				4E7441DDE14FA3D900000000 /* graph_tracer.cc in Sources */,
+				4E7441DD0046B07B00000000 /* trace_builder.cc in Sources */,
+				4E7441DD56BF070900000000 /* image_frame.cc in Sources */,
+				4E7441DD2D4BF7B700000000 /* input_side_packet_handler.cc in Sources */,
+				4E7441DDF17ED23500000000 /* input_stream_manager.cc in Sources */,
+				4E7441DD6922738900000000 /* input_stream_shard.cc in Sources */,
+				4E7441DD4256AC7700000000 /* legacy_calculator_support.cc in Sources */,
+				4E7441DD6BED0B1F00000000 /* name_util.cc in Sources */,
+				4E7441DDAFA9D29200000000 /* output_side_packet_impl.cc in Sources */,
+				4E7441DD3EC400B900000000 /* output_stream_shard.cc in Sources */,
+				4E7441DDD1EAD15200000000 /* packet.cc in Sources */,
+				4E7441DD3FF67A0700000000 /* packet_generator_graph.cc in Sources */,
+				4E7441DD8464E59700000000 /* packet_type.cc in Sources */,
+				4E7441DDA780E9A600000000 /* proto_util_lite.cc in Sources */,
+				4E7441DD1B3D549E00000000 /* registration.cc in Sources */,
+				4E7441DD1741551B00000000 /* ret_check.cc in Sources */,
+				4E7441DDD1A2041300000000 /* status.cc in Sources */,
+				4E7441DDA1D3740400000000 /* status_builder.cc in Sources */,
+				4E7441DDE91D081800000000 /* status_util.cc in Sources */,
+				4E7441DDF8F8481400000000 /* statusor.cc in Sources */,
+				4E7441DD2CC0855E00000000 /* subgraph.cc in Sources */,
+				4E7441DD2FD8967000000000 /* subgraph_expansion.cc in Sources */,
+				4E7441DD7EB9931B00000000 /* tag_map.cc in Sources */,
+				4E7441DDD51F4C6E00000000 /* template_expander.cc in Sources */,
+				4E7441DD2229F48900000000 /* thread_pool_executor.cc in Sources */,
+				4E7441DDA825CBED00000000 /* threadpool_pthread_impl.cc in Sources */,
+				4E7441DDA377762200000000 /* timestamp.cc in Sources */,
+				4E7441DDE33BB79900000000 /* topologicalsorter.cc in Sources */,
+				4E7441DDBC55115300000000 /* util.cc in Sources */,
+				4E7441DD8A78CDA600000000 /* validate.cc in Sources */,
+				4E7441DDA88889BD00000000 /* validate_name.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D2CE23E0000000000000004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				4E7441DD567E731F00000000 /* profiler_resource_util_ios.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D2CE23E0000000000000005 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				4E7441DD427F97B700000000 /* registration_token.cc in Sources */,
+				4E7441DDB65F382800000000 /* gpu_service.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D2CE23E0000000000000006 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				4E7441DDE9B132D700000000 /* shader_util.cc in Sources */,
+				4E7441DDE3BBA65F00000000 /* gl_quad_renderer.cc in Sources */,
+				4E7441DDE9ED2E6200000000 /* gpu_buffer_format.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D2CE23E0000000000000007 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				4E7441DDC234CF5800000000 /* gl_simple_shaders.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D2CE23E0000000000000008 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				4E7441DD85B014BA00000000 /* MPPGraphGPUData.mm in Sources */,
+				4E7441DDAA662CB600000000 /* gpu_shared_data_internal.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D2CE23E0000000000000009 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				4E7441DD0781B76B00000000 /* sink.cc in Sources */,
+				4E7441DDC259A90B00000000 /* calculator_graph.cc in Sources */,
+				4E7441DDA350D71E00000000 /* scheduler.cc in Sources */,
+				4E7441DD6597841900000000 /* gpu_buffer_multi_pool.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D2CE23E000000000000000A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				4E7441DDAFE0472400000000 /* output_stream_manager.cc in Sources */,
+				4E7441DD71F5DE7D00000000 /* calculator_node.cc in Sources */,
+				4E7441DD1B03E02200000000 /* default_input_stream_handler.cc in Sources */,
+				4E7441DD5C4291BC00000000 /* graph_output_stream.cc in Sources */,
+				4E7441DD34A2A10800000000 /* in_order_output_stream_handler.cc in Sources */,
+				4E7441DDFC9C1C1900000000 /* input_stream_handler.cc in Sources */,
+				4E7441DDC49AF4B600000000 /* output_stream_handler.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D2CE23E000000000000000B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				4E7441DD3CE2D50400000000 /* scheduler_queue.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D2CE23E000000000000000C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				4E7441DD9BDD29CA00000000 /* pixel_buffer_pool_util.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D2CE23E000000000000000D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				4E7441DD798C27D600000000 /* gl_context.cc in Sources */,
+				4E7441DD0C7EC44400000000 /* gl_context_eagl.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8DBD91F5079A3DD500000000 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7E28F80079A3DD400000000 /* _idx_registration_token_gpu_service_20AEE6FB_ios_min10.0 */;
+			targetProxy = 9931F9A0079A3DD500000000 /* PBXContainerItemProxy */;
+		};
+		8DBD91F514AEDC1D00000000 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7E28F8014AEDC1C00000000 /* _idx_mediapipe_input_sources_ios_B5C92B5F_ios_min10.0 */;
+			targetProxy = 9931F9A014AEDC1D00000000 /* PBXContainerItemProxy */;
+		};
+		8DBD91F521397EF700000000 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7E28F8021397EF600000000 /* _idx_gl_simple_shaders_9BE47DE4_ios_min10.0 */;
+			targetProxy = 9931F9A021397EF700000000 /* PBXContainerItemProxy */;
+		};
+		8DBD91F52A73AD2900000000 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 326DA36C2A73AD2800000000 /* _bazel_clean_ */;
+			targetProxy = 9931F9A02A73AD2900000000 /* PBXContainerItemProxy */;
+		};
+		8DBD91F5348F8CFD00000000 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7E28F80348F8CFC00000000 /* _idx_MPPGraphGPUData_6980D839_ios_min10.0 */;
+			targetProxy = 9931F9A0348F8CFD00000000 /* PBXContainerItemProxy */;
+		};
+		8DBD91F53E12974700000000 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7E28F803E12974600000000 /* _idx_sink_calculator_graph_gpu_buffer_multi_pool_D5C77C6B_ios_min10.0 */;
+			targetProxy = 9931F9A03E12974700000000 /* PBXContainerItemProxy */;
+		};
+		8DBD91F553810A2300000000 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7E28F8053810A2200000000 /* _idx_mediapipe_layer_renderer_gl_calculator_helper_ios_mediapipe_framework_ios_mediapipe_gl_view_renderer_DFF84B5D_ios_min10.0 */;
+			targetProxy = 9931F9A053810A2300000000 /* PBXContainerItemProxy */;
+		};
+		8DBD91F556F7330700000000 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7E28F8056F7330600000000 /* _idx_pixel_buffer_pool_util_11B1CF81_ios_min10.0 */;
+			targetProxy = 9931F9A056F7330700000000 /* PBXContainerItemProxy */;
+		};
+		8DBD91F55CD9973F00000000 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7E28F805CD9973E00000000 /* _idx_validated_graph_config_calculator_base_calculator_context_calculator_context_manager_calculator_contract_calculator_registry_util_calculator_state_callback_packet_calculator_cl_etc_7C1AD98D_ios_min10.0 */;
+			targetProxy = 9931F9A05CD9973F00000000 /* PBXContainerItemProxy */;
+		};
+		8DBD91F5947DCA2100000000 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7E28F80947DCA2000000000 /* _idx_output_stream_manager_calculator_node_default_input_stream_handler_graph_output_stream_in_order_output_stream_handler_input_stream_handler_output_stream_handler_997A2E1C_ios_min10.0 */;
+			targetProxy = 9931F9A0947DCA2100000000 /* PBXContainerItemProxy */;
+		};
+		8DBD91F5A696441900000000 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7E28F80A696441800000000 /* _idx_profiler_resource_util_9FE97AC4_ios_min10.0 */;
+			targetProxy = 9931F9A0A696441900000000 /* PBXContainerItemProxy */;
+		};
+		8DBD91F5A86909CB00000000 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7E28F80A86909CA00000000 /* _idx_scheduler_queue_00D9FD43_ios_min10.0 */;
+			targetProxy = 9931F9A0A86909CB00000000 /* PBXContainerItemProxy */;
+		};
+		8DBD91F5BB46C4E300000000 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7E28F80BB46C4E200000000 /* _idx_shader_util_gl_quad_renderer_gpu_buffer_format_84BF7823_ios_min10.0 */;
+			targetProxy = 9931F9A0BB46C4E300000000 /* PBXContainerItemProxy */;
+		};
+		8DBD91F5E0F3415F00000000 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7E28F80E0F3415E00000000 /* _idx_gl_context_C983A10F_ios_min10.0 */;
+			targetProxy = 9931F9A0E0F3415F00000000 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D8D592DA34F0553C00000000 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0707F974A2F720400000000 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D8D592DAEC50D40A00000000 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0707F9739997ECF00000000 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		599A2705397D9D7100000000 /* __TulsiTestRunner_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				DONT_RUN_SWIFT_STDLIB_TOOL = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "--version";
+				OTHER_LDFLAGS = "--version";
+				OTHER_SWIFT_FLAGS = "--version";
+				PYTHONIOENCODING = utf8;
+				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(PRODUCT_NAME).h";
+				TULSI_BWRS = "$(PROJECT_FILE_PATH)/.tulsi/tulsi-workspace";
+				TULSI_PROJECT = Mediapipe;
+				TULSI_VERSION = 0.20190814.88;
+				TULSI_WR = "$(SRCROOT)";
+			};
+			name = __TulsiTestRunner_Release;
+		};
+		599A2705397D9D7100000001 /* __TulsiTestRunner_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Stub Launch Image";
+				BAZEL_TARGET = "//mediapipe/examples/ios/handtrackinggpu:HandTrackingGpuApp";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "${PROJECT_FILE_PATH}/.tulsi/Resources/StubInfoPlist.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "--version";
+				OTHER_LDFLAGS = "--version";
+				OTHER_SWIFT_FLAGS = "--version";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.ecn.das;
+				PRODUCT_NAME = HandTrackingGpuApp;
+				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(PRODUCT_NAME).h";
+				TULSI_BUILD_PATH = mediapipe/examples/ios/handtrackinggpu;
+				TULSI_XCODE_VERSION = 11.6.0.11E708;
+			};
+			name = __TulsiTestRunner_Release;
+		};
+		599A27053E5C9C9700000000 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				DONT_RUN_SWIFT_STDLIB_TOOL = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(TULSI_BWRS)",
+					"$(TULSI_WR)/bazel-bin",
+					"$(TULSI_WR)/bazel-genfiles",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				PYTHONIOENCODING = utf8;
+				SDKROOT = iphoneos;
+				TULSI_BWRS = "$(PROJECT_FILE_PATH)/.tulsi/tulsi-workspace";
+				TULSI_PROJECT = Mediapipe;
+				TULSI_VERSION = 0.20190814.88;
+				TULSI_WR = "$(SRCROOT)";
+			};
+			name = Release;
+		};
+		599A27053E5C9C9700000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Stub Launch Image";
+				BAZEL_TARGET = "//mediapipe/examples/ios/handtrackinggpu:HandTrackingGpuApp";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				INFOPLIST_FILE = "${PROJECT_FILE_PATH}/.tulsi/Resources/StubInfoPlist.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.ecn.das;
+				PRODUCT_NAME = HandTrackingGpuApp;
+				SDKROOT = iphoneos;
+				TULSI_BUILD_PATH = mediapipe/examples/ios/handtrackinggpu;
+				TULSI_XCODE_VERSION = 11.6.0.11E708;
+			};
+			name = Release;
+		};
+		599A27053E5C9C9700000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TULSI_WR)/external/google_toolbox_for_mac",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/google_toolbox_for_mac",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_gflags_gflags/_virtual_includes/gflags",
+					"$(TULSI_WR)/.",
+					"$(TULSI_WR)/_tulsi-includes/x/x/",
+					"$(TULSI_WR)/external/com_google_protobuf",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_protobuf",
+					"$(TULSI_WR)/external/zlib",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/zlib",
+					"$(TULSI_WR)/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_WR)/external/com_github_gflags_gflags",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_gflags_gflags",
+					"$(TULSI_WR)/external/com_google_absl",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_absl",
+					"$(TULSI_WR)/external/com_google_protobuf/src",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_protobuf/src",
+					"$(TULSI_WR)/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_BWRS)/external/google_toolbox_for_mac",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/google_toolbox_for_mac",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_gflags_gflags/_virtual_includes/gflags",
+					"$(TULSI_BWRS)/.",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/",
+					"$(TULSI_BWRS)/external/com_google_protobuf",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_protobuf",
+					"$(TULSI_BWRS)/external/zlib",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/zlib",
+					"$(TULSI_BWRS)/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_BWRS)/external/com_github_gflags_gflags",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_gflags_gflags",
+					"$(TULSI_BWRS)/external/com_google_absl",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_absl",
+					"$(TULSI_BWRS)/external/com_google_protobuf/src",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_protobuf/src",
+					"$(TULSI_BWRS)/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5/src",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-DGLES_SILENCE_DEPRECATION=1",
+					"-DMEDIAPIPE_PROFILER_AVAILABLE",
+					"-D_FORTIFY_SOURCE=1",
+					"-D__CLANG_SUPPORT_DYN_ANNOTATION__",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Release;
+		};
+		599A27053E5C9C9700000003 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TULSI_WR)/.",
+					"$(TULSI_WR)/_tulsi-includes/x/x/",
+					"$(TULSI_BWRS)/.",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-D_FORTIFY_SOURCE=1",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_mediapipe_input_sources_ios_B5C92B5F_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Release;
+		};
+		599A27053E5C9C9700000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TULSI_WR)/external/google_toolbox_for_mac",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/google_toolbox_for_mac",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_gflags_gflags/_virtual_includes/gflags",
+					"$(TULSI_WR)/.",
+					"$(TULSI_WR)/_tulsi-includes/x/x/",
+					"$(TULSI_WR)/external/com_google_protobuf",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_protobuf",
+					"$(TULSI_WR)/external/zlib",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/zlib",
+					"$(TULSI_WR)/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_WR)/external/com_github_gflags_gflags",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_gflags_gflags",
+					"$(TULSI_WR)/external/com_google_absl",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_absl",
+					"$(TULSI_WR)/external/com_google_protobuf/src",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_protobuf/src",
+					"$(TULSI_WR)/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_BWRS)/external/google_toolbox_for_mac",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/google_toolbox_for_mac",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_gflags_gflags/_virtual_includes/gflags",
+					"$(TULSI_BWRS)/.",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/",
+					"$(TULSI_BWRS)/external/com_google_protobuf",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_protobuf",
+					"$(TULSI_BWRS)/external/zlib",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/zlib",
+					"$(TULSI_BWRS)/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_BWRS)/external/com_github_gflags_gflags",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_gflags_gflags",
+					"$(TULSI_BWRS)/external/com_google_absl",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_absl",
+					"$(TULSI_BWRS)/external/com_google_protobuf/src",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_protobuf/src",
+					"$(TULSI_BWRS)/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5/src",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-DGLES_SILENCE_DEPRECATION=1",
+					"-DMEDIAPIPE_PROFILER_AVAILABLE",
+					"-D_FORTIFY_SOURCE=1",
+					"-D__CLANG_SUPPORT_DYN_ANNOTATION__",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_mediapipe_layer_renderer_gl_calculator_helper_ios_mediapipe_framework_ios_mediapipe_gl_view_renderer_DFF84B5D_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Release;
+		};
+		599A27053E5C9C9700000005 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-D_FORTIFY_SOURCE=1",
+					"-D__CLANG_SUPPORT_DYN_ANNOTATION__",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_validated_graph_config_calculator_base_calculator_context_calculator_context_manager_calculator_contract_calculator_registry_util_calculator_state_callback_packet_calculator_cl_etc_7C1AD98D_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Release;
+		};
+		599A27053E5C9C9700000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-ObjC++",
+					"-D_FORTIFY_SOURCE=1",
+					"-D__CLANG_SUPPORT_DYN_ANNOTATION__",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_profiler_resource_util_9FE97AC4_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Release;
+		};
+		599A27053E5C9C9700000007 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-D_FORTIFY_SOURCE=1",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_registration_token_gpu_service_20AEE6FB_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Release;
+		};
+		599A27053E5C9C9700000008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-DGLES_SILENCE_DEPRECATION=1",
+					"-D_FORTIFY_SOURCE=1",
+					"-D__CLANG_SUPPORT_DYN_ANNOTATION__",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_shader_util_gl_quad_renderer_gpu_buffer_format_84BF7823_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Release;
+		};
+		599A27053E5C9C9700000009 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-DGLES_SILENCE_DEPRECATION=1",
+					"-D_FORTIFY_SOURCE=1",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_gl_simple_shaders_9BE47DE4_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Release;
+		};
+		599A27053E5C9C970000000A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TULSI_WR)/external/google_toolbox_for_mac",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/google_toolbox_for_mac",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_gflags_gflags/_virtual_includes/gflags",
+					"$(TULSI_WR)/.",
+					"$(TULSI_WR)/_tulsi-includes/x/x/",
+					"$(TULSI_WR)/external/com_google_protobuf",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_protobuf",
+					"$(TULSI_WR)/external/zlib",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/zlib",
+					"$(TULSI_WR)/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_WR)/external/com_github_gflags_gflags",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_gflags_gflags",
+					"$(TULSI_WR)/external/com_google_absl",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_absl",
+					"$(TULSI_WR)/external/com_google_protobuf/src",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_protobuf/src",
+					"$(TULSI_WR)/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_BWRS)/external/google_toolbox_for_mac",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/google_toolbox_for_mac",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_gflags_gflags/_virtual_includes/gflags",
+					"$(TULSI_BWRS)/.",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/",
+					"$(TULSI_BWRS)/external/com_google_protobuf",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_protobuf",
+					"$(TULSI_BWRS)/external/zlib",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/zlib",
+					"$(TULSI_BWRS)/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_BWRS)/external/com_github_gflags_gflags",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_gflags_gflags",
+					"$(TULSI_BWRS)/external/com_google_absl",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_absl",
+					"$(TULSI_BWRS)/external/com_google_protobuf/src",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_protobuf/src",
+					"$(TULSI_BWRS)/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5/src",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-x",
+					"objective-c++",
+					"-DGLES_SILENCE_DEPRECATION=1",
+					"-DMEDIAPIPE_PROFILER_AVAILABLE",
+					"-D_FORTIFY_SOURCE=1",
+					"-D__CLANG_SUPPORT_DYN_ANNOTATION__",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_MPPGraphGPUData_6980D839_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Release;
+		};
+		599A27053E5C9C970000000B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-DGLES_SILENCE_DEPRECATION=1",
+					"-DMEDIAPIPE_PROFILER_AVAILABLE",
+					"-D_FORTIFY_SOURCE=1",
+					"-D__CLANG_SUPPORT_DYN_ANNOTATION__",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_sink_calculator_graph_gpu_buffer_multi_pool_D5C77C6B_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Release;
+		};
+		599A27053E5C9C970000000C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-DMEDIAPIPE_PROFILER_AVAILABLE",
+					"-D_FORTIFY_SOURCE=1",
+					"-D__CLANG_SUPPORT_DYN_ANNOTATION__",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_output_stream_manager_calculator_node_default_input_stream_handler_graph_output_stream_in_order_output_stream_handler_input_stream_handler_output_stream_handler_997A2E1C_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Release;
+		};
+		599A27053E5C9C970000000D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-ObjC++",
+					"-DMEDIAPIPE_PROFILER_AVAILABLE",
+					"-D_FORTIFY_SOURCE=1",
+					"-D__CLANG_SUPPORT_DYN_ANNOTATION__",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_scheduler_queue_00D9FD43_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Release;
+		};
+		599A27053E5C9C970000000E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_gflags_gflags/_virtual_includes/gflags",
+					"$(TULSI_WR)/.",
+					"$(TULSI_WR)/_tulsi-includes/x/x/",
+					"$(TULSI_WR)/external/com_google_absl",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_absl",
+					"$(TULSI_WR)/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_WR)/external/com_github_gflags_gflags",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_gflags_gflags",
+					"$(TULSI_WR)/external/com_google_protobuf",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_protobuf",
+					"$(TULSI_WR)/external/zlib",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/zlib",
+					"$(TULSI_WR)/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_WR)/external/com_google_protobuf/src",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_protobuf/src",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_gflags_gflags/_virtual_includes/gflags",
+					"$(TULSI_BWRS)/.",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/",
+					"$(TULSI_BWRS)/external/com_google_absl",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_absl",
+					"$(TULSI_BWRS)/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_BWRS)/external/com_github_gflags_gflags",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_gflags_gflags",
+					"$(TULSI_BWRS)/external/com_google_protobuf",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_protobuf",
+					"$(TULSI_BWRS)/external/zlib",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/zlib",
+					"$(TULSI_BWRS)/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_BWRS)/external/com_google_protobuf/src",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_protobuf/src",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-D_FORTIFY_SOURCE=1",
+					"-D__CLANG_SUPPORT_DYN_ANNOTATION__",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_pixel_buffer_pool_util_11B1CF81_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Release;
+		};
+		599A27053E5C9C970000000F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-x",
+					"objective-c++",
+					"-fobjc-arc",
+					"-DGLES_SILENCE_DEPRECATION=1",
+					"-DMEDIAPIPE_PROFILER_AVAILABLE",
+					"-D_FORTIFY_SOURCE=1",
+					"-D__CLANG_SUPPORT_DYN_ANNOTATION__",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_gl_context_C983A10F_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Release;
+		};
+		599A27054DF3BCEA00000000 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				DONT_RUN_SWIFT_STDLIB_TOOL = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(TULSI_BWRS)",
+					"$(TULSI_WR)/bazel-bin",
+					"$(TULSI_WR)/bazel-genfiles",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				PYTHONIOENCODING = utf8;
+				SDKROOT = iphoneos;
+				TULSI_BWRS = "$(PROJECT_FILE_PATH)/.tulsi/tulsi-workspace";
+				TULSI_PROJECT = Mediapipe;
+				TULSI_VERSION = 0.20190814.88;
+				TULSI_WR = "$(SRCROOT)";
+			};
+			name = Debug;
+		};
+		599A27054DF3BCEA00000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Stub Launch Image";
+				BAZEL_TARGET = "//mediapipe/examples/ios/handtrackinggpu:HandTrackingGpuApp";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				INFOPLIST_FILE = "${PROJECT_FILE_PATH}/.tulsi/Resources/StubInfoPlist.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.ecn.das;
+				PRODUCT_NAME = HandTrackingGpuApp;
+				SDKROOT = iphoneos;
+				TULSI_BUILD_PATH = mediapipe/examples/ios/handtrackinggpu;
+				TULSI_XCODE_VERSION = 11.6.0.11E708;
+			};
+			name = Debug;
+		};
+		599A27054DF3BCEA00000002 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TULSI_WR)/external/google_toolbox_for_mac",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/google_toolbox_for_mac",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_gflags_gflags/_virtual_includes/gflags",
+					"$(TULSI_WR)/.",
+					"$(TULSI_WR)/_tulsi-includes/x/x/",
+					"$(TULSI_WR)/external/com_google_protobuf",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_protobuf",
+					"$(TULSI_WR)/external/zlib",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/zlib",
+					"$(TULSI_WR)/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_WR)/external/com_github_gflags_gflags",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_gflags_gflags",
+					"$(TULSI_WR)/external/com_google_absl",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_absl",
+					"$(TULSI_WR)/external/com_google_protobuf/src",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_protobuf/src",
+					"$(TULSI_WR)/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_BWRS)/external/google_toolbox_for_mac",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/google_toolbox_for_mac",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_gflags_gflags/_virtual_includes/gflags",
+					"$(TULSI_BWRS)/.",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/",
+					"$(TULSI_BWRS)/external/com_google_protobuf",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_protobuf",
+					"$(TULSI_BWRS)/external/zlib",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/zlib",
+					"$(TULSI_BWRS)/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_BWRS)/external/com_github_gflags_gflags",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_gflags_gflags",
+					"$(TULSI_BWRS)/external/com_google_absl",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_absl",
+					"$(TULSI_BWRS)/external/com_google_protobuf/src",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_protobuf/src",
+					"$(TULSI_BWRS)/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5/src",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-DGLES_SILENCE_DEPRECATION=1",
+					"-DMEDIAPIPE_PROFILER_AVAILABLE",
+					"-D_FORTIFY_SOURCE=1",
+					"-D__CLANG_SUPPORT_DYN_ANNOTATION__",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Debug;
+		};
+		599A27054DF3BCEA00000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TULSI_WR)/.",
+					"$(TULSI_WR)/_tulsi-includes/x/x/",
+					"$(TULSI_BWRS)/.",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-D_FORTIFY_SOURCE=1",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_mediapipe_input_sources_ios_B5C92B5F_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Debug;
+		};
+		599A27054DF3BCEA00000004 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TULSI_WR)/external/google_toolbox_for_mac",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/google_toolbox_for_mac",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_gflags_gflags/_virtual_includes/gflags",
+					"$(TULSI_WR)/.",
+					"$(TULSI_WR)/_tulsi-includes/x/x/",
+					"$(TULSI_WR)/external/com_google_protobuf",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_protobuf",
+					"$(TULSI_WR)/external/zlib",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/zlib",
+					"$(TULSI_WR)/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_WR)/external/com_github_gflags_gflags",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_gflags_gflags",
+					"$(TULSI_WR)/external/com_google_absl",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_absl",
+					"$(TULSI_WR)/external/com_google_protobuf/src",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_protobuf/src",
+					"$(TULSI_WR)/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_BWRS)/external/google_toolbox_for_mac",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/google_toolbox_for_mac",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_gflags_gflags/_virtual_includes/gflags",
+					"$(TULSI_BWRS)/.",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/",
+					"$(TULSI_BWRS)/external/com_google_protobuf",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_protobuf",
+					"$(TULSI_BWRS)/external/zlib",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/zlib",
+					"$(TULSI_BWRS)/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_BWRS)/external/com_github_gflags_gflags",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_gflags_gflags",
+					"$(TULSI_BWRS)/external/com_google_absl",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_absl",
+					"$(TULSI_BWRS)/external/com_google_protobuf/src",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_protobuf/src",
+					"$(TULSI_BWRS)/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5/src",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-DGLES_SILENCE_DEPRECATION=1",
+					"-DMEDIAPIPE_PROFILER_AVAILABLE",
+					"-D_FORTIFY_SOURCE=1",
+					"-D__CLANG_SUPPORT_DYN_ANNOTATION__",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_mediapipe_layer_renderer_gl_calculator_helper_ios_mediapipe_framework_ios_mediapipe_gl_view_renderer_DFF84B5D_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Debug;
+		};
+		599A27054DF3BCEA00000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-D_FORTIFY_SOURCE=1",
+					"-D__CLANG_SUPPORT_DYN_ANNOTATION__",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_validated_graph_config_calculator_base_calculator_context_calculator_context_manager_calculator_contract_calculator_registry_util_calculator_state_callback_packet_calculator_cl_etc_7C1AD98D_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Debug;
+		};
+		599A27054DF3BCEA00000006 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-ObjC++",
+					"-D_FORTIFY_SOURCE=1",
+					"-D__CLANG_SUPPORT_DYN_ANNOTATION__",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_profiler_resource_util_9FE97AC4_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Debug;
+		};
+		599A27054DF3BCEA00000007 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-D_FORTIFY_SOURCE=1",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_registration_token_gpu_service_20AEE6FB_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Debug;
+		};
+		599A27054DF3BCEA00000008 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-DGLES_SILENCE_DEPRECATION=1",
+					"-D_FORTIFY_SOURCE=1",
+					"-D__CLANG_SUPPORT_DYN_ANNOTATION__",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_shader_util_gl_quad_renderer_gpu_buffer_format_84BF7823_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Debug;
+		};
+		599A27054DF3BCEA00000009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-DGLES_SILENCE_DEPRECATION=1",
+					"-D_FORTIFY_SOURCE=1",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_gl_simple_shaders_9BE47DE4_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Debug;
+		};
+		599A27054DF3BCEA0000000A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TULSI_WR)/external/google_toolbox_for_mac",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/google_toolbox_for_mac",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_gflags_gflags/_virtual_includes/gflags",
+					"$(TULSI_WR)/.",
+					"$(TULSI_WR)/_tulsi-includes/x/x/",
+					"$(TULSI_WR)/external/com_google_protobuf",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_protobuf",
+					"$(TULSI_WR)/external/zlib",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/zlib",
+					"$(TULSI_WR)/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_WR)/external/com_github_gflags_gflags",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_gflags_gflags",
+					"$(TULSI_WR)/external/com_google_absl",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_absl",
+					"$(TULSI_WR)/external/com_google_protobuf/src",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_protobuf/src",
+					"$(TULSI_WR)/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_BWRS)/external/google_toolbox_for_mac",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/google_toolbox_for_mac",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_gflags_gflags/_virtual_includes/gflags",
+					"$(TULSI_BWRS)/.",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/",
+					"$(TULSI_BWRS)/external/com_google_protobuf",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_protobuf",
+					"$(TULSI_BWRS)/external/zlib",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/zlib",
+					"$(TULSI_BWRS)/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_BWRS)/external/com_github_gflags_gflags",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_gflags_gflags",
+					"$(TULSI_BWRS)/external/com_google_absl",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_absl",
+					"$(TULSI_BWRS)/external/com_google_protobuf/src",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_protobuf/src",
+					"$(TULSI_BWRS)/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5/src",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-x",
+					"objective-c++",
+					"-DGLES_SILENCE_DEPRECATION=1",
+					"-DMEDIAPIPE_PROFILER_AVAILABLE",
+					"-D_FORTIFY_SOURCE=1",
+					"-D__CLANG_SUPPORT_DYN_ANNOTATION__",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_MPPGraphGPUData_6980D839_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Debug;
+		};
+		599A27054DF3BCEA0000000B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-DGLES_SILENCE_DEPRECATION=1",
+					"-DMEDIAPIPE_PROFILER_AVAILABLE",
+					"-D_FORTIFY_SOURCE=1",
+					"-D__CLANG_SUPPORT_DYN_ANNOTATION__",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_sink_calculator_graph_gpu_buffer_multi_pool_D5C77C6B_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Debug;
+		};
+		599A27054DF3BCEA0000000C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-DMEDIAPIPE_PROFILER_AVAILABLE",
+					"-D_FORTIFY_SOURCE=1",
+					"-D__CLANG_SUPPORT_DYN_ANNOTATION__",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_output_stream_manager_calculator_node_default_input_stream_handler_graph_output_stream_in_order_output_stream_handler_input_stream_handler_output_stream_handler_997A2E1C_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Debug;
+		};
+		599A27054DF3BCEA0000000D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-ObjC++",
+					"-DMEDIAPIPE_PROFILER_AVAILABLE",
+					"-D_FORTIFY_SOURCE=1",
+					"-D__CLANG_SUPPORT_DYN_ANNOTATION__",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_scheduler_queue_00D9FD43_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Debug;
+		};
+		599A27054DF3BCEA0000000E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_gflags_gflags/_virtual_includes/gflags",
+					"$(TULSI_WR)/.",
+					"$(TULSI_WR)/_tulsi-includes/x/x/",
+					"$(TULSI_WR)/external/com_google_absl",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_absl",
+					"$(TULSI_WR)/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_WR)/external/com_github_gflags_gflags",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_gflags_gflags",
+					"$(TULSI_WR)/external/com_google_protobuf",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_protobuf",
+					"$(TULSI_WR)/external/zlib",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/zlib",
+					"$(TULSI_WR)/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_WR)/external/com_google_protobuf/src",
+					"$(TULSI_WR)/_tulsi-includes/x/x/external/com_google_protobuf/src",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_gflags_gflags/_virtual_includes/gflags",
+					"$(TULSI_BWRS)/.",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/",
+					"$(TULSI_BWRS)/external/com_google_absl",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_absl",
+					"$(TULSI_BWRS)/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5",
+					"$(TULSI_BWRS)/external/com_github_gflags_gflags",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_gflags_gflags",
+					"$(TULSI_BWRS)/external/com_google_protobuf",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_protobuf",
+					"$(TULSI_BWRS)/external/zlib",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/zlib",
+					"$(TULSI_BWRS)/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_github_glog_glog_v_0_3_5/src",
+					"$(TULSI_BWRS)/external/com_google_protobuf/src",
+					"$(TULSI_BWRS)/_tulsi-includes/x/x/external/com_google_protobuf/src",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-D_FORTIFY_SOURCE=1",
+					"-D__CLANG_SUPPORT_DYN_ANNOTATION__",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_pixel_buffer_pool_util_11B1CF81_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Debug;
+		};
+		599A27054DF3BCEA0000000F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-x",
+					"objective-c++",
+					"-fobjc-arc",
+					"-DGLES_SILENCE_DEPRECATION=1",
+					"-DMEDIAPIPE_PROFILER_AVAILABLE",
+					"-D_FORTIFY_SOURCE=1",
+					"-D__CLANG_SUPPORT_DYN_ANNOTATION__",
+					"-D__DATE__=\"redacted\"",
+					"-D__TIMESTAMP__=\"redacted\"",
+					"-D__TIME__=\"redacted\"",
+				);
+				PRODUCT_NAME = _idx_gl_context_C983A10F_ios_min10.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
+			};
+			name = Debug;
+		};
+		599A2705C2DF3E3700000000 /* __TulsiTestRunner_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				DONT_RUN_SWIFT_STDLIB_TOOL = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "--version";
+				OTHER_LDFLAGS = "--version";
+				OTHER_SWIFT_FLAGS = "--version";
+				PYTHONIOENCODING = utf8;
+				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(PRODUCT_NAME).h";
+				TULSI_BWRS = "$(PROJECT_FILE_PATH)/.tulsi/tulsi-workspace";
+				TULSI_PROJECT = Mediapipe;
+				TULSI_VERSION = 0.20190814.88;
+				TULSI_WR = "$(SRCROOT)";
+			};
+			name = __TulsiTestRunner_Debug;
+		};
+		599A2705C2DF3E3700000001 /* __TulsiTestRunner_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Stub Launch Image";
+				BAZEL_TARGET = "//mediapipe/examples/ios/handtrackinggpu:HandTrackingGpuApp";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "${PROJECT_FILE_PATH}/.tulsi/Resources/StubInfoPlist.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "--version";
+				OTHER_LDFLAGS = "--version";
+				OTHER_SWIFT_FLAGS = "--version";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.ecn.das;
+				PRODUCT_NAME = HandTrackingGpuApp;
+				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(PRODUCT_NAME).h";
+				TULSI_BUILD_PATH = mediapipe/examples/ios/handtrackinggpu;
+				TULSI_XCODE_VERSION = 11.6.0.11E708;
+			};
+			name = __TulsiTestRunner_Debug;
+		};
+		79A0E8DF250FE0EB00912DC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = _bazel_clean_;
+			};
+			name = Debug;
+		};
+		79A0E8E0250FE0EB00912DC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				PRODUCT_NAME = _bazel_clean_;
+			};
+			name = Release;
+		};
+		79A0E8E1250FE0EB00912DC7 /* __TulsiTestRunner_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _bazel_clean_;
+			};
+			name = __TulsiTestRunner_Debug;
+		};
+		79A0E8E2250FE0EB00912DC7 /* __TulsiTestRunner_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _bazel_clean_;
+			};
+			name = __TulsiTestRunner_Release;
+		};
+		79A0E8E3250FE0EB00912DC7 /* __TulsiTestRunner_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Debug;
+		};
+		79A0E8E4250FE0EB00912DC7 /* __TulsiTestRunner_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Release;
+		};
+		79A0E8E5250FE0EB00912DC7 /* __TulsiTestRunner_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_MPPGraphGPUData_6980D839_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Debug;
+		};
+		79A0E8E6250FE0EB00912DC7 /* __TulsiTestRunner_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_MPPGraphGPUData_6980D839_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Release;
+		};
+		79A0E8E7250FE0EB00912DC7 /* __TulsiTestRunner_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_gl_context_C983A10F_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Debug;
+		};
+		79A0E8E8250FE0EB00912DC7 /* __TulsiTestRunner_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_gl_context_C983A10F_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Release;
+		};
+		79A0E8E9250FE0EB00912DC7 /* __TulsiTestRunner_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_gl_simple_shaders_9BE47DE4_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Debug;
+		};
+		79A0E8EA250FE0EB00912DC7 /* __TulsiTestRunner_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_gl_simple_shaders_9BE47DE4_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Release;
+		};
+		79A0E8EB250FE0EB00912DC7 /* __TulsiTestRunner_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_mediapipe_input_sources_ios_B5C92B5F_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Debug;
+		};
+		79A0E8EC250FE0EB00912DC7 /* __TulsiTestRunner_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_mediapipe_input_sources_ios_B5C92B5F_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Release;
+		};
+		79A0E8ED250FE0EB00912DC7 /* __TulsiTestRunner_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_mediapipe_layer_renderer_gl_calculator_helper_ios_mediapipe_framework_ios_mediapipe_gl_view_renderer_DFF84B5D_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Debug;
+		};
+		79A0E8EE250FE0EB00912DC7 /* __TulsiTestRunner_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_mediapipe_layer_renderer_gl_calculator_helper_ios_mediapipe_framework_ios_mediapipe_gl_view_renderer_DFF84B5D_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Release;
+		};
+		79A0E8EF250FE0EB00912DC7 /* __TulsiTestRunner_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_output_stream_manager_calculator_node_default_input_stream_handler_graph_output_stream_in_order_output_stream_handler_input_stream_handler_output_stream_handler_997A2E1C_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Debug;
+		};
+		79A0E8F0250FE0EB00912DC7 /* __TulsiTestRunner_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_output_stream_manager_calculator_node_default_input_stream_handler_graph_output_stream_in_order_output_stream_handler_input_stream_handler_output_stream_handler_997A2E1C_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Release;
+		};
+		79A0E8F1250FE0EB00912DC7 /* __TulsiTestRunner_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_pixel_buffer_pool_util_11B1CF81_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Debug;
+		};
+		79A0E8F2250FE0EB00912DC7 /* __TulsiTestRunner_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_pixel_buffer_pool_util_11B1CF81_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Release;
+		};
+		79A0E8F3250FE0EB00912DC7 /* __TulsiTestRunner_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_profiler_resource_util_9FE97AC4_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Debug;
+		};
+		79A0E8F4250FE0EB00912DC7 /* __TulsiTestRunner_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_profiler_resource_util_9FE97AC4_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Release;
+		};
+		79A0E8F5250FE0EB00912DC7 /* __TulsiTestRunner_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_registration_token_gpu_service_20AEE6FB_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Debug;
+		};
+		79A0E8F6250FE0EB00912DC7 /* __TulsiTestRunner_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_registration_token_gpu_service_20AEE6FB_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Release;
+		};
+		79A0E8F7250FE0EB00912DC7 /* __TulsiTestRunner_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_scheduler_queue_00D9FD43_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Debug;
+		};
+		79A0E8F8250FE0EB00912DC7 /* __TulsiTestRunner_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_scheduler_queue_00D9FD43_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Release;
+		};
+		79A0E8F9250FE0EB00912DC7 /* __TulsiTestRunner_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_shader_util_gl_quad_renderer_gpu_buffer_format_84BF7823_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Debug;
+		};
+		79A0E8FA250FE0EB00912DC7 /* __TulsiTestRunner_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_shader_util_gl_quad_renderer_gpu_buffer_format_84BF7823_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Release;
+		};
+		79A0E8FB250FE0EB00912DC7 /* __TulsiTestRunner_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_sink_calculator_graph_gpu_buffer_multi_pool_D5C77C6B_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Debug;
+		};
+		79A0E8FC250FE0EB00912DC7 /* __TulsiTestRunner_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_sink_calculator_graph_gpu_buffer_multi_pool_D5C77C6B_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Release;
+		};
+		79A0E8FD250FE0EB00912DC7 /* __TulsiTestRunner_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_validated_graph_config_calculator_base_calculator_context_calculator_context_manager_calculator_contract_calculator_registry_util_calculator_state_callback_packet_calculator_cl_etc_7C1AD98D_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Debug;
+		};
+		79A0E8FE250FE0EB00912DC7 /* __TulsiTestRunner_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = _idx_validated_graph_config_calculator_base_calculator_context_calculator_context_manager_calculator_contract_calculator_registry_util_calculator_state_callback_packet_calculator_cl_etc_7C1AD98D_ios_min10.0;
+			};
+			name = __TulsiTestRunner_Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DD6A929A02B0AC5D00000000 /* Build configuration list for PBXNativeTarget "_idx_scheduler_queue_00D9FD43_ios_min10.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				599A27054DF3BCEA0000000D /* Debug */,
+				599A27053E5C9C970000000D /* Release */,
+				79A0E8F7250FE0EB00912DC7 /* __TulsiTestRunner_Debug */,
+				79A0E8F8250FE0EB00912DC7 /* __TulsiTestRunner_Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD6A929A2E425AA000000000 /* Build configuration list for PBXNativeTarget "_idx_sink_calculator_graph_gpu_buffer_multi_pool_D5C77C6B_ios_min10.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				599A27054DF3BCEA0000000B /* Debug */,
+				599A27053E5C9C970000000B /* Release */,
+				79A0E8FB250FE0EB00912DC7 /* __TulsiTestRunner_Debug */,
+				79A0E8FC250FE0EB00912DC7 /* __TulsiTestRunner_Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD6A929A42624DC000000000 /* Build configuration list for PBXNativeTarget "_idx_mediapipe_layer_renderer_gl_calculator_helper_ios_mediapipe_framework_ios_mediapipe_gl_view_renderer_DFF84B5D_ios_min10.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				599A27054DF3BCEA00000004 /* Debug */,
+				599A27053E5C9C9700000004 /* Release */,
+				79A0E8ED250FE0EB00912DC7 /* __TulsiTestRunner_Debug */,
+				79A0E8EE250FE0EB00912DC7 /* __TulsiTestRunner_Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD6A929A4CFCDAE500000000 /* Build configuration list for PBXNativeTarget "_idx_registration_token_gpu_service_20AEE6FB_ios_min10.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				599A27054DF3BCEA00000007 /* Debug */,
+				599A27053E5C9C9700000007 /* Release */,
+				79A0E8F5250FE0EB00912DC7 /* __TulsiTestRunner_Debug */,
+				79A0E8F6250FE0EB00912DC7 /* __TulsiTestRunner_Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD6A929A4E3B421600000000 /* Build configuration list for PBXProject "Mediapipe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				599A27054DF3BCEA00000000 /* Debug */,
+				599A27053E5C9C9700000000 /* Release */,
+				599A2705C2DF3E3700000000 /* __TulsiTestRunner_Debug */,
+				599A2705397D9D7100000000 /* __TulsiTestRunner_Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD6A929A56B31F2D00000000 /* Build configuration list for PBXNativeTarget "_idx_mediapipe_input_sources_ios_B5C92B5F_ios_min10.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				599A27054DF3BCEA00000003 /* Debug */,
+				599A27053E5C9C9700000003 /* Release */,
+				79A0E8EB250FE0EB00912DC7 /* __TulsiTestRunner_Debug */,
+				79A0E8EC250FE0EB00912DC7 /* __TulsiTestRunner_Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD6A929A6CCFD91B00000000 /* Build configuration list for PBXNativeTarget "_idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				599A27054DF3BCEA00000002 /* Debug */,
+				599A27053E5C9C9700000002 /* Release */,
+				79A0E8E3250FE0EB00912DC7 /* __TulsiTestRunner_Debug */,
+				79A0E8E4250FE0EB00912DC7 /* __TulsiTestRunner_Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD6A929A6F4E589D00000000 /* Build configuration list for PBXNativeTarget "_idx_gl_simple_shaders_9BE47DE4_ios_min10.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				599A27054DF3BCEA00000009 /* Debug */,
+				599A27053E5C9C9700000009 /* Release */,
+				79A0E8E9250FE0EB00912DC7 /* __TulsiTestRunner_Debug */,
+				79A0E8EA250FE0EB00912DC7 /* __TulsiTestRunner_Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD6A929A8E22EE8600000000 /* Build configuration list for PBXNativeTarget "_idx_profiler_resource_util_9FE97AC4_ios_min10.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				599A27054DF3BCEA00000006 /* Debug */,
+				599A27053E5C9C9700000006 /* Release */,
+				79A0E8F3250FE0EB00912DC7 /* __TulsiTestRunner_Debug */,
+				79A0E8F4250FE0EB00912DC7 /* __TulsiTestRunner_Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD6A929AC3E4C36400000000 /* Build configuration list for PBXNativeTarget "_idx_shader_util_gl_quad_renderer_gpu_buffer_format_84BF7823_ios_min10.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				599A27054DF3BCEA00000008 /* Debug */,
+				599A27053E5C9C9700000008 /* Release */,
+				79A0E8F9250FE0EB00912DC7 /* __TulsiTestRunner_Debug */,
+				79A0E8FA250FE0EB00912DC7 /* __TulsiTestRunner_Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD6A929ACE0B36DD00000000 /* Build configuration list for PBXNativeTarget "_idx_gl_context_C983A10F_ios_min10.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				599A27054DF3BCEA0000000F /* Debug */,
+				599A27053E5C9C970000000F /* Release */,
+				79A0E8E7250FE0EB00912DC7 /* __TulsiTestRunner_Debug */,
+				79A0E8E8250FE0EB00912DC7 /* __TulsiTestRunner_Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD6A929AD41CD82100000000 /* Build configuration list for PBXNativeTarget "_idx_MPPGraphGPUData_6980D839_ios_min10.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				599A27054DF3BCEA0000000A /* Debug */,
+				599A27053E5C9C970000000A /* Release */,
+				79A0E8E5250FE0EB00912DC7 /* __TulsiTestRunner_Debug */,
+				79A0E8E6250FE0EB00912DC7 /* __TulsiTestRunner_Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD6A929AD83CDCDC00000000 /* Build configuration list for PBXNativeTarget "_idx_output_stream_manager_calculator_node_default_input_stream_handler_graph_output_stream_in_order_output_stream_handler_input_stream_handler_output_stream_handler_997A2E1C_ios_min10.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				599A27054DF3BCEA0000000C /* Debug */,
+				599A27053E5C9C970000000C /* Release */,
+				79A0E8EF250FE0EB00912DC7 /* __TulsiTestRunner_Debug */,
+				79A0E8F0250FE0EB00912DC7 /* __TulsiTestRunner_Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD6A929ADAAC455300000000 /* Build configuration list for PBXLegacyTarget "_bazel_clean_" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79A0E8DF250FE0EB00912DC7 /* Debug */,
+				79A0E8E0250FE0EB00912DC7 /* Release */,
+				79A0E8E1250FE0EB00912DC7 /* __TulsiTestRunner_Debug */,
+				79A0E8E2250FE0EB00912DC7 /* __TulsiTestRunner_Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD6A929ADF00DB7F00000000 /* Build configuration list for PBXNativeTarget "_idx_validated_graph_config_calculator_base_calculator_context_calculator_context_manager_calculator_contract_calculator_registry_util_calculator_state_callback_packet_calculator_cl_etc_7C1AD98D_ios_min10.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				599A27054DF3BCEA00000005 /* Debug */,
+				599A27053E5C9C9700000005 /* Release */,
+				79A0E8FD250FE0EB00912DC7 /* __TulsiTestRunner_Debug */,
+				79A0E8FE250FE0EB00912DC7 /* __TulsiTestRunner_Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD6A929AF227A0B200000000 /* Build configuration list for PBXNativeTarget "_idx_pixel_buffer_pool_util_11B1CF81_ios_min10.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				599A27054DF3BCEA0000000E /* Debug */,
+				599A27053E5C9C970000000E /* Release */,
+				79A0E8F1250FE0EB00912DC7 /* __TulsiTestRunner_Debug */,
+				79A0E8F2250FE0EB00912DC7 /* __TulsiTestRunner_Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD6A929AFE093F8300000000 /* Build configuration list for PBXNativeTarget "HandTrackingGpuApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				599A27054DF3BCEA00000001 /* Debug */,
+				599A27053E5C9C9700000001 /* Release */,
+				599A2705C2DF3E3700000001 /* __TulsiTestRunner_Debug */,
+				599A2705397D9D7100000001 /* __TulsiTestRunner_Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D2A6F216428F4B8400000000 /* Project object */;
+}

@@ -1,0 +1,96 @@
+{
+  "additionalFilePaths" : [
+    "/BUILD",
+    "mediapipe/BUILD",
+    "mediapipe/examples/ios/BUILD",
+    "tulsi/BUILD",
+    "mediapipe/examples/ios/handtrackinggpu/BUILD"
+  ],
+  "buildTargets" : [
+    "//mediapipe/examples/ios/handtrackinggpu:HandTrackingGpuApp"
+  ],
+  "optionSet" : {
+    "BazelBuildOptionsDebug" : {
+      "p" : ""
+    },
+    "BazelBuildOptionsRelease" : {
+      "p" : ""
+    },
+    "BazelBuildStartupOptionsDebug" : {
+      "p" : ""
+    },
+    "BazelBuildStartupOptionsRelease" : {
+      "p" : ""
+    },
+    "BuildActionPostActionScript" : {
+      "p" : ""
+    },
+    "BuildActionPreActionScript" : {
+      "p" : ""
+    },
+    "CommandlineArguments" : {
+      "p" : ""
+    },
+    "EnvironmentVariables" : {
+      "p" : ""
+    },
+    "LaunchActionPostActionScript" : {
+      "p" : ""
+    },
+    "LaunchActionPreActionScript" : {
+      "p" : ""
+    },
+    "ProjectGenerationBazelStartupOptions" : {
+      "p" : ""
+    },
+    "TestActionPostActionScript" : {
+      "p" : ""
+    },
+    "TestActionPreActionScript" : {
+      "p" : ""
+    }
+  },
+  "projectName" : "Mediapipe",
+  "sourceFilters" : [
+    "hand-gesture-recognition",
+    "mediapipe",
+    "mediapipe/calculators",
+    "mediapipe/calculators/core",
+    "mediapipe/calculators/image",
+    "mediapipe/calculators/internal",
+    "mediapipe/calculators/tflite",
+    "mediapipe/calculators/util",
+    "mediapipe/examples",
+    "mediapipe/examples/ios",
+    "mediapipe/examples/ios/handtrackinggpu",
+    "mediapipe/examples/ios/handtrackinggpu/Base.lproj",
+    "mediapipe/framework",
+    "mediapipe/framework/deps",
+    "mediapipe/framework/formats",
+    "mediapipe/framework/formats/annotation",
+    "mediapipe/framework/formats/object_detection",
+    "mediapipe/framework/port",
+    "mediapipe/framework/profiler",
+    "mediapipe/framework/stream_handler",
+    "mediapipe/framework/tool",
+    "mediapipe/gpu",
+    "mediapipe/graphs",
+    "mediapipe/graphs/hand_tracking",
+    "mediapipe/graphs/hand_tracking/calculators",
+    "mediapipe/graphs/hand_tracking/subgraphs",
+    "mediapipe/java",
+    "mediapipe/java/com",
+    "mediapipe/java/com/google",
+    "mediapipe/java/com/google/mediapipe",
+    "mediapipe/java/com/google/mediapipe/framework",
+    "mediapipe/java/com/google/mediapipe/framework/jni",
+    "mediapipe/models",
+    "mediapipe/objc",
+    "mediapipe/util",
+    "mediapipe/util/android",
+    "mediapipe/util/android/file",
+    "mediapipe/util/android/file/base",
+    "mediapipe/util/tflite",
+    "mediapipe/util/tflite/operations"
+  ]
+}

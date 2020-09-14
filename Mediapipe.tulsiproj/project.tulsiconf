@@ -1,0 +1,16 @@
+{
+  "configDefaults" : {
+    "optionSet" : {
+
+    }
+  },
+  "packages" : [
+    "",
+    "mediapipe",
+    "mediapipe/examples/ios",
+    "tulsi",
+    "mediapipe/examples/ios/handtrackinggpu"
+  ],
+  "projectName" : "Mediapipe",
+  "workspaceRoot" : ".."
+}
