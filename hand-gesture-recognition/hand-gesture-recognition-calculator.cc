@@ -178,8 +178,8 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
     }
 
     float maxprob = 0;
-    int maxindex = 24;
-    std::string model_path = "mediapipe/models/model_targeted_a.tflite";
+    int maxindex = 26;
+    std::string model_path = "mediapipe/models/model.tflite";
     ASSIGN_OR_RETURN(model_path, PathToResourceAsFile(model_path));
     const char *filename = model_path.c_str();
     std::unique_ptr<tflite::Interpreter> interpreter;
@@ -225,7 +225,7 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
                         if(output != 0)
                         {
                             indexModel_Regular = 100;
-                            for (int i = 0; i < 24; i++)
+                            for (int i = 0; i < 26; i++)
                             {
                                 if (output[i] > maxprob)
                                 {
@@ -241,7 +241,7 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
        // std::string letters =  {'G', 'V', 'Y', 'A', 'E', 'L', 'R', 'W', 'Q', 'T', 'I', 'P', 'H', 'F', 'O', 'U', 'M', 'B', 'N', 'D', 'K', 'X', 'S', 'C', 'Z'};
         std::string letters  =  {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 
-            if (maxprob > 0.3)
+            if (maxprob > 0.5)
             {
                 ASL_Word = letters[maxindex];
             }
