@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/../../../.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SignLanguageRecognition" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/mediapipe/abseil-cpp" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/mediapipe/tulsi" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tulsi" vcs="Git" />
