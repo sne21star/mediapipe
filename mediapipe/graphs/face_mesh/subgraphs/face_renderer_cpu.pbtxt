@@ -307,9 +307,9 @@ node {
       landmark_connections: 109
       landmark_connections: 109
       landmark_connections: 10
-      landmark_color { r: 255 g: 0 b: 0 }
-      connection_color { r: 0 g: 255 b: 0 }
-      thickness: 1.5
+      landmark_color { r: 0 g: 255 b: 255}
+      connection_color { r: 0 g: 0 b: 255 }
+      thickness: 1.1
       visualize_landmark_depth: false
     }
   }
@@ -333,7 +333,7 @@ node {
   node_options: {
     [type.googleapis.com/mediapipe.RectToRenderDataCalculatorOptions] {
       filled: false
-      color { r: 255 g: 0 b: 0 }
+      color { r: 0 g: 100 b: 200 }
       thickness: 4.0
     }
   }

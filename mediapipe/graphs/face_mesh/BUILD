@@ -29,6 +29,7 @@ cc_library(
         "//mediapipe/calculators/video:opencv_video_encoder_calculator",
         "//mediapipe/graphs/face_mesh/subgraphs:face_renderer_cpu",
         "//mediapipe/modules/face_landmark:face_landmark_front_cpu",
+        "//face-mesh-recognition:face-mesh-recognition-calculator",
     ],
 )
 
@@ -39,6 +40,8 @@ cc_library(
         "//mediapipe/calculators/core:flow_limiter_calculator",
         "//mediapipe/graphs/face_mesh/subgraphs:face_renderer_cpu",
         "//mediapipe/modules/face_landmark:face_landmark_front_cpu",
+        "//face-mesh-recognition:face-mesh-recognition-calculator",
+
     ],
 )
 
@@ -49,6 +52,8 @@ cc_library(
         "//mediapipe/calculators/core:flow_limiter_calculator",
         "//mediapipe/graphs/face_mesh/subgraphs:face_renderer_gpu",
         "//mediapipe/modules/face_landmark:face_landmark_front_gpu",
+        "//face-mesh-recognition:face-mesh-recognition-calculator",
+
     ],
 )
 

@@ -179,7 +179,7 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
 
     float maxprob = 0;
     int maxindex = 26;
-    std::string model_path = "mediapipe/models/model.tflite";
+    std::string model_path = "mediapipe/models/model_targeted_a.tflite";
     ASSIGN_OR_RETURN(model_path, PathToResourceAsFile(model_path));
     const char *filename = model_path.c_str();
     std::unique_ptr<tflite::Interpreter> interpreter;
@@ -247,7 +247,7 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
             }
             else
             {
-                ASL_Word = "Not a letter of the alphabet!";
+                ASL_Word = "Please try again!";
             }
     }
     //LOG(INFO) << maxprob;
@@ -374,7 +374,7 @@ REGISTER_CALCULATOR(HandGestureRecognitionCalculator);
         }
         else
         {
-           ASL_Word = "Not in ASL";
+           ASL_Word = "Please Try Again!";
             LOG(INFO) << "Finger States: " << thumbIsOpen << firstFingerIsOpen << secondFingerIsOpen << thirdFingerIsOpen << fourthFingerIsOpen;
             LOG(INFO) << "___";
         }

@@ -107,6 +107,13 @@
 		792D1AA425114C3F005FAA4B /* IMG_4552.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 792D1A9825114A6C005FAA4B /* IMG_4552.jpg */; };
 		792D1AA525114C3F005FAA4B /* householdItems.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 792D1A4325114510005FAA4B /* householdItems.jpg */; };
 		792D1AA625114C3F005FAA4B /* appImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 792D1A422511426D005FAA4B /* appImage.jpg */; };
+		796A3C7225476C0C00561A39 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 796A3C7125476C0C00561A39 /* UIImage+animatedGIF.m */; };
+		796A3C7525476C9000561A39 /* Animal.gif in Resources */ = {isa = PBXBuildFile; fileRef = 796A3C7425476C9000561A39 /* Animal.gif */; };
+		796A3C7925476CD600561A39 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796A3C7825476CD600561A39 /* ImageIO.framework */; };
+		796A3C7B25476E7500561A39 /* gifLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A3C7A25476E7500561A39 /* gifLoad.swift */; };
+		796A3C7C25476FC600561A39 /* Animal.gif in Resources */ = {isa = PBXBuildFile; fileRef = 796A3C7425476C9000561A39 /* Animal.gif */; };
+		796A3C7F2547705D00561A39 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796A3C7E2547705D00561A39 /* ImageIO.framework */; };
+		79FFA1D4252E33560094624F /* ViewControllerPhrase.mm in Sources */ = {isa = PBXBuildFile; fileRef = 79FFA1D3252E33560094624F /* ViewControllerPhrase.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -205,6 +212,14 @@
 		792D1A4625114532005FAA4B /* ASLAlphabet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ASLAlphabet.jpg; sourceTree = "<group>"; };
 		792D1A9325114898005FAA4B /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		792D1A9825114A6C005FAA4B /* IMG_4552.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_4552.jpg; sourceTree = "<group>"; };
+		796A3C7125476C0C00561A39 /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
+		796A3C7325476C2400561A39 /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
+		796A3C7425476C9000561A39 /* Animal.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Animal.gif; sourceTree = "<group>"; };
+		796A3C7825476CD600561A39 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
+		796A3C7A25476E7500561A39 /* gifLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gifLoad.swift; sourceTree = "<group>"; };
+		796A3C7E2547705D00561A39 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		79FFA1D2252E33560094624F /* ViewControllerPhrase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerPhrase.h; sourceTree = "<group>"; };
+		79FFA1D3252E33560094624F /* ViewControllerPhrase.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewControllerPhrase.mm; sourceTree = "<group>"; };
 		E0707F970046B07B00000000 /* trace_builder.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = trace_builder.cc; path = mediapipe/framework/profiler/trace_builder.cc; sourceTree = "<group>"; };
 		E0707F97019A627500000000 /* clock.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = clock.cc; path = mediapipe/framework/deps/clock.cc; sourceTree = "<group>"; };
 		E0707F9701EE93C100000000 /* calculator_framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = calculator_framework.h; path = mediapipe/framework/calculator_framework.h; sourceTree = "<group>"; };
@@ -478,6 +493,25 @@
 		E0707F97FF38A60C00000000 /* MPPDisplayLinkWeakTarget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MPPDisplayLinkWeakTarget.h; path = mediapipe/objc/MPPDisplayLinkWeakTarget.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFrameworksBuildPhase section */
+		796A3C7625476CC400561A39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				796A3C7925476CD600561A39 /* ImageIO.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		796A3C7D2547705300561A39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				796A3C7F2547705D00561A39 /* ImageIO.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
 		3E9DBDE800C6630900000000 /* Indexer */ = {
 			isa = PBXGroup;
@@ -587,6 +621,7 @@
 				3E9DBDE8A238D8AA00000000 /* Products */,
 				3E9DBDE8E5373A7400000001 /* mediapipe */,
 				3E9DBDE8F3C874DB00000000 /* tulsi */,
+				796A3C7725476CD600561A39 /* Frameworks */,
 			);
 			name = mainGroup;
 			sourceTree = SOURCE_ROOT;
@@ -929,6 +964,7 @@
 			isa = PBXGroup;
 			children = (
 				792D1A4125114249005FAA4B /* Assets.xcassets */,
+				796A3C7425476C9000561A39 /* Animal.gif */,
 				792D1A4525114528005FAA4B /* IloveYou.jpg */,
 				792D1A4625114532005FAA4B /* ASLAlphabet.jpg */,
 				792D1A9825114A6C005FAA4B /* IMG_4552.jpg */,
@@ -945,6 +981,11 @@
 				E0707F97C337C41400000000 /* ViewController.mm */,
 				E0707F97C49B738A00000000 /* main.m */,
 				792D1A9325114898005FAA4B /* AppViewController.swift */,
+				79FFA1D2252E33560094624F /* ViewControllerPhrase.h */,
+				79FFA1D3252E33560094624F /* ViewControllerPhrase.mm */,
+				796A3C7125476C0C00561A39 /* UIImage+animatedGIF.m */,
+				796A3C7325476C2400561A39 /* UIImage+animatedGIF.h */,
+				796A3C7A25476E7500561A39 /* gifLoad.swift */,
 			);
 			name = handtrackinggpu;
 			sourceTree = "<group>";
@@ -995,6 +1036,15 @@
 				E0707F9766EDBDC600000000 /* BUILD */,
 			);
 			name = tulsi;
+			sourceTree = "<group>";
+		};
+		796A3C7725476CD600561A39 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				796A3C7E2547705D00561A39 /* ImageIO.framework */,
+				796A3C7825476CD600561A39 /* ImageIO.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1289,6 +1339,7 @@
 			buildPhases = (
 				DA926BAF06FBA17700000000 /* ShellScript */,
 				792D1AA025114C37005FAA4B /* Resources */,
+				796A3C7D2547705300561A39 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1324,6 +1375,7 @@
 			buildPhases = (
 				4D2CE23E0000000000000000 /* Sources */,
 				792D1A9925114BF8005FAA4B /* Resources */,
+				796A3C7625476CC400561A39 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1347,6 +1399,9 @@
 				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 1000;
 				TargetAttributes = {
+					326DA36C2A73AD2800000000 = {
+						LastSwiftMigration = 1160;
+					};
 					B7E28F80348F8CFC00000000 = {
 						LastSwiftMigration = 1160;
 					};
@@ -1396,6 +1451,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				796A3C7C25476FC600561A39 /* Animal.gif in Resources */,
 				792D1A9B25114C08005FAA4B /* IloveYou.jpg in Resources */,
 				792D1A9C25114C08005FAA4B /* ASLAlphabet.jpg in Resources */,
 				792D1A9D25114C08005FAA4B /* IMG_4552.jpg in Resources */,
@@ -1409,6 +1465,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				796A3C7525476C9000561A39 /* Animal.gif in Resources */,
 				792D1AA225114C3F005FAA4B /* IloveYou.jpg in Resources */,
 				792D1AA325114C3F005FAA4B /* ASLAlphabet.jpg in Resources */,
 				792D1AA425114C3F005FAA4B /* IMG_4552.jpg in Resources */,
@@ -1441,9 +1498,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				79FFA1D4252E33560094624F /* ViewControllerPhrase.mm in Sources */,
+				796A3C7225476C0C00561A39 /* UIImage+animatedGIF.m in Sources */,
 				4E7441DD34CF1B9A00000000 /* AppDelegate.m in Sources */,
 				4E7441DDC337C41400000000 /* ViewController.mm in Sources */,
 				792D1A97251148A5005FAA4B /* AppViewController.swift in Sources */,
+				796A3C7B25476E7500561A39 /* gifLoad.swift in Sources */,
 				4E7441DDC49B738A00000000 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2868,33 +2928,46 @@
 		79A0E8DF250FE0EB00912DC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = _bazel_clean_;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		79A0E8E0250FE0EB00912DC7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = _bazel_clean_;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 		79A0E8E1250FE0EB00912DC7 /* __TulsiTestRunner_Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = _bazel_clean_;
+				SWIFT_VERSION = 5.0;
 			};
 			name = __TulsiTestRunner_Debug;
 		};
 		79A0E8E2250FE0EB00912DC7 /* __TulsiTestRunner_Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = _bazel_clean_;
+				SWIFT_VERSION = 5.0;
 			};
 			name = __TulsiTestRunner_Release;
 		};

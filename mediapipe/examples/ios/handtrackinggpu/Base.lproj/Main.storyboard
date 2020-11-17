@@ -84,6 +84,9 @@
                                 <rect key="frame" x="384" y="392" width="56" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Phrases"/>
+                                <connections>
+                                    <segue destination="r2n-Sv-B6s" kind="show" id="Qt6-2p-vPa"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="householdItems.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="RGu-3w-nue">
                                 <rect key="frame" x="568" y="194" width="172" height="190"/>
@@ -101,6 +104,9 @@
                                 <rect key="frame" x="596" y="391" width="116" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Household Items"/>
+                                <connections>
+                                    <segue destination="ZIf-Cs-I6H" kind="show" id="deD-0Q-Mkd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GuU-Yu-Ss0">
                                 <rect key="frame" x="631" y="701" width="47" height="30"/>
@@ -174,6 +180,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x48-4g-Brr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="919.99999999999989" y="-94.444444444444443"/>
+        </scene>
+        <!--View Controller Phrase-->
+        <scene sceneID="qKY-QQ-mR4">
+            <objects>
+                <viewController id="r2n-Sv-B6s" customClass="ViewControllerPhrase" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="laA-vC-AA2">
+                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZtL-gm-56C">
+                                <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Camera access needed for this demo. Please enable camera access in the Settings app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOu-Qu-zON">
+                                        <rect key="frame" x="275" y="464" width="260" height="151"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" label="PreviewDisplayView">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="lw5-3w-TqR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YSO-J2-DgL"/>
+                    <connections>
+                        <outlet property="_liveView" destination="ZtL-gm-56C" id="6vq-sN-gYW"/>
+                        <outlet property="_noCameraLabel" destination="VOu-Qu-zON" id="ofJ-XS-2uP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1od-Ta-Rbp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1662.9629629629628" y="588.88888888888891"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="PTi-yq-5xn">
+            <objects>
+                <viewController id="ZIf-Cs-I6H" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tfl-hJ-qyB">
+                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="4bN-Gl-ba3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8py-Q1-250"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Shj-Vk-E44" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2339" y="141"/>
         </scene>
     </scenes>
     <resources>

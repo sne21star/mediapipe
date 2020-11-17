@@ -29,6 +29,7 @@ cc_library(
         "//mediapipe/calculators/util:detections_to_render_data_calculator",
         "//mediapipe/calculators/util:landmarks_to_render_data_calculator",
         "//mediapipe/calculators/util:rect_to_render_data_calculator",
+
     ],
 )
 
@@ -47,5 +48,6 @@ mediapipe_simple_subgraph(
     register_as = "FaceRendererCpu",
     deps = [
         ":renderer_calculators",
+        "//face-mesh-recognition:face-mesh-recognition-calculator",
     ],
 )

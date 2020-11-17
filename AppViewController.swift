@@ -6,15 +6,14 @@
 //
 
 import UIKit
-
 class AppViewController: UIViewController {
 
+   // @IBOutlet weak var animal: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //animal.loadGif(name: "Animal")
     }
-    
-
     /*
     // MARK: - Navigation
 

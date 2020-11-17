@@ -32,6 +32,8 @@ cc_library(
         "//mediapipe/calculators/util:non_max_suppression_calculator",
         "//mediapipe/gpu:gpu_buffer_to_image_frame_calculator",
         "//mediapipe/gpu:image_frame_to_gpu_buffer_calculator",
+        "//face-mesh-recognition:face-mesh-recognition-calculator",
+
     ],
 )
 
@@ -49,6 +51,8 @@ cc_library(
         "//mediapipe/calculators/util:detection_letterbox_removal_calculator",
         "//mediapipe/calculators/util:detections_to_render_data_calculator",
         "//mediapipe/calculators/util:non_max_suppression_calculator",
+        "//face-mesh-recognition:face-mesh-recognition-calculator",
+
     ],
 )
 
