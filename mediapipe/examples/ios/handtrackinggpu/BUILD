@@ -42,11 +42,16 @@ objc_library(
     srcs = [
         "AppDelegate.m",
         "ViewController.mm",
+        "ViewControllerPhrase.mm",
+        "AppViewController.mm",
         "main.m",
     ],
     hdrs = [
+        "HandTrackingGpuApp-Bridging-Header.h",
         "AppDelegate.h",
+        "ViewControllerPhrase.h",
         "ViewController.h",
+        "AppViewController.h",      
     ],
     data = [
         "Base.lproj/LaunchScreen.storyboard",

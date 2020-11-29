@@ -17,6 +17,9 @@ This shows the handtracking Mediapipe has already created.
 
 ## ASL Translator App
 ![Real-time Hand Tracking](mediapipe/docs/images/ASL.gif)
+
+![Real-time Hand Tracking](mediapipe/docs/images/RecordingScreen.gif)
+
 ## Installation
 Follow these [instructions](mediapipe/docs/install.md).
 

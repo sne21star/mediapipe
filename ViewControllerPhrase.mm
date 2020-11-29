@@ -46,11 +46,12 @@ static const char* kVideoQueueLabel = "com.google.mediapipe.example.videoQueue";
   MPPCameraInputSource* _cameraSource;
 
   /// Inform the user when camera is unavailable.
-
+   __weak IBOutlet UILabel *openCamera;
+    __weak IBOutlet UIView *live_VIEW;
     /// Display the camera preview frames.
 
-    IBOutlet UIView *_liveView;
-    IBOutlet UILabel *_noCameraLabel;
+   
+    
     /// Render frames in a layer.
   MPPLayerRenderer* _renderer;
 
@@ -101,8 +102,8 @@ static const char* kVideoQueueLabel = "com.google.mediapipe.example.videoQueue";
   [super viewDidLoad];
 
   _renderer = [[MPPLayerRenderer alloc] init];
-  _renderer.layer.frame = _liveView.layer.bounds;
-  [_liveView.layer addSublayer:_renderer.layer];
+  _renderer.layer.frame = live_VIEW.layer.bounds;
+  [live_VIEW.layer addSublayer:_renderer.layer];
   _renderer.frameScaleMode = MPPFrameScaleModeFillAndCrop;
   // When using the front camera, mirror the input for a more natural look.
   _renderer.mirrored = YES;
@@ -137,7 +138,7 @@ static const char* kVideoQueueLabel = "com.google.mediapipe.example.videoQueue";
     if (granted) {
       [self startGraphAndCamera];
       dispatch_async(dispatch_get_main_queue(), ^{
-        _noCameraLabel.hidden = YES;
+        openCamera.hidden = YES;
       });
     }
   }];

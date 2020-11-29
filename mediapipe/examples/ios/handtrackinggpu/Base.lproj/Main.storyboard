@@ -67,7 +67,7 @@
         <!--App View Controller-->
         <scene sceneID="Xw6-y2-fEq">
             <objects>
-                <viewController id="N4h-W1-JKx" customClass="AppViewController" customModule="_idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10_0" sceneMemberID="viewController">
+                <viewController id="N4h-W1-JKx" customClass="AppViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n4L-hB-AOM">
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,7 +88,7 @@
                                     <segue destination="r2n-Sv-B6s" kind="show" id="Qt6-2p-vPa"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="householdItems.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="RGu-3w-nue">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RGu-3w-nue">
                                 <rect key="frame" x="568" y="194" width="172" height="190"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -148,10 +148,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Clothing"/>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ASLAlphabet.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="05b-7y-eeV">
-                                <rect key="frame" x="69" y="194" width="163" height="190"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQH-bX-4kC">
                                 <rect key="frame" x="124" y="978" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -161,21 +157,36 @@
                                 <rect key="frame" x="339" y="471" width="161" height="206"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IloveYou.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="FKY-Q5-DFf">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FKY-Q5-DFf">
                                 <rect key="frame" x="332" y="194" width="161" height="190"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="163-ze-IoB">
-                                <rect key="frame" x="128" y="700" width="35" height="30"/>
+                                <rect key="frame" x="122" y="700" width="47" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Food"/>
+                                <state key="normal" title="Animal"/>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3hN-58-RMq">
+                                <rect key="frame" x="79" y="194" width="153" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0987770018" green="0.92018223389999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.0" green="0.12173247129972387" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="Vzt-FC-39I"/>
                     </view>
                     <navigationItem key="navigationItem" id="cEE-qD-eXd"/>
+                    <connections>
+                        <outlet property="Actions" destination="j7G-RM-K1y" id="01P-eM-JNm"/>
+                        <outlet property="AlphabetGif" destination="3hN-58-RMq" id="1jj-dA-HBe"/>
+                        <outlet property="AnimalGIF" destination="4aE-vf-uFK" id="oP0-CF-GXr"/>
+                        <outlet property="Clothing" destination="yPy-Cb-bOh" id="BZ8-bU-wcz"/>
+                        <outlet property="HouseHold" destination="RGu-3w-nue" id="oea-zh-awu"/>
+                        <outlet property="Outdoots" destination="DaY-n5-6f2" id="mPd-u8-Kan"/>
+                        <outlet property="People" destination="hLw-qJ-yab" id="wsx-gL-MvK"/>
+                        <outlet property="PhrasesGif" destination="FKY-Q5-DFf" id="nbF-fv-xfT"/>
+                        <outlet property="School" destination="ZUW-nB-BBK" id="N4h-a2-gkp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x48-4g-Brr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,22 +200,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZtL-gm-56C">
-                                <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yE1-qF-EIV">
+                                <rect key="frame" x="46" y="50" width="713" height="978"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Camera access needed for this demo. Please enable camera access in the Settings app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOu-Qu-zON">
-                                        <rect key="frame" x="275" y="464" width="260" height="151"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Camera Access" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cO4-5h-H6J">
+                                        <rect key="frame" x="293" y="428" width="125" height="61"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <accessibility key="accessibilityConfiguration" label="PreviewDisplayView">
-                                    <bool key="isElement" value="YES"/>
-                                </accessibility>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -212,8 +220,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="YSO-J2-DgL"/>
                     <connections>
-                        <outlet property="_liveView" destination="ZtL-gm-56C" id="6vq-sN-gYW"/>
-                        <outlet property="_noCameraLabel" destination="VOu-Qu-zON" id="ofJ-XS-2uP"/>
+                        <outlet property="live_VIEW" destination="yE1-qF-EIV" id="pfM-ew-aSx"/>
+                        <outlet property="openCamera" destination="cO4-5h-H6J" id="3s7-m3-2F7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1od-Ta-Rbp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -237,9 +245,4 @@
             <point key="canvasLocation" x="2339" y="141"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="ASLAlphabet.jpg" width="1920" height="1080"/>
-        <image name="IloveYou.jpg" width="250" height="250"/>
-        <image name="householdItems.jpg" width="268.14215087890625" height="215.27984619140625"/>
-    </resources>
 </document>

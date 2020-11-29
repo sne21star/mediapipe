@@ -95,7 +95,6 @@
 		4E7441DDF36AAB3600000000 /* delegating_executor.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97F36AAB3600000000 /* delegating_executor.cc */; };
 		4E7441DDF8F8481400000000 /* statusor.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97F8F8481400000000 /* statusor.cc */; };
 		4E7441DDFC9C1C1900000000 /* input_stream_handler.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97FC9C1C1900000000 /* input_stream_handler.cc */; };
-		792D1A97251148A5005FAA4B /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D1A9325114898005FAA4B /* AppViewController.swift */; };
 		792D1A9A25114C01005FAA4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 792D1A4125114249005FAA4B /* Assets.xcassets */; };
 		792D1A9B25114C08005FAA4B /* IloveYou.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 792D1A4525114528005FAA4B /* IloveYou.jpg */; };
 		792D1A9C25114C08005FAA4B /* ASLAlphabet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 792D1A4625114532005FAA4B /* ASLAlphabet.jpg */; };
@@ -107,12 +106,33 @@
 		792D1AA425114C3F005FAA4B /* IMG_4552.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 792D1A9825114A6C005FAA4B /* IMG_4552.jpg */; };
 		792D1AA525114C3F005FAA4B /* householdItems.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 792D1A4325114510005FAA4B /* householdItems.jpg */; };
 		792D1AA625114C3F005FAA4B /* appImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 792D1A422511426D005FAA4B /* appImage.jpg */; };
-		796A3C7225476C0C00561A39 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 796A3C7125476C0C00561A39 /* UIImage+animatedGIF.m */; };
+		7945981F2564418900736239 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8D592DAEC50D40A00000000 /* Main.storyboard */; };
+		796A3C7225476C0C00561A39 /* UIImage_animatedGIF.mm in Sources */ = {isa = PBXBuildFile; fileRef = 796A3C7125476C0C00561A39 /* UIImage_animatedGIF.mm */; };
 		796A3C7525476C9000561A39 /* Animal.gif in Resources */ = {isa = PBXBuildFile; fileRef = 796A3C7425476C9000561A39 /* Animal.gif */; };
 		796A3C7925476CD600561A39 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796A3C7825476CD600561A39 /* ImageIO.framework */; };
-		796A3C7B25476E7500561A39 /* gifLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A3C7A25476E7500561A39 /* gifLoad.swift */; };
 		796A3C7C25476FC600561A39 /* Animal.gif in Resources */ = {isa = PBXBuildFile; fileRef = 796A3C7425476C9000561A39 /* Animal.gif */; };
 		796A3C7F2547705D00561A39 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796A3C7E2547705D00561A39 /* ImageIO.framework */; };
+		79F890FA25730DFC0078B207 /* Alphabet.gif in Resources */ = {isa = PBXBuildFile; fileRef = 79F890F925730DFC0078B207 /* Alphabet.gif */; };
+		79F890FB25730DFC0078B207 /* Alphabet.gif in Resources */ = {isa = PBXBuildFile; fileRef = 79F890F925730DFC0078B207 /* Alphabet.gif */; };
+		79F8910F25732D9E0078B207 /* AppViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 79F8910E25732D9E0078B207 /* AppViewController.mm */; };
+		79F8911B2574278B0078B207 /* Alphabet in Resources */ = {isa = PBXBuildFile; fileRef = 79F8911A2574278B0078B207 /* Alphabet */; };
+		79F8911C2574278B0078B207 /* Alphabet in Resources */ = {isa = PBXBuildFile; fileRef = 79F8911A2574278B0078B207 /* Alphabet */; };
+		79F8911E25742B6D0078B207 /* Phrases in Resources */ = {isa = PBXBuildFile; fileRef = 79F8911D25742B6D0078B207 /* Phrases */; };
+		79F8911F25742B6D0078B207 /* Phrases in Resources */ = {isa = PBXBuildFile; fileRef = 79F8911D25742B6D0078B207 /* Phrases */; };
+		79F891212574311E0078B207 /* HouseHold in Resources */ = {isa = PBXBuildFile; fileRef = 79F891202574311D0078B207 /* HouseHold */; };
+		79F891222574311E0078B207 /* HouseHold in Resources */ = {isa = PBXBuildFile; fileRef = 79F891202574311D0078B207 /* HouseHold */; };
+		79F89124257437520078B207 /* AnimalGIF in Resources */ = {isa = PBXBuildFile; fileRef = 79F89123257437510078B207 /* AnimalGIF */; };
+		79F89125257437520078B207 /* AnimalGIF in Resources */ = {isa = PBXBuildFile; fileRef = 79F89123257437510078B207 /* AnimalGIF */; };
+		79F891272574375A0078B207 /* Clothing in Resources */ = {isa = PBXBuildFile; fileRef = 79F891262574375A0078B207 /* Clothing */; };
+		79F891282574375A0078B207 /* Clothing in Resources */ = {isa = PBXBuildFile; fileRef = 79F891262574375A0078B207 /* Clothing */; };
+		79F8912A2574376A0078B207 /* SchoolGIF in Resources */ = {isa = PBXBuildFile; fileRef = 79F891292574376A0078B207 /* SchoolGIF */; };
+		79F8912B2574376A0078B207 /* SchoolGIF in Resources */ = {isa = PBXBuildFile; fileRef = 79F891292574376A0078B207 /* SchoolGIF */; };
+		79F8912D257437B50078B207 /* ActionsGIF in Resources */ = {isa = PBXBuildFile; fileRef = 79F8912C257437B50078B207 /* ActionsGIF */; };
+		79F8912E257437B50078B207 /* ActionsGIF in Resources */ = {isa = PBXBuildFile; fileRef = 79F8912C257437B50078B207 /* ActionsGIF */; };
+		79F89130257437DA0078B207 /* OutdoorsGIF in Resources */ = {isa = PBXBuildFile; fileRef = 79F8912F257437DA0078B207 /* OutdoorsGIF */; };
+		79F89131257437DA0078B207 /* OutdoorsGIF in Resources */ = {isa = PBXBuildFile; fileRef = 79F8912F257437DA0078B207 /* OutdoorsGIF */; };
+		79F89133257437E30078B207 /* PeopleGIF in Resources */ = {isa = PBXBuildFile; fileRef = 79F89132257437E20078B207 /* PeopleGIF */; };
+		79F89134257437E30078B207 /* PeopleGIF in Resources */ = {isa = PBXBuildFile; fileRef = 79F89132257437E20078B207 /* PeopleGIF */; };
 		79FFA1D4252E33560094624F /* ViewControllerPhrase.mm in Sources */ = {isa = PBXBuildFile; fileRef = 79FFA1D3252E33560094624F /* ViewControllerPhrase.mm */; };
 /* End PBXBuildFile section */
 
@@ -210,14 +230,26 @@
 		792D1A442511451F005FAA4B /* householdItems.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = householdItems.jpg; path = ../../../../../RecordingToGif/householdItems.jpg; sourceTree = "<group>"; };
 		792D1A4525114528005FAA4B /* IloveYou.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IloveYou.jpg; sourceTree = "<group>"; };
 		792D1A4625114532005FAA4B /* ASLAlphabet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ASLAlphabet.jpg; sourceTree = "<group>"; };
-		792D1A9325114898005FAA4B /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		792D1A9825114A6C005FAA4B /* IMG_4552.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_4552.jpg; sourceTree = "<group>"; };
-		796A3C7125476C0C00561A39 /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
-		796A3C7325476C2400561A39 /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
+		796A3C7125476C0C00561A39 /* UIImage_animatedGIF.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = UIImage_animatedGIF.mm; sourceTree = "<group>"; };
+		796A3C7325476C2400561A39 /* UIImage_animatedGIF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIImage_animatedGIF.h; sourceTree = "<group>"; };
 		796A3C7425476C9000561A39 /* Animal.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Animal.gif; sourceTree = "<group>"; };
 		796A3C7825476CD600561A39 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
 		796A3C7A25476E7500561A39 /* gifLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gifLoad.swift; sourceTree = "<group>"; };
 		796A3C7E2547705D00561A39 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		79F890F925730DFC0078B207 /* Alphabet.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Alphabet.gif; path = ../../../../../recordinga/Alphabet.gif; sourceTree = "<group>"; };
+		79F890FC2573104D0078B207 /* HandTrackingGpuApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HandTrackingGpuApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		79F8910D25732C480078B207 /* AppViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppViewController.h; sourceTree = "<group>"; };
+		79F8910E25732D9E0078B207 /* AppViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppViewController.mm; sourceTree = "<group>"; };
+		79F8911A2574278B0078B207 /* Alphabet */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Alphabet; path = mediapipe/examples/ios/handtrackinggpu/Alphabet; sourceTree = "<group>"; };
+		79F8911D25742B6D0078B207 /* Phrases */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Phrases; path = mediapipe/examples/ios/handtrackinggpu/Phrases; sourceTree = "<group>"; };
+		79F891202574311D0078B207 /* HouseHold */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HouseHold; path = mediapipe/examples/ios/handtrackinggpu/HouseHold; sourceTree = "<group>"; };
+		79F89123257437510078B207 /* AnimalGIF */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AnimalGIF; sourceTree = "<group>"; };
+		79F891262574375A0078B207 /* Clothing */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Clothing; sourceTree = "<group>"; };
+		79F891292574376A0078B207 /* SchoolGIF */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SchoolGIF; sourceTree = "<group>"; };
+		79F8912C257437B50078B207 /* ActionsGIF */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ActionsGIF; sourceTree = "<group>"; };
+		79F8912F257437DA0078B207 /* OutdoorsGIF */ = {isa = PBXFileReference; lastKnownFileType = folder; path = OutdoorsGIF; sourceTree = "<group>"; };
+		79F89132257437E20078B207 /* PeopleGIF */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PeopleGIF; sourceTree = "<group>"; };
 		79FFA1D2252E33560094624F /* ViewControllerPhrase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerPhrase.h; sourceTree = "<group>"; };
 		79FFA1D3252E33560094624F /* ViewControllerPhrase.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewControllerPhrase.mm; sourceTree = "<group>"; };
 		E0707F970046B07B00000000 /* trace_builder.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = trace_builder.cc; path = mediapipe/framework/profiler/trace_builder.cc; sourceTree = "<group>"; };
@@ -283,7 +315,7 @@
 		E0707F97354C992500000000 /* monotonic_clock.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = monotonic_clock.cc; path = mediapipe/framework/deps/monotonic_clock.cc; sourceTree = "<group>"; };
 		E0707F97378F2A5100000000 /* output_side_packet_impl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = output_side_packet_impl.h; path = mediapipe/framework/output_side_packet_impl.h; sourceTree = "<group>"; };
 		E0707F9739132F5C00000000 /* lib_idx_profiler_resource_util_9FE97AC4_ios_min10.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = lib_idx_profiler_resource_util_9FE97AC4_ios_min10.0.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0707F9739997ECF00000000 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text; name = Base; path = mediapipe/examples/ios/handtrackinggpu/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E0707F9739997ECF00000000 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = mediapipe/examples/ios/handtrackinggpu/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E0707F973A6A394500000000 /* status_macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = status_macros.h; path = mediapipe/framework/deps/status_macros.h; sourceTree = "<group>"; };
 		E0707F973B0678C900000000 /* NSError+util_status.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "NSError+util_status.mm"; path = "mediapipe/objc/NSError+util_status.mm"; sourceTree = "<group>"; };
 		E0707F973CE2D50400000000 /* scheduler_queue.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = scheduler_queue.cc; path = mediapipe/framework/scheduler_queue.cc; sourceTree = "<group>"; };
@@ -967,6 +999,7 @@
 				796A3C7425476C9000561A39 /* Animal.gif */,
 				792D1A4525114528005FAA4B /* IloveYou.jpg */,
 				792D1A4625114532005FAA4B /* ASLAlphabet.jpg */,
+				79F890F925730DFC0078B207 /* Alphabet.gif */,
 				792D1A9825114A6C005FAA4B /* IMG_4552.jpg */,
 				792D1A4325114510005FAA4B /* householdItems.jpg */,
 				792D1A422511426D005FAA4B /* appImage.jpg */,
@@ -976,16 +1009,27 @@
 				E0707F97A0957F0200000000 /* BUILD */,
 				E0707F97571E9A8F00000000 /* Info.plist */,
 				D8D592DA34F0553C00000000 /* LaunchScreen.storyboard */,
+				79F8912C257437B50078B207 /* ActionsGIF */,
+				79F891292574376A0078B207 /* SchoolGIF */,
+				79F891202574311D0078B207 /* HouseHold */,
+				79F8911A2574278B0078B207 /* Alphabet */,
 				D8D592DAEC50D40A00000000 /* Main.storyboard */,
+				79F891262574375A0078B207 /* Clothing */,
+				79F89123257437510078B207 /* AnimalGIF */,
+				79F8911D25742B6D0078B207 /* Phrases */,
 				E0707F9732C3E21400000000 /* ViewController.h */,
+				79F8912F257437DA0078B207 /* OutdoorsGIF */,
+				79F89132257437E20078B207 /* PeopleGIF */,
 				E0707F97C337C41400000000 /* ViewController.mm */,
 				E0707F97C49B738A00000000 /* main.m */,
-				792D1A9325114898005FAA4B /* AppViewController.swift */,
 				79FFA1D2252E33560094624F /* ViewControllerPhrase.h */,
 				79FFA1D3252E33560094624F /* ViewControllerPhrase.mm */,
-				796A3C7125476C0C00561A39 /* UIImage+animatedGIF.m */,
-				796A3C7325476C2400561A39 /* UIImage+animatedGIF.h */,
+				796A3C7125476C0C00561A39 /* UIImage_animatedGIF.mm */,
+				796A3C7325476C2400561A39 /* UIImage_animatedGIF.h */,
 				796A3C7A25476E7500561A39 /* gifLoad.swift */,
+				79F890FC2573104D0078B207 /* HandTrackingGpuApp-Bridging-Header.h */,
+				79F8910D25732C480078B207 /* AppViewController.h */,
+				79F8910E25732D9E0078B207 /* AppViewController.mm */,
 			);
 			name = handtrackinggpu;
 			sourceTree = "<group>";
@@ -1340,6 +1384,7 @@
 				DA926BAF06FBA17700000000 /* ShellScript */,
 				792D1AA025114C37005FAA4B /* Resources */,
 				796A3C7D2547705300561A39 /* Frameworks */,
+				79F891102573399D0078B207 /* Sources */,
 			);
 			buildRules = (
 			);
@@ -1451,12 +1496,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79F8912B2574376A0078B207 /* SchoolGIF in Resources */,
+				79F8912E257437B50078B207 /* ActionsGIF in Resources */,
 				796A3C7C25476FC600561A39 /* Animal.gif in Resources */,
+				79F8911C2574278B0078B207 /* Alphabet in Resources */,
+				79F89125257437520078B207 /* AnimalGIF in Resources */,
 				792D1A9B25114C08005FAA4B /* IloveYou.jpg in Resources */,
 				792D1A9C25114C08005FAA4B /* ASLAlphabet.jpg in Resources */,
+				7945981F2564418900736239 /* Main.storyboard in Resources */,
 				792D1A9D25114C08005FAA4B /* IMG_4552.jpg in Resources */,
+				79F890FB25730DFC0078B207 /* Alphabet.gif in Resources */,
 				792D1A9E25114C08005FAA4B /* householdItems.jpg in Resources */,
+				79F891222574311E0078B207 /* HouseHold in Resources */,
+				79F89134257437E30078B207 /* PeopleGIF in Resources */,
 				792D1A9F25114C08005FAA4B /* appImage.jpg in Resources */,
+				79F8911F25742B6D0078B207 /* Phrases in Resources */,
+				79F891282574375A0078B207 /* Clothing in Resources */,
+				79F89131257437DA0078B207 /* OutdoorsGIF in Resources */,
 				792D1A9A25114C01005FAA4B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1465,12 +1521,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79F891212574311E0078B207 /* HouseHold in Resources */,
 				796A3C7525476C9000561A39 /* Animal.gif in Resources */,
+				79F8912A2574376A0078B207 /* SchoolGIF in Resources */,
+				79F8911B2574278B0078B207 /* Alphabet in Resources */,
+				79F89133257437E30078B207 /* PeopleGIF in Resources */,
+				79F890FA25730DFC0078B207 /* Alphabet.gif in Resources */,
 				792D1AA225114C3F005FAA4B /* IloveYou.jpg in Resources */,
 				792D1AA325114C3F005FAA4B /* ASLAlphabet.jpg in Resources */,
 				792D1AA425114C3F005FAA4B /* IMG_4552.jpg in Resources */,
+				79F8911E25742B6D0078B207 /* Phrases in Resources */,
+				79F89130257437DA0078B207 /* OutdoorsGIF in Resources */,
+				79F891272574375A0078B207 /* Clothing in Resources */,
 				792D1AA525114C3F005FAA4B /* householdItems.jpg in Resources */,
 				792D1AA625114C3F005FAA4B /* appImage.jpg in Resources */,
+				79F89124257437520078B207 /* AnimalGIF in Resources */,
+				79F8912D257437B50078B207 /* ActionsGIF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1499,11 +1565,10 @@
 			buildActionMask = 0;
 			files = (
 				79FFA1D4252E33560094624F /* ViewControllerPhrase.mm in Sources */,
-				796A3C7225476C0C00561A39 /* UIImage+animatedGIF.m in Sources */,
+				796A3C7225476C0C00561A39 /* UIImage_animatedGIF.mm in Sources */,
 				4E7441DD34CF1B9A00000000 /* AppDelegate.m in Sources */,
 				4E7441DDC337C41400000000 /* ViewController.mm in Sources */,
-				792D1A97251148A5005FAA4B /* AppViewController.swift in Sources */,
-				796A3C7B25476E7500561A39 /* gifLoad.swift in Sources */,
+				79F8910F25732D9E0078B207 /* AppViewController.mm in Sources */,
 				4E7441DDC49B738A00000000 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1684,6 +1749,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		79F891102573399D0078B207 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1841,6 +1913,7 @@
 				PRODUCT_NAME = HandTrackingGpuApp;
 				SDKROOT = iphoneos;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "HandTrackingGpuApp-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(PRODUCT_NAME).h";
 				SWIFT_VERSION = 5.0;
 				TULSI_BUILD_PATH = mediapipe/examples/ios/handtrackinggpu;
@@ -1903,6 +1976,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.ecn.das;
 				PRODUCT_NAME = HandTrackingGpuApp;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "HandTrackingGpuApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TULSI_BUILD_PATH = mediapipe/examples/ios/handtrackinggpu;
 				TULSI_XCODE_VERSION = 11.6.0.11E708;
@@ -1968,6 +2042,7 @@
 				);
 				PRODUCT_NAME = _idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10.0;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/snehamahapatra/Desktop/Spring2020/EPCS412/CNN_ASL/mediapipe/mediapipe/HandTrackingGpuApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
 			};
@@ -2407,6 +2482,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.ecn.das;
 				PRODUCT_NAME = HandTrackingGpuApp;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "HandTrackingGpuApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TULSI_BUILD_PATH = mediapipe/examples/ios/handtrackinggpu;
 				TULSI_XCODE_VERSION = 11.6.0.11E708;
@@ -2472,6 +2548,7 @@
 				);
 				PRODUCT_NAME = _idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10.0;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/snehamahapatra/Desktop/Spring2020/EPCS412/CNN_ASL/mediapipe/mediapipe/HandTrackingGpuApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
 			};
@@ -2918,6 +2995,7 @@
 				PRODUCT_NAME = HandTrackingGpuApp;
 				SDKROOT = iphoneos;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "HandTrackingGpuApp-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(PRODUCT_NAME).h";
 				SWIFT_VERSION = 5.0;
 				TULSI_BUILD_PATH = mediapipe/examples/ios/handtrackinggpu;
@@ -2977,6 +3055,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = _idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/snehamahapatra/Desktop/Spring2020/EPCS412/CNN_ASL/mediapipe/mediapipe/HandTrackingGpuApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = __TulsiTestRunner_Debug;
@@ -2987,6 +3066,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = _idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/snehamahapatra/Desktop/Spring2020/EPCS412/CNN_ASL/mediapipe/mediapipe/HandTrackingGpuApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = __TulsiTestRunner_Release;
