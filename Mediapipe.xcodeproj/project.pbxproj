@@ -95,7 +95,6 @@
 		4E7441DDF36AAB3600000000 /* delegating_executor.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97F36AAB3600000000 /* delegating_executor.cc */; };
 		4E7441DDF8F8481400000000 /* statusor.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97F8F8481400000000 /* statusor.cc */; };
 		4E7441DDFC9C1C1900000000 /* input_stream_handler.cc in Sources */ = {isa = PBXBuildFile; fileRef = E0707F97FC9C1C1900000000 /* input_stream_handler.cc */; };
-		792D1A9A25114C01005FAA4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 792D1A4125114249005FAA4B /* Assets.xcassets */; };
 		792D1A9B25114C08005FAA4B /* IloveYou.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 792D1A4525114528005FAA4B /* IloveYou.jpg */; };
 		792D1A9C25114C08005FAA4B /* ASLAlphabet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 792D1A4625114532005FAA4B /* ASLAlphabet.jpg */; };
 		792D1A9D25114C08005FAA4B /* IMG_4552.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 792D1A9825114A6C005FAA4B /* IMG_4552.jpg */; };
@@ -112,6 +111,7 @@
 		796A3C7925476CD600561A39 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796A3C7825476CD600561A39 /* ImageIO.framework */; };
 		796A3C7C25476FC600561A39 /* Animal.gif in Resources */ = {isa = PBXBuildFile; fileRef = 796A3C7425476C9000561A39 /* Animal.gif */; };
 		796A3C7F2547705D00561A39 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796A3C7E2547705D00561A39 /* ImageIO.framework */; };
+		79ACF630257490C400257856 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 792D1A4125114249005FAA4B /* Assets.xcassets */; };
 		79F890FA25730DFC0078B207 /* Alphabet.gif in Resources */ = {isa = PBXBuildFile; fileRef = 79F890F925730DFC0078B207 /* Alphabet.gif */; };
 		79F890FB25730DFC0078B207 /* Alphabet.gif in Resources */ = {isa = PBXBuildFile; fileRef = 79F890F925730DFC0078B207 /* Alphabet.gif */; };
 		79F8910F25732D9E0078B207 /* AppViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 79F8910E25732D9E0078B207 /* AppViewController.mm */; };
@@ -224,7 +224,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		792D1A4125114249005FAA4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = mediapipe/examples/ios/handtrackinggpu/Assets.xcassets; sourceTree = "<group>"; };
+		792D1A4125114249005FAA4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = mediapipe/examples/ios/handtrackinggpu/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		792D1A422511426D005FAA4B /* appImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = appImage.jpg; sourceTree = "<group>"; };
 		792D1A4325114510005FAA4B /* householdItems.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = householdItems.jpg; sourceTree = "<group>"; };
 		792D1A442511451F005FAA4B /* householdItems.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = householdItems.jpg; path = ../../../../../RecordingToGif/householdItems.jpg; sourceTree = "<group>"; };
@@ -1512,8 +1512,8 @@
 				792D1A9F25114C08005FAA4B /* appImage.jpg in Resources */,
 				79F8911F25742B6D0078B207 /* Phrases in Resources */,
 				79F891282574375A0078B207 /* Clothing in Resources */,
+				79ACF630257490C400257856 /* Assets.xcassets in Resources */,
 				79F89131257437DA0078B207 /* OutdoorsGIF in Resources */,
-				792D1A9A25114C01005FAA4B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1895,7 +1895,8 @@
 		599A2705397D9D7100000001 /* __TulsiTestRunner_Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Stub Launch Image";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				BAZEL_TARGET = "//mediapipe/examples/ios/handtrackinggpu:HandTrackingGpuApp";
 				CLANG_ENABLE_MODULES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1965,7 +1966,8 @@
 		599A27053E5C9C9700000001 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Stub Launch Image";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				BAZEL_TARGET = "//mediapipe/examples/ios/handtrackinggpu:HandTrackingGpuApp";
 				CLANG_ENABLE_MODULES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1986,7 +1988,11 @@
 		599A27053E5C9C9700000002 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
+				COMPRESS_PNG_FILES = NO;
+				ENABLE_ON_DEMAND_RESOURCES = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2042,6 +2048,7 @@
 				);
 				PRODUCT_NAME = _idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10.0;
 				SDKROOT = iphoneos;
+				STRIP_PNG_TEXT = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/snehamahapatra/Desktop/Spring2020/EPCS412/CNN_ASL/mediapipe/mediapipe/HandTrackingGpuApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
@@ -2471,7 +2478,8 @@
 		599A27054DF3BCEA00000001 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Stub Launch Image";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				BAZEL_TARGET = "//mediapipe/examples/ios/handtrackinggpu:HandTrackingGpuApp";
 				CLANG_ENABLE_MODULES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -2492,7 +2500,11 @@
 		599A27054DF3BCEA00000002 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
+				COMPRESS_PNG_FILES = NO;
+				ENABLE_ON_DEMAND_RESOURCES = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2548,6 +2560,7 @@
 				);
 				PRODUCT_NAME = _idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10.0;
 				SDKROOT = iphoneos;
+				STRIP_PNG_TEXT = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/snehamahapatra/Desktop/Spring2020/EPCS412/CNN_ASL/mediapipe/mediapipe/HandTrackingGpuApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				USER_HEADER_SEARCH_PATHS = "$(TULSI_WR)";
@@ -2977,7 +2990,8 @@
 		599A2705C2DF3E3700000001 /* __TulsiTestRunner_Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Stub Launch Image";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				BAZEL_TARGET = "//mediapipe/examples/ios/handtrackinggpu:HandTrackingGpuApp";
 				CLANG_ENABLE_MODULES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -3052,9 +3066,14 @@
 		79A0E8E3250FE0EB00912DC7 /* __TulsiTestRunner_Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
+				COMPRESS_PNG_FILES = NO;
+				ENABLE_ON_DEMAND_RESOURCES = NO;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = _idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10.0;
+				STRIP_PNG_TEXT = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/snehamahapatra/Desktop/Spring2020/EPCS412/CNN_ASL/mediapipe/mediapipe/HandTrackingGpuApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
@@ -3063,9 +3082,14 @@
 		79A0E8E4250FE0EB00912DC7 /* __TulsiTestRunner_Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
+				COMPRESS_PNG_FILES = NO;
+				ENABLE_ON_DEMAND_RESOURCES = NO;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = _idx_HandTrackingGpuAppLibrary_B42E32AE_ios_min10.0;
+				STRIP_PNG_TEXT = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/snehamahapatra/Desktop/Spring2020/EPCS412/CNN_ASL/mediapipe/mediapipe/HandTrackingGpuApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};

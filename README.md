@@ -16,10 +16,22 @@ This project is part of a senior design project at Purdue University. My team an
 This shows the handtracking Mediapipe has already created.
 
 ## ASL Translator App
+###Android (Google Pixel 2)
 ![Real-time Hand Tracking](mediapipe/docs/images/ASL.gif)
 
+###iOS (7th Generation, 10.0+)
 ![Real-time Hand Tracking](mediapipe/docs/images/RecordingScreen.gif)
-*Gifs of each category came from this database: https://asl-lex.github.io/asl-lex/index.html
+
+
+## Dynamic Sign Translation 
+Architecture was based off of this repo: https://github.com/Tachionstrahl/SignLanguageRecognition
+
+Converted model to work on CPU, translate ASL phrases, and work on MacOS
+![Real-time Hand Tracking](mediapipe/docs/images/hello.gif)
+![Real-time Hand Tracking](mediapipe/docs/images/here.gif)
+![Real-time Hand Tracking](mediapipe/docs/images/no.gif)
+
+Gifs of each category came from this database: https://asl-lex.github.io/asl-lex/index.html
 ## Installation
 Follow these [instructions](mediapipe/docs/install.md).
 
