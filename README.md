@@ -16,10 +16,10 @@ This project is part of a senior design project at Purdue University. My team an
 This shows the handtracking Mediapipe has already created.
 
 ## ASL Translator App
-###Android (Google Pixel 2)
+### Android (Google Pixel 2)
 ![Real-time Hand Tracking](mediapipe/docs/images/ASL.gif)
 
-###iOS (7th Generation, 10.0+)
+### iOS (7th Generation, 10.0+)
 ![Real-time Hand Tracking](mediapipe/docs/images/RecordingScreen.gif)
 
 
