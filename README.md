@@ -1,8 +1,6 @@
 ![ASL Translator](mediapipe/docs/images/ASL_Translator_small.png?raw=true "ASL Translator on App")
 =======================================================================
 
-[MediaPipe](http://mediapipe.dev)
-
 This project is part of a senior design project at Purdue University. My team and I are attempting to create an ASL translator using the Mediapipe Framework. We have so far been able to translator ASL letters. We are going to attempt to interpret words as well in ASL.
 
 ![Real-time Hand Tracking](mediapipe/docs/images/mobile/hand_tracking_android_gpu.gif)
