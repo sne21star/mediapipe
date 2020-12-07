@@ -1,5 +1,25 @@
-![ASL Translator](mediapipe/docs/images/ASL_Translator_small.png?raw=true "ASL Translator on App")
-=======================================================================
+
+
+## Installation
+Follow these [instructions](mediapipe/docs/install.md).
+
+## Getting started
+See mobile, desktop, web and Google Coral [examples](mediapipe/docs/examples.md).
+
+## Documentation
+We will soon create Documentation to help understand the changes we made in this framework.
+[MediaPipe Read-the-Docs](https://mediapipe.readthedocs.io/) or [docs.mediapipe.dev](https://docs.mediapipe.dev)
+
+Check out the [Examples page](https://mediapipe.readthedocs.io/en/latest/examples.html) for tutorials on how to use MediaPipe. [Concepts page](https://mediapipe.readthedocs.io/en/latest/concepts.html) for basic definitions
+
+## Visualizing MediaPipe graphs
+A web-based visualizer is hosted on [viz.mediapipe.dev](https://viz.mediapipe.dev/). Please also see instructions [here](mediapipe/docs/visualizer.md).
+
+## Google Open Source Code search
+Search MediaPipe Github repository using [Google Open Source code search](https://t.co/LSZnbMUUnT?amp=1)
+
+## Videos
+*  [YouTube Channel](https://www.youtube.com/channel/UCObqmpuSMx-usADtL_qdMAw)
 
 [MediaPipe](http://mediapipe.dev)
 
@@ -31,24 +51,4 @@ Converted model to work on CPU, translate ASL phrases, and work on MacOS
 ![Real-time Hand Tracking](mediapipe/docs/images/here.gif)
 ![Real-time Hand Tracking](mediapipe/docs/images/no.gif)
 
-## Installation
-Follow these [instructions](mediapipe/docs/install.md).
-
-## Getting started
-See mobile, desktop, web and Google Coral [examples](mediapipe/docs/examples.md).
-
-## Documentation
-We will soon create Documentation to help understand the changes we made in this framework.
-[MediaPipe Read-the-Docs](https://mediapipe.readthedocs.io/) or [docs.mediapipe.dev](https://docs.mediapipe.dev)
-
-Check out the [Examples page](https://mediapipe.readthedocs.io/en/latest/examples.html) for tutorials on how to use MediaPipe. [Concepts page](https://mediapipe.readthedocs.io/en/latest/concepts.html) for basic definitions
-
-## Visualizing MediaPipe graphs
-A web-based visualizer is hosted on [viz.mediapipe.dev](https://viz.mediapipe.dev/). Please also see instructions [here](mediapipe/docs/visualizer.md).
-
-## Google Open Source Code search
-Search MediaPipe Github repository using [Google Open Source code search](https://t.co/LSZnbMUUnT?amp=1)
-
-## Videos
-*  [YouTube Channel](https://www.youtube.com/channel/UCObqmpuSMx-usADtL_qdMAw)
 
